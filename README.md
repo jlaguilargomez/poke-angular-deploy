@@ -1,5 +1,5 @@
 # PokeAngular
-##### Autor: Alberto Rivera Mérida
+#### Autor: Alberto Rivera Mérida
 
 Desarrolla una aplicación en Angular que cumpla con las siguientes especificaciones detalladas más adelante. Podéis organizaros por grupos/equipos.
 
