@@ -21,8 +21,8 @@ export class PokemonCardComponent implements OnInit {
       const id = params['id'] - 1;
       this.pokedexService.pokemonsLoaded.subscribe((data: Pokemon[]) => {
         this.pokemonSelected = data[id];
-        console.log(this.pokemonSelected);
       });
+      this.pokemonSelected = this.pokedexService.getPokemon(id);
     });
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PokemonListComponent implements OnInit {
   @Input() pokemonList: Object[];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  renderPokemon(e) {
-    console.log(e);
+  renderPokemon(index) {
+    this.router.navigate(['pokedex', index + 1]);
   }
 
   ngOnInit() {}

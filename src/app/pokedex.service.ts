@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Pokemon } from './interface/pokemon.interface';
 import { Observable, Subject } from 'rxjs';
 import { resolve } from 'url';
+import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail.component';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { resolve } from 'url';
 export class PokedexService {
   promises: Promise<object>[] = [];
   pokemonsLoaded = new Subject<Object[]>();
+  pokemonList: Pokemon[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -58,8 +60,12 @@ export class PokedexService {
   }
   getPokemons(limit: number) {
     this.loadPokemons(limit);
-    Promise.all(this.promises).then(newPokemon => {
+    Promise.all(this.promises).then((newPokemon: Pokemon[]) => {
       this.pokemonsLoaded.next(newPokemon);
+      this.pokemonList = newPokemon;
     });
+  }
+  getPokemon(index) {
+    return this.pokemonList[index];
   }
 }
