@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
 import { PokedexService } from 'src/app/pokedex.service';
@@ -8,7 +8,7 @@ import { PokedexService } from 'src/app/pokedex.service';
   templateUrl: './pokemon-map.component.html',
   styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit {
+export class PokemonMapComponent implements DoCheck {
   map: any;
   pokemons: Pokemon[];
   selectedPokemon: number = 0;
@@ -26,10 +26,9 @@ export class PokemonMapComponent implements OnInit {
 
   constructor(private pokedexService: PokedexService) {}
 
-  ngOnInit() {
+  ngDoCheck() {
     this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
       this.pokemons = pokemons;
-
       // Leaflet setting
       let options = { attributionControl: false };
       let map = L.map('map', options).setView(

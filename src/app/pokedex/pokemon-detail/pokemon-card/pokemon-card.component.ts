@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { PokedexService } from 'src/app/pokedex.service';
+import { Pokemon } from 'src/app/interface/pokemon.interface';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -8,44 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class PokemonCardComponent implements OnInit {
   public pokemonSelected: object;
 
-  constructor() {
-    this.pokemonSelected = {
-      //Still on development
-      name: 'Bulbasur',
-      ability: ['chlorophy', 'overgrow'],
-      type: ['poison', 'grass', 'flying'],
-      height: 7,
-      weight: 69,
-      stats: [
-        // We have to change the objet name 'base-state' to a base.
-        {
-          name: 'hp',
-          base: 92,
-        },
-        {
-          name: 'speed',
-          base: 35,
-        },
-        {
-          name: 'special-defense',
-          base: 25,
-        },
-        {
-          name: 'defense',
-          base: 40,
-        },
+  constructor(
+    private route: ActivatedRoute,
+    private pokedexService: PokedexService
+  ) {}
 
-        {
-          name: 'special-attack',
-          base: 77,
-        },
-      ],
-      imagePath:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-    };
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      const id = params['id'] - 1;
+      this.pokedexService.pokemonsLoaded.subscribe((data: Pokemon[]) => {
+        this.pokemonSelected = data[id];
+      });
+      this.pokemonSelected = this.pokedexService.getPokemon(id);
+    });
   }
-
-  ngOnInit() {}
 
   colorBar(num) {
     switch (true) {

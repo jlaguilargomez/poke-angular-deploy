@@ -10,7 +10,10 @@ const appRoutes: Routes = [
   {
     path: 'pokedex',
     component: PokedexComponent,
-    children: [{ path: ':id', component: PokemonDetailComponent }],
+    children: [
+      { path: '', component: PokemonDetailComponent },
+      { path: ':id', component: PokemonDetailComponent },
+    ],
   },
 ];
 

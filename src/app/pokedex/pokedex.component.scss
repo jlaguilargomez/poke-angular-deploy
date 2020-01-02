@@ -8,10 +8,22 @@
   height: calc(100vh-140px);
 }
 
-app-pokemon-list {
+.pokemon-list {
   width: 50%;
 }
 
 .pokemon-detail {
   width: 50%;
+}
+
+.loading-pokeball {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  &__gif {
+    display: block;
+    margin: 0 auto;
+    border-radius: 100px;
+    height: 60px;
+  }
 }
