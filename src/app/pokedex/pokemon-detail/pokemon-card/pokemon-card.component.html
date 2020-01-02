@@ -1,4 +1,4 @@
-<div class="shadow">
+<div class="shadow" *ngIf="pokemonSelected != undefined">
   <div class="container container--general">
     <div class="container container--photo">
       <div class="background-photo">
@@ -38,11 +38,11 @@
       <table>
         <tr *ngFor="let stat of pokemonSelected.stats">
           <td>{{ stat.name }}</td>
-          <td>{{ stat.base }}</td>
+          <td>{{ stat['base-stat'] }}</td>
           <div class="progress-bar">
             <div
               [style.width.%]="stat.base"
-              [style.background-color]="colorBar(stat.base)"
+              [style.background-color]="colorBar(stat.base - stat)"
               class="progress-bar__skill"
             >
               <div class="d-hidden">Skill</div>

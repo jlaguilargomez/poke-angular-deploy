@@ -11,7 +11,6 @@ import { Pokemon } from '../interface/pokemon.interface';
 })
 export class PokedexComponent implements OnInit {
   pokemons: Pokemon[];
-  pokemonObservable: Observable<Pokemon[]>;
 
   constructor(private pokedexService: PokedexService) {}
 
@@ -20,6 +19,5 @@ export class PokedexComponent implements OnInit {
     this.pokedexService.pokemonsLoaded.subscribe((dataSet: Pokemon[]) => {
       this.pokemons = dataSet;
     });
-    this.pokemonObservable.subscribe(() => console.log('loaded Pokemons'));
   }
 }
