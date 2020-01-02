@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
+import { PokedexService } from 'src/app/pokedex.service';
 
 @Component({
   selector: 'app-pokemon-map',
@@ -8,8 +9,6 @@ import { Pokemon } from '../../../interface/pokemon.interface';
   styleUrls: ['./pokemon-map.component.scss'],
 })
 export class PokemonMapComponent implements OnInit {
-  @Input() pokemonObservable;
-
   map: any;
   pokemons: Pokemon[];
   selectedPokemon: number = 0;
@@ -25,10 +24,10 @@ export class PokemonMapComponent implements OnInit {
     );
   }
 
-  constructor() {}
+  constructor(private pokedexService: PokedexService) {}
 
   ngOnInit() {
-    this.pokemonObservable.subscribe(pokemons => {
+    this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
       this.pokemons = pokemons;
 
       // Leaflet setting

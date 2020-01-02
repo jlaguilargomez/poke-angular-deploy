@@ -1,7 +1,6 @@
 <div class="component-box">
   <app-pokemon-list [pokemonList]="pokemons"></app-pokemon-list>
-  <app-pokemon-detail
-    class="column-detail"
-    [pokemonObservable]="pokemonObservable"
-  ></app-pokemon-detail>
+  <div class="pokemon-detail">
+    <router-outlet></router-outlet>
+  </div>
 </div>

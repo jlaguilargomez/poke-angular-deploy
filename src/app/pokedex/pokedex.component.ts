@@ -16,14 +16,10 @@ export class PokedexComponent implements OnInit {
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit() {
-    this.pokemonObservable = Observable.create(observer => {
-      Promise.all(this.pokedexService.getPokemons(151)).then(
-        (dataSet: Pokemon[]) => {
-          this.pokemons = dataSet;
-          observer.next(this.pokemons);
-          console.log(this.pokemons);
-        }
-      );
+    this.pokedexService.getPokemons(151);
+    this.pokedexService.pokemonsLoaded.subscribe((dataSet: Pokemon[]) => {
+      this.pokemons = dataSet;
     });
+    this.pokemonObservable.subscribe(() => console.log('loaded Pokemons'));
   }
 }

@@ -9,10 +9,11 @@ import { resolve } from 'url';
 })
 export class PokedexService {
   promises: Promise<object>[] = [];
+  pokemonsLoaded = new Subject<Object[]>();
 
   constructor(private http: HttpClient) {}
 
-  getPokemons(limit: number) {
+  loadPokemons(limit: number) {
     for (let i = 1; i < limit + 1; i++) {
       let promise: any = new Promise(resolve => {
         this.http
@@ -54,6 +55,11 @@ export class PokedexService {
       });
       this.promises.push(promise);
     }
-    return this.promises;
+  }
+  getPokemons(limit: number) {
+    this.loadPokemons(limit);
+    Promise.all(this.promises).then(newPokemon => {
+      this.pokemonsLoaded.next(newPokemon);
+    });
   }
 }

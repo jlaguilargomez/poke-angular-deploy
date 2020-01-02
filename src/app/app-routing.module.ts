@@ -1,10 +1,17 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './landing/landing.component';
+import { PokedexComponent } from './pokedex/pokedex.component';
+import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingComponent },
+  {
+    path: 'pokedex',
+    component: PokedexComponent,
+    children: [{ path: ':id', component: PokemonDetailComponent }],
+  },
 ];
 
 @NgModule({
