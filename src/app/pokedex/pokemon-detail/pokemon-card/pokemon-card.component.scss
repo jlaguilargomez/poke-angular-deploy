@@ -89,17 +89,55 @@ table {
   background-color: rgba(255, 255, 255, 0.363);
   padding: 0.3em;
   border-radius: 0.3em;
+  color: white;
 
   &--pysychic {
-    background-color: #ffbcfc;
+    background-color: #dd3267;
   }
-
   &--normal {
-    background-color: #fff6e9;
+    background-color: #aea695;
   }
-
   &--poison {
-    background-color: #cbfad3;
+    background-color: #712873;
+  }
+  &--fire {
+    background-color: #c72100;
+  }
+  &--bug {
+    background-color: #88960e;
+  }
+  &--dark {
+    background-color: #3c2d23;
+  }
+  &--dragon {
+    background-color: #5440ac;
+  }
+  &--electric {
+    background-color: #e79302;
+  }
+  &--fairy {
+    background-color: #e08ee0;
+  }
+  &--ghost {
+    background-color: #454593;
+  }
+  &--grass {
+    background-color: #3d9d07;
+  }
+  &--ground {
+    background-color: #ad8c33;
+  }
+  &--ice {
+    background-color: #efefef;
+  }
+  &--rock {
+    background-color: #9e863d;
+  }
+  &--steel {
+    background-color: #8e8e9f;
+  }
+  &--water {
+    background-color: #0c67c2;
   }
 }
 
@@ -108,30 +146,8 @@ table {
   width: 100%;
   padding: 5px;
 
-  &__skill--hp {
+  &__skill {
     border-radius: 0.5rem;
-    width: 90%;
-    background-color: rgb(0, 255, 0);
-  }
-  &__skill--attack {
-    border-radius: 0.5rem;
-    width: 60%;
-    background-color: rgb(179, 255, 0);
-  }
-  &__skill--sattack {
-    border-radius: 0.5rem;
-    width: 67%;
-    background-color: rgb(115, 255, 0);
-  }
-  &__skill--sdeffense {
-    border-radius: 0.5rem;
-    width: 45%;
-    background-color: rgb(229, 255, 0);
-  }
-  &__skill--speed {
-    border-radius: 0.5rem;
-    width: 23%;
-    background-color: rgb(255, 136, 0);
   }
 }
 .d-hidden {
