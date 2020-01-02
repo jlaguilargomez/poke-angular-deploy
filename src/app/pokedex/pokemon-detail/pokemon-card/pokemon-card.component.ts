@@ -32,7 +32,7 @@ export class PokemonCardComponent implements OnInit {
         return '#74c646';
       case pokemonType === 'fire' || pokemonType === 'fighting':
         return '#c67946';
-      case pokemonType === ' rock' ||
+      case pokemonType === 'rock' ||
         pokemonType === 'normal' ||
         pokemonType === 'ground':
         return '#c9c090';
