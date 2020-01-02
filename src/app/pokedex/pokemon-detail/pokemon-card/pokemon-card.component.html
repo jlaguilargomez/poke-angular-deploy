@@ -1,4 +1,4 @@
-<div class="shadow" *ngIf="pokemonSelected != undefined">
+<div class="shadow" *ngIf="pokemonSelected != undefined; else loading">
   <div class="container container--general">
     <div class="container container--photo">
       <div class="background-photo">
@@ -42,7 +42,7 @@
           <div class="progress-bar">
             <div
               [style.width.%]="stat.base"
-              [style.background-color]="colorBar(stat.base - stat)"
+              [style.background-color]="colorBar(stat.base)"
               class="progress-bar__skill"
             >
               <div class="d-hidden">Skill</div>
@@ -53,3 +53,6 @@
     </div>
   </div>
 </div>
+<ng-template #loading
+  ><img class="loading-pokeball" src="assets/img/loading-pokeball.gif"
+/></ng-template>
