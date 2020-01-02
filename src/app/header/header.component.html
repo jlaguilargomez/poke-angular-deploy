@@ -6,8 +6,18 @@
   />
 
   <nav class="menu">
-    <a class="menu__item" href="#">Home</a>
-    <a class="menu__item" href="#">Pokedex</a>
+    <a
+      class="menu__item"
+      [routerLink]="['/landing']"
+      routerLinkActive="menu__item--active"
+      >Home</a
+    >
+    <a
+      class="menu__item"
+      [routerLink]="['/pokedex']"
+      routerLinkActive="menu__item--active"
+      >Pokedex</a
+    >
     <a class="menu__item" href="#">About us</a>
   </nav>
 </header>

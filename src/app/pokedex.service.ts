@@ -32,7 +32,7 @@ export class PokedexService {
               stats: item.stats.map(stat => {
                 return {
                   name: stat['stat']['name'],
-                  'base-stat': stat['base_stat'],
+                  base: stat['base_stat'],
                 };
               }),
               moves: [

@@ -35,10 +35,14 @@
       font-size: 1.6rem;
       padding: 20px;
       //   box-shadow: 0 0 5px 5px gray;
-      border-radius: 100%;
+      border-radius: 15px;
     }
 
-    &:active {
+    &--active {
+      font-size: 1.6rem;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: $menu-item-color-hoover;
     }
   }
 }
