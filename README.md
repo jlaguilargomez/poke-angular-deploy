@@ -1,7 +1,5 @@
 # PokeAngular
 
-<<<<<<< HEAD
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## New features developed!
@@ -44,8 +42,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # poke-angular
 
-=======
-
 #### Autor: Alberto Rivera Mérida
 
 Desarrolla una aplicación en Angular que cumpla con las siguientes especificaciones detalladas más adelante. Podéis organizaros por grupos/equipos.
@@ -79,5 +75,3 @@ Realizar una Landing Inicial en la que expliquéis el funcionamiento de vuestra 
 Realizar alguna funcionalidad extra al contenido.
 Completar un Readme explicativo.
 Cualquier otra mejora que implementéis será un plus.
-
-> > > > > > > f9f16fd1bbe958ae25978b1169440cd7b1f9fd79

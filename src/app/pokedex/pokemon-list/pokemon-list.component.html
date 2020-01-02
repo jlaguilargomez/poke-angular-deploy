@@ -1,30 +1,31 @@
 <main class="component-box">
-  <header class="box-title">
+  <header class="title-box">
     <img
       class="logo"
       src="./assets/img/pokeball-logo.png"
       alt="pokeball-logo"
     />
-    <h1 class="box-title__title">Pokedex</h1>
+    <h1 class="title-box__title">Pokedex</h1>
   </header>
 
-  <section *ngIf="pokemonList != undefined" class="list-container">
+  <div class="list-container">
     <form class="search-bar">
       <img src="./assets/img/glass-search.png" class="search-bar__img" />
-      <input class="search-bar__input" type="text" placeholder="Search" />
+      <input class="search-bar__input" type="text" placeholder="Search..." />
     </form>
-    <div
-      class="list-elem"
-      (click)="renderPokemon(i)"
-      *ngFor="let elem of pokemonList; index as i"
-    >
-      <span class="list-elem__id">{{ elem.id }}</span>
-      <img
-        class="list-elem__img"
-        src="{{ elem.imagePath }}"
-        alt="pokemon-img"
-      />
-      <p class="list-elem__name">{{ elem.name }}</p>
+
+    <div *ngIf="pokemonList != undefined" class="list-elem">
+      <div
+        class="elem"
+        (click)="renderPokemon(i)"
+        *ngFor="let elem of pokemonList; index as i"
+      >
+        <span class="elem__id">{{ elem.id }}</span>
+        <div class="elem__info">
+          <img class="elem__img" src="{{ elem.imagePath }}" alt="pokemon-img" />
+          <p class="elem__name">{{ elem.name }}</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </main>
