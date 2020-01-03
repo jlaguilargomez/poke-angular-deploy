@@ -38,6 +38,7 @@ export class PokemonMapComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		console.log('something has happend!');
+
 		this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
 			this.pokemons = pokemons;
 			// Leaflet setting
