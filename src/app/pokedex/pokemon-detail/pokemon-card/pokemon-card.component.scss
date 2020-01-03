@@ -2,161 +2,165 @@
 $radius: 2em;
 
 //Text General
-.titulo {
-  font-size: 3em; //Pending general styles
-  font-weight: bold; ////Pending general styles
+.title {
+	font-size: 3em; //Pending general styles
+	font-weight: bold; ////Pending general styles
 }
 
-.subtitulo {
-  color: white;
-  font-weight: bolder;
-  margin: 0.3em 0;
-  font-size: 2em;
+.subtitle {
+	color: white;
+	font-weight: bolder;
+	margin: 0.3em 0;
+	font-size: 2em;
+}
+
+.cap {
+	text-transform: capitalize;
 }
 //Shadow
 .shadow {
-  padding: 0.5em;
-  background-color: rgba(0, 0, 0, 0.37);
-  border-radius: 2em;
-  margin-bottom: 2em;
+	padding: 0.5em;
+	background-color: rgba(0, 0, 0, 0.37);
+	border-radius: 2em;
+	margin-bottom: 2em;
 }
 
 //Containers
 .container {
-  display: flex;
+	display: flex;
 
-  &--general {
-    border-radius: $radius;
-    background-color: #9b9b9b; //pending from Javascript Service
-  }
+	&--general {
+		border-radius: $radius;
+		background-color: #9b9b9b; //pending from Javascript Service
+	}
 
-  &--info {
-    border-radius: $radius;
-    flex-direction: column;
-    background-color: #ececec;
-    width: 60%;
-    padding: 1em 2em 2em 2em; //It sets general Size.
-  }
+	&--info {
+		border-radius: $radius;
+		flex-direction: column;
+		background-color: #ececec;
+		width: 60%;
+		padding: 1em 2em 2em 2em; //It sets general Size.
+	}
 
-  &--photo {
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    padding: 1em 0 2em 0em;
-  }
+	&--photo {
+		flex-direction: column;
+		align-items: center;
+		width: 40%;
+		padding: 1em 0 2em 0em;
+	}
 
-  &--row {
-    width: 100%;
-    justify-content: space-evenly;
-  }
+	&--row {
+		width: 100%;
+		justify-content: space-evenly;
+	}
 
-  //Managing the margin inside Container
-  ul {
-    margin: 1em 0;
-    li:last-child {
-      margin-bottom: 0; //Eliminate margin to proper vertical align
-    }
-  }
-  ul:last-child {
-    margin-bottom: 0; //Eliminate margin to proper vertical align
-  }
-  li {
-    margin: 0.5em 0;
-  }
+	//Managing the margin inside Container
+	ul {
+		margin: 1em 0;
+		li:last-child {
+			margin-bottom: 0; //Eliminate margin to proper vertical align
+		}
+	}
+	ul:last-child {
+		margin-bottom: 0; //Eliminate margin to proper vertical align
+	}
+	li {
+		margin: 0.5em 0;
+	}
 }
 
 table {
-  border-collapse: separate;
-  border-spacing: 0 0.5em; //Space beetwen tr
+	border-collapse: separate;
+	border-spacing: 0 0.5em; //Space beetwen tr
 }
 
 //Pokemon img
 .sprite {
-  border-radius: 1.5em;
-  width: 10em; //Size img, pending mediaquerys
+	border-radius: 1.5em;
+	width: 10em; //Size img, pending mediaquerys
 }
 
 //Div Background White
 .background-photo {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  border-radius: 2em;
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	border-radius: 2em;
 }
 
 //btn classes
 .type {
-  background-color: rgba(255, 255, 255, 0.363);
-  padding: 0.3em;
-  border-radius: 0.3em;
-  color: white;
+	background-color: rgba(255, 255, 255, 0.363);
+	padding: 0.3em;
+	border-radius: 0.3em;
+	color: white;
 
-  &--pysychic {
-    background-color: #dd3267;
-  }
-  &--normal {
-    background-color: #aea695;
-  }
-  &--poison {
-    background-color: #712873;
-  }
-  &--fire {
-    background-color: #c72100;
-  }
-  &--bug {
-    background-color: #88960e;
-  }
-  &--dark {
-    background-color: #3c2d23;
-  }
-  &--dragon {
-    background-color: #5440ac;
-  }
-  &--electric {
-    background-color: #e79302;
-  }
-  &--fairy {
-    background-color: #e08ee0;
-  }
-  &--ghost {
-    background-color: #454593;
-  }
-  &--grass {
-    background-color: #3d9d07;
-  }
-  &--ground {
-    background-color: #ad8c33;
-  }
-  &--ice {
-    background-color: #c9d9dd;
-  }
-  &--rock {
-    background-color: #9e863d;
-  }
-  &--steel {
-    background-color: #8e8e9f;
-  }
-  &--water {
-    background-color: #0c67c2;
-  }
+	&--pysychic {
+		background-color: #dd3267;
+	}
+	&--normal {
+		background-color: #aea695;
+	}
+	&--poison {
+		background-color: #712873;
+	}
+	&--fire {
+		background-color: #c72100;
+	}
+	&--bug {
+		background-color: #88960e;
+	}
+	&--dark {
+		background-color: #3c2d23;
+	}
+	&--dragon {
+		background-color: #5440ac;
+	}
+	&--electric {
+		background-color: #e79302;
+	}
+	&--fairy {
+		background-color: #e08ee0;
+	}
+	&--ghost {
+		background-color: #454593;
+	}
+	&--grass {
+		background-color: #3d9d07;
+	}
+	&--ground {
+		background-color: #ad8c33;
+	}
+	&--ice {
+		background-color: #c9d9dd;
+	}
+	&--rock {
+		background-color: #9e863d;
+	}
+	&--steel {
+		background-color: #8e8e9f;
+	}
+	&--water {
+		background-color: #0c67c2;
+	}
 }
 
 //Skill Bar types
 .progress-bar {
-  width: 100%;
-  padding: 5px;
+	width: 100%;
+	padding: 5px;
 
-  &__skill {
-    border-radius: 0.5rem;
-  }
+	&__skill {
+		border-radius: 0.5rem;
+	}
 }
 .d-hidden {
-  visibility: hidden;
+	visibility: hidden;
 }
 
 .loading-pokeball {
-  display: block;
-  margin: 0 auto;
-  border-radius: 25px;
-  height: 40px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 25px;
+	height: 40px;
 }
