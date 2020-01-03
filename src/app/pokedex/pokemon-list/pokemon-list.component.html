@@ -23,7 +23,7 @@
 		<div *ngIf="pokemonList != undefined" class="list-elem">
 			<div
 				class="elem"
-				(click)="renderPokemon(i)"
+				(click)="renderPokemon(elem.id - 1)"
 				*ngFor="
 					let elem of pokemonList | searcherFilter: searchPokemonName;
 					index as i
