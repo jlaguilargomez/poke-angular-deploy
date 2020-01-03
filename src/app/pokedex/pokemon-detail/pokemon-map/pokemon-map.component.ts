@@ -9,7 +9,7 @@ import { PokedexService } from 'src/app/pokedex.service';
 	templateUrl: './pokemon-map.component.html',
 	styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit, OnChanges {
+export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
 	selectedPokemon = 0;
@@ -32,13 +32,22 @@ export class PokemonMapComponent implements OnInit, OnChanges {
 		);
 	}
 
-	ngOnChanges() {
-		console.log('something has happend!');
-	}
-
 	ngOnInit() {
-		console.log('something has happend!');
+		console.log(
+			'pokemon-map component works!, it must display in the console (...) the pokemon clicked on the list'
+		);
 
+		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
+		this.route.params.subscribe((params: Params) => {
+			const id = params['id'] - 1;
+			this.pokedexService.pokemonsLoaded.subscribe((data: Pokemon[]) => {
+				this.pokemonSelected = data[id];
+			});
+			this.pokemonSelected = this.pokedexService.getPokemon(id);
+			console.log(this.pokemonSelected);
+		});
+
+		// this used to work:
 		this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
 			this.pokemons = pokemons;
 			// Leaflet setting
