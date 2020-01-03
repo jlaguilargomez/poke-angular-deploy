@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
 import { PokedexService } from 'src/app/pokedex.service';
@@ -8,10 +9,17 @@ import { PokedexService } from 'src/app/pokedex.service';
   templateUrl: './pokemon-map.component.html',
   styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements DoCheck {
+export class PokemonMapComponent implements OnInit {
   map: any;
   pokemons: Pokemon[];
   selectedPokemon: number = 0;
+
+  constructor(
+    private route: ActivatedRoute,
+    private pokedexService: PokedexService
+  ) {}
+
+  public pokemonSelected: object;
 
   changePokemon() {
     this.selectedPokemon++;
@@ -24,9 +32,18 @@ export class PokemonMapComponent implements DoCheck {
     );
   }
 
-  constructor(private pokedexService: PokedexService) {}
+  ngOnChanges() {
+    this.route.params.subscribe((params: Params) => {
+      const id = params['id'] - 1;
+      this.pokedexService.pokemonsLoaded.subscribe((data: Pokemon[]) => {
+        this.pokemonSelected = data[id];
+      });
+      this.pokemonSelected = this.pokedexService.getPokemon(id);
+    });
+    console.log(this.pokemonSelected);
+  }
 
-  ngDoCheck() {
+  ngOnInit() {
     this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
       this.pokemons = pokemons;
       // Leaflet setting

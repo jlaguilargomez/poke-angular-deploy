@@ -5,7 +5,7 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'landing', pathMatch: 'full' },
+  { path: '', redirectTo: 'pokedex', pathMatch: 'full' }, //this must be changed !!
   { path: 'landing', component: LandingComponent },
   {
     path: 'pokedex',
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { enableTracing: false })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
