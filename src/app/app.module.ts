@@ -14,6 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { SearchFilterPipe } from './pokedex/pipes/search-filter.pipe';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -25,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
 		PokemonMapComponent,
 		HeaderComponent,
 		FooterComponent,
+		SearchFilterPipe,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
 	providers: [],

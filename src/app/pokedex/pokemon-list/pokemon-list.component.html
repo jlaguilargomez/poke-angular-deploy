@@ -24,7 +24,10 @@
 			<div
 				class="elem"
 				(click)="renderPokemon(i)"
-				*ngFor="let elem of pokemonList; index as i"
+				*ngFor="
+					let elem of pokemonList | searcherFilter: searchPokemonName;
+					index as i
+				"
 			>
 				<span class="elem__id">{{ elem.id }}</span>
 				<div class="elem__info">
