@@ -26,33 +26,60 @@ export class PokemonCardComponent implements OnInit {
     });
   }
 
+  colorBackground(pokemonType) {
+    switch (true) {
+      case pokemonType === 'grass' || pokemonType === 'bug':
+        return '#74c646';
+      case pokemonType === 'fire' || pokemonType === 'fighting':
+        return '#c67946';
+      case pokemonType === 'rock' ||
+        pokemonType === 'normal' ||
+        pokemonType === 'ground':
+        return '#c9c090';
+      case pokemonType === 'water' ||
+        pokemonType === 'ice' ||
+        pokemonType === 'flying':
+        return '#62b8c7';
+      case pokemonType === 'dragon' || pokemonType === 'ghost':
+        return '#b8bcd9';
+      case pokemonType === 'dark' || pokemonType === 'steel':
+        return '#8d8a90';
+      case pokemonType === 'psychic' ||
+        pokemonType === 'fairy' ||
+        pokemonType === 'poison':
+        return '#f264c4';
+      case pokemonType === 'electric':
+        return '#e3d528';
+      default:
+        'grey';
+    }
+  }
+
   colorBar(num) {
     switch (true) {
-      case num < 10:
+      case num < 16:
         return '#d6522a';
-
-      case num >= 10 && num < 20:
+      case num >= 16 && num < 32:
         return '#d6822a';
-
-      case num >= 20 && num < 30:
+      case num >= 32 && num < 48:
         return '#d6b12a';
-
-      case num >= 30 && num < 40:
+      case num >= 48 && num < 64:
         return '#c0c42a';
-
-      case num >= 40 && num <= 50:
+      case num >= 64 && num <= 80:
         return '#aad62a';
-      case num >= 50 && num <= 60:
+      case num >= 80 && num <= 96:
         return '#99d62b';
-      case num >= 60 && num <= 70:
+      case num >= 96 && num <= 112:
         return '#87d52c';
-      case num >= 70 && num <= 80:
+      case num >= 112 && num <= 128:
         return '#62d52d';
-      case num >= 80 && num <= 90:
+      case num >= 128 && num <= 144:
         return '#34d52e';
-      case num >= 90 && num <= 100:
+      case num >= 144 && num <= 160:
         return '#30d55d';
-
+      //Extra Case
+      case num > 160:
+        return '#00ff84';
       default:
         return 'grey';
     }

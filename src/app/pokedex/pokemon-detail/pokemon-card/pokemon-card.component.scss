@@ -2,12 +2,12 @@
 $radius: 2em;
 
 //Text General
-h1 {
+.titulo {
   font-size: 3em; //Pending general styles
   font-weight: bold; ////Pending general styles
 }
 
-h2 {
+.subtitulo {
   color: white;
   font-weight: bolder;
   margin: 0.3em 0;
@@ -27,7 +27,7 @@ h2 {
 
   &--general {
     border-radius: $radius;
-    background-color: #6fad6e; //pending from Javascript Service
+    background-color: #9b9b9b; //pending from Javascript Service
   }
 
   &--info {
@@ -128,7 +128,7 @@ table {
     background-color: #ad8c33;
   }
   &--ice {
-    background-color: #efefef;
+    background-color: #c9d9dd;
   }
   &--rock {
     background-color: #9e863d;
