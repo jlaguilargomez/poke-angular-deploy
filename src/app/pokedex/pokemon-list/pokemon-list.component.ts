@@ -9,6 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PokemonListComponent implements OnInit {
 	@Input() pokemonList: object[];
 
+	public searchPokemonName: string;
+	dd;
+
 	constructor(private router: Router) {}
 
 	renderPokemon(index) {
