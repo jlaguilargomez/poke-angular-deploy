@@ -11,14 +11,23 @@
 	<div class="list-container">
 		<form class="search-bar">
 			<img src="./assets/img/glass-search.png" class="search-bar__img" />
-			<input class="search-bar__input" type="text" placeholder="Search..." />
+			<input
+				name="pokemonName"
+				class="search-bar__input"
+				type="text"
+				placeholder="Search..."
+				[(ngModel)]="searchPokemonName"
+			/>
 		</form>
 		<!--List of Pokemons-->
 		<div *ngIf="pokemonList != undefined" class="list-elem">
 			<div
 				class="elem"
-				(click)="renderPokemon(i)"
-				*ngFor="let elem of pokemonList; index as i"
+				(click)="renderPokemon(elem.id - 1)"
+				*ngFor="
+					let elem of pokemonList | searcherFilter: searchPokemonName;
+					index as i
+				"
 			>
 				<span class="elem__id">{{ elem.id }}</span>
 				<div class="elem__info">
