@@ -1,5 +1,8 @@
 <div class="shadow" *ngIf="pokemonSelected != undefined">
-  <div class="container container--general">
+  <div
+    class="container container--general"
+    [style.background-color]="colorBackground(pokemonSelected.type[0])"
+  >
     <div class="container container--photo">
       <div class="background-photo">
         <img
@@ -9,7 +12,7 @@
         />
       </div>
 
-      <h2>{{ pokemonSelected.name }}</h2>
+      <h2 class="subtitulo">{{ pokemonSelected.name }}</h2>
       <div class="container container--row">
         <!-- Type For -->
         <div
@@ -22,7 +25,7 @@
     </div>
 
     <div class="container container--info">
-      <h1>#{{ pokemonSelected.name }}</h1>
+      <h1 class="titulo">#{{ pokemonSelected.name }}</h1>
       <ul>
         <!-- Ability has to be iterated-->
         <li>
@@ -41,7 +44,7 @@
           <td>{{ stat.base }}</td>
           <div class="progress-bar">
             <div
-              [style.width.%]="stat.base"
+              [style.width.%]="stat.base > 160 ? 160 : stat.base"
               [style.background-color]="colorBar(stat.base)"
               class="progress-bar__skill"
             >
