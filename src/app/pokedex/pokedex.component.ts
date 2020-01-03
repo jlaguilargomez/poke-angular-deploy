@@ -5,23 +5,23 @@ import { Observable } from 'rxjs';
 import { Pokemon } from '../interface/pokemon.interface';
 
 @Component({
-  selector: 'app-pokedex',
-  templateUrl: './pokedex.component.html',
-  styleUrls: ['./pokedex.component.scss'],
+	selector: 'app-pokedex',
+	templateUrl: './pokedex.component.html',
+	styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit {
-  pokemons: Pokemon[];
-  pokemonLoaded: boolean = false;
+	pokemons: Pokemon[];
+	pokemonLoaded = false;
 
-  constructor(private pokedexService: PokedexService) {}
+	constructor(private pokedexService: PokedexService) {}
 
-  ngOnInit() {
-    this.pokedexService.getPokemons(151);
-    this.pokedexService.pokemonsLoaded.subscribe((dataSet: Pokemon[]) => {
-      this.pokemons = dataSet;
-      setTimeout(() => {
-        this.pokemonLoaded = true;
-      }, 200);
-    });
-  }
+	ngOnInit() {
+		this.pokedexService.getPokemons(151);
+		this.pokedexService.pokemonsLoaded.subscribe((dataSet: Pokemon[]) => {
+			this.pokemons = dataSet;
+			setTimeout(() => {
+				this.pokemonLoaded = true;
+			}, 200);
+		});
+	}
 }
