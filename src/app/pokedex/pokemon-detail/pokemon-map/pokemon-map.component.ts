@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, OnChanges } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
@@ -9,7 +9,7 @@ import { PokedexService } from 'src/app/pokedex.service';
 	templateUrl: './pokemon-map.component.html',
 	styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit {
+export class PokemonMapComponent implements OnInit, OnChanges {
 	map: any;
 	pokemons: Pokemon[];
 	selectedPokemon = 0;
@@ -32,7 +32,12 @@ export class PokemonMapComponent implements OnInit {
 		);
 	}
 
+	ngOnChanges() {
+		console.log('something has happend!');
+	}
+
 	ngOnInit() {
+		console.log('something has happend!');
 		this.pokedexService.pokemonsLoaded.subscribe((pokemons: Pokemon[]) => {
 			this.pokemons = pokemons;
 			// Leaflet setting

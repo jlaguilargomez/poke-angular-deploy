@@ -12,7 +12,8 @@
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "ng lint"
     }
   },
   "dependencies": {
