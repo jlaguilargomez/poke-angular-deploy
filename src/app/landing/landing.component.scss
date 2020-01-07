@@ -54,6 +54,7 @@
 	position: absolute;
 	bottom: 80px;
 	right: 135px;
+	transition: 0.7s;
 	&__button {
 		cursor: pointer;
 		display: inline-block;
@@ -240,6 +241,14 @@ p {
 			width: 100%;
 			max-width: 150px;
 			height: auto;
+		}
+	}
+	.main-right {
+		position: absolute;
+		bottom: 50px;
+		right: 60px;
+		&__button {
+			font-size: 14px;
 		}
 	}
 }
