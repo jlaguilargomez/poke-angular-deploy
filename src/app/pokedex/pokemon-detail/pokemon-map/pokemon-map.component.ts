@@ -9,9 +9,10 @@ import { PokedexService } from 'src/app/pokedex.service';
 	templateUrl: './pokemon-map.component.html',
 	styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit {
+export class PokemonMapComponent implements OnInit, DoCheck {
 	map: any;
 	pokemons: Pokemon[];
+	pokemonSelected: Pokemon;
 	selectedPokemon = 0;
 
 	constructor(
@@ -19,17 +20,16 @@ export class PokemonMapComponent implements OnInit {
 		private pokedexService: PokedexService
 	) {}
 
-	public pokemonSelected: object;
-
 	changePokemon() {
-		this.selectedPokemon++;
 		this.map.flyTo(
-			[
-				this.pokemons[this.selectedPokemon].coord.lat,
-				this.pokemons[this.selectedPokemon].coord.long,
-			],
-			13
+			[this.pokemonSelected.coord.lat, this.pokemonSelected.coord.long],
+			15
 		);
+	}
+
+	ngDoCheck() {
+		this.changePokemon();
+		console.log('hola');
 	}
 
 	ngOnInit() {
@@ -49,7 +49,7 @@ export class PokemonMapComponent implements OnInit {
 				this.pokemons[this.selectedPokemon].coord.lat,
 				this.pokemons[this.selectedPokemon].coord.long,
 			],
-			13
+			15
 		);
 		const tileLayer = L.tileLayer(
 			'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
