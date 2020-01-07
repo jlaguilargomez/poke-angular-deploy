@@ -1,31 +1,40 @@
 <main class="component-box">
-  <header class="title-box">
-    <img
-      class="logo"
-      src="./assets/img/pokeball-logo.png"
-      alt="pokeball-logo"
-    />
-    <h1 class="title-box__title">Pokedex</h1>
-  </header>
+	<header class="title-box">
+		<img
+			class="logo"
+			src="./assets/img/pokeball-logo.png"
+			alt="pokeball-logo"
+		/>
+		<h1 class="title-box__title">Pokedex</h1>
+	</header>
 
-  <div class="list-container">
-    <form class="search-bar">
-      <img src="./assets/img/glass-search.png" class="search-bar__img" />
-      <input class="search-bar__input" type="text" placeholder="Search..." />
-    </form>
-
-    <div *ngIf="pokemonList != undefined" class="list-elem">
-      <div
-        class="elem"
-        (click)="renderPokemon(i)"
-        *ngFor="let elem of pokemonList; index as i"
-      >
-        <span class="elem__id">{{ elem.id }}</span>
-        <div class="elem__info">
-          <img class="elem__img" src="{{ elem.imagePath }}" alt="pokemon-img" />
-          <p class="elem__name">{{ elem.name }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="list-container">
+		<form class="search-bar">
+			<img src="./assets/img/glass-search.png" class="search-bar__img" />
+			<input
+				name="pokemonName"
+				class="search-bar__input"
+				type="text"
+				placeholder="Search..."
+				[(ngModel)]="searchPokemonName"
+			/>
+		</form>
+		<!--List of Pokemons-->
+		<div *ngIf="pokemonList != undefined" class="list-elem">
+			<div
+				class="elem"
+				(click)="renderPokemon(elem.id - 1)"
+				*ngFor="
+					let elem of pokemonList | searcherFilter: searchPokemonName;
+					index as i
+				"
+			>
+				<span class="elem__id">{{ elem.id }}</span>
+				<div class="elem__info">
+					<img class="elem__img" src="{{ elem.imagePath }}" alt="pokemon-img" />
+					<p class="elem__name">{{ elem.name }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
