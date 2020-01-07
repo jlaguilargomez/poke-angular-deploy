@@ -2,14 +2,12 @@
 
 .main {
 	display: flex;
+	position: relative;
 	flex-flow: row nowrap;
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
-	background-image: url('../../assets/img/pokemon-tog.png');
-	background-repeat: no-repeat;
-	background-position: center;
+	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
-	overflow: hidden;
 }
 .main-left {
 	display: flex;
@@ -17,8 +15,6 @@
 }
 .main-image {
 	width: 16%;
-	height: 50%;
-	margin: 16em 1em;
 }
 .box {
 	width: 40%;
@@ -64,7 +60,10 @@
 }
 
 .main-wave {
-	margin: 13em 0em 0em 0em;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
 }
 
 @keyframes drift {
