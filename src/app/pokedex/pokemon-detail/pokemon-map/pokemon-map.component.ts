@@ -16,11 +16,12 @@ export class PokemonMapComponent implements OnInit {
 	initializedSelection: boolean = false;
 
 	constructor(
-		private route: ActivatedRoute,
+		private routerData: ActivatedRoute,
+		private router: Router,
 		private pokedexService: PokedexService
 	) {}
 
-	changePokemon() {
+	private changePokemon() {
 		this.map.flyTo(
 			[this.pokemonSelected.coord.lat, this.pokemonSelected.coord.long],
 			15
@@ -29,7 +30,7 @@ export class PokemonMapComponent implements OnInit {
 
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
-		this.route.params.subscribe((params: Params) => {
+		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
 			this.pokemons = this.pokedexService.getPokemonList();
 			if (this.initializedSelection) this.changePokemon();
@@ -64,15 +65,19 @@ export class PokemonMapComponent implements OnInit {
 			const marker = L.marker([pokemon.coord.lat, pokemon.coord.long], {
 				icon: pokemonIcon,
 			}).bindPopup(pokemon.name, { closeButton: false });
+			// Pop-up with the pokemon name
 			marker.on('mouseover', () => {
 				marker.openPopup();
 			});
-			marker.on('click', event => {
-				// Extact the pokemon number using the imagePath
-				console.log(event.target._icon.src.match(/\d+/)[0]);
-			});
 			marker.on('mouseout', () => {
 				marker.closePopup();
+			});
+			// Change selected Pokemon
+			marker.on('click', event => {
+				this.router.navigate([
+					'pokedex',
+					event.target._icon.src.match(/\d+/)[0],
+				]);
 			});
 			marker.addTo(map);
 		});
