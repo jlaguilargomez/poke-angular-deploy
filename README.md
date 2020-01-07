@@ -75,13 +75,8 @@ Añadir un buscador de pokemons en el mapa (Buscador por nombre o tipo).
 
 ### BONUS
 
-<<<<<<< HEAD
-
-=======
 Dar la opción de añadir un pokemon en algún punto del mapa.
-
-> > > > > > > 75a4f9913d11f0650e9407a9beef477aaea0efbe
-> > > > > > > Realizar una Landing Inicial en la que expliquéis el funcionamiento de vuestra app.
-> > > > > > > Realizar alguna funcionalidad extra al contenido.
-> > > > > > > Completar un Readme explicativo.
-> > > > > > > Cualquier otra mejora que implementéis será un plus.
+Realizar una Landing Inicial en la que expliquéis el funcionamiento de vuestra app.
+Realizar alguna funcionalidad extra al contenido.
+Completar un Readme explicativo.
+Cualquier otra mejora que implementéis será un plus.
