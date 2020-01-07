@@ -28,7 +28,7 @@ export class LandingComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		//this.updatePokemon();
+		// this.updatePokemon();
 	}
 
 	updatePokemon() {
