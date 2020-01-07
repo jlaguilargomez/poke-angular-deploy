@@ -6,7 +6,7 @@ import { PipeTransform, Pipe } from '@angular/core';
 export class SearchFilterPipe implements PipeTransform {
 	transform(pokemonsArray, searchTerm: string) {
 		if (!pokemonsArray || !searchTerm) {
-			console.log(pokemonsArray);
+			// console.log(pokemonsArray);
 			return pokemonsArray;
 		} else {
 			return pokemonsArray.filter(

@@ -1,29 +1,41 @@
 @import '../../commonStyles.scss';
 
 .main {
-	display: flex;
-	flex-flow: row nowrap;
-	width: 100vw;
-	height: 100vh;
-	background-image: url('../../assets/img/pokemon-tog.png');
-	background-repeat: no-repeat;
-	background-position: center;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100vh - 70px);
+	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
-	overflow: hidden;
+	&__wave {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: auto;
+	}
 }
 .main-left {
-	display: flex;
-	flex-direction: row;
+	position: absolute;
+	left: 30px;
+	bottom: 70px;
+	&__image {
+		display: inline-block;
+		width: 100%;
+		max-width: 240px;
+		height: auto;
+		transition: 0.7s;
+	}
+	&__bubble {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		transition: 0.7s;
+	}
 }
-.main-image {
-	width: 16%;
-	height: 50%;
-	margin: 16em 1em;
-}
-.box {
-	width: 40%;
-	height: 35%;
-}
+
 .main-image2 {
 	margin: 1em 1em;
 	width: 60%;
@@ -32,33 +44,97 @@
 
 .main-right {
 	position: absolute;
-	width: 20%;
-	height: 20%;
-	top: 68%;
-	left: 79%;
-}
-
-.button-twist {
-	background: $primary-color;
-	width: 20%;
-	height: 40%;
-	border-radius: 43%;
-	opacity: 0.8;
-	animation: drift 3000ms infinite linear;
-	&__link {
-		width: 10%;
-		height: 10%;
-		margin-top: 0em 3em;
-		text-align: center;
-		font-size: 18px;
+	bottom: 80px;
+	right: 135px;
+	transition: 0.7s;
+	&__button {
+		cursor: pointer;
+		display: inline-block;
+		padding: 0.75rem 1.25rem;
+		border-radius: 10px;
+		color: #fff;
 		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 20px;
+		letter-spacing: 0.15rem;
+		transition: all 0.3s;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		.quote {
+			&:before {
+				content: '»';
+				position: absolute;
+				left: -30px;
+				opacity: 0;
+				transition: all 0.4s;
+			}
+			&:after {
+				content: '»';
+				position: absolute;
+				left: 8px;
+				opacity: 1;
+				transition: all 0.4s;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $primary-color;
+			border-radius: 10px;
+			z-index: -2;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0%;
+			height: 100%;
+			background-color: $terciary-color;
+			transition: all 0.3s;
+			border-radius: 10px;
+			z-index: -1;
+		}
+		&:hover {
+			color: $secondary-color;
+			&:before {
+				width: 100%;
+			}
+			.quote:before {
+				content: '»';
+				position: absolute;
+				left: 8px;
+				opacity: 1;
+			}
+			.quote:after {
+				content: '»';
+				position: absolute;
+				left: 15px;
+				opacity: 0;
+			}
+		}
 	}
-}
-
-.main-wave {
-	display: inline-block;
-	width: 100%;
-	overflow: hidden;
+	// &__button{
+	//     background: $primary-color;
+	//     width: 180px;
+	//     height: 180px;
+	//     border-radius: 40%;
+	//     opacity: 0.8;
+	//     animation: drift 3000ms infinite linear;
+	// }
+	// &__link {
+	//     color: white;
+	//     display: block;
+	//     margin: 0 auto;
+	//     text-align: center;
+	//     font-size: 18px;
+	//     font-weight: bold;
+	// }
 }
 
 @keyframes drift {
@@ -162,4 +238,23 @@ p {
 	text-transform: uppercase;
 	color: white;
 	margin-top: 1em;
+}
+
+@media (max-width: 1024px) {
+	.main-left {
+		bottom: 50px;
+		&__image {
+			width: 100%;
+			max-width: 150px;
+			height: auto;
+		}
+	}
+	.main-right {
+		position: absolute;
+		bottom: 50px;
+		right: 60px;
+		&__button {
+			font-size: 14px;
+		}
+	}
 }

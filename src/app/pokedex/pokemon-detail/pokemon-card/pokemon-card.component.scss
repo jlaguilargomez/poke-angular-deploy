@@ -22,7 +22,6 @@ $radius: 2em;
 	padding: 0.5em;
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
-	margin-bottom: 2em;
 }
 
 //Containers
@@ -32,6 +31,10 @@ $radius: 2em;
 	&--general {
 		border-radius: $radius;
 		background-color: #9b9b9b; //pending from Javascript Service
+		background-image: url(./../../../../assets/img/pokeball-bg.svg);
+		background-repeat: no-repeat;
+		background-size: 80%; // Size pokeball bg
+		background-position: 0 100%; // Placed left bottom
 	}
 
 	&--info {
@@ -88,7 +91,7 @@ table {
 	border-radius: 2em;
 }
 
-//btn classes
+//pokemon types classes
 .type {
 	background-color: rgba(255, 255, 255, 0.363);
 	padding: 0.3em;
