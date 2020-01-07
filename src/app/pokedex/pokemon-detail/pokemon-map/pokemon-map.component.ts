@@ -13,7 +13,7 @@ export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
 	pokemonSelected: Pokemon;
-	initializedSelection: boolean = false;
+	initializedSelection = false;
 
 	constructor(
 		private routerData: ActivatedRoute,
@@ -33,7 +33,9 @@ export class PokemonMapComponent implements OnInit {
 		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
 			this.pokemons = this.pokedexService.getPokemonList();
-			if (this.initializedSelection) this.changePokemon();
+			if (this.initializedSelection) {
+				this.changePokemon();
+			}
 			this.initializedSelection = true;
 		});
 
