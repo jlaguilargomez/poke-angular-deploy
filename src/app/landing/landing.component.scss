@@ -1,25 +1,41 @@
 @import '../../commonStyles.scss';
 
 .main {
-	display: flex;
 	position: relative;
-	flex-flow: row nowrap;
+	box-sizing: border-box;
 	width: 100%;
-	height: 100vh;
+	height: calc(100vh - 70px);
 	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
+	&__wave {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: auto;
+	}
 }
 .main-left {
-	display: flex;
-	flex-direction: row;
+	position: absolute;
+	left: 30px;
+	bottom: 100px;
+	&__image {
+		display: inline-block;
+		width: 100%;
+		max-width: 240px;
+		height: auto;
+		transition: 0.7s;
+	}
+	&__bubble {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		transition: 0.7s;
+	}
 }
-.main-image {
-	width: 16%;
-}
-.box {
-	width: 40%;
-	height: 35%;
-}
+
 .main-image2 {
 	margin: 2em 0em;
 	width: 60%;
@@ -36,7 +52,8 @@
 
 .main-right {
 	position: absolute;
-	width: 50%;
+	flex: 1;
+	width: 100%;
 	height: 50%;
 	top: 68%;
 	left: 79%;
@@ -57,13 +74,6 @@
 		font-size: 18px;
 		font-weight: bold;
 	}
-}
-
-.main-wave {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: auto;
 }
 
 @keyframes drift {
@@ -153,4 +163,15 @@ p {
 	text-transform: uppercase;
 	color: white;
 	margin-top: 1em;
+}
+
+@media (max-width: 1024px) {
+	.main-left {
+		bottom: 50px;
+		&__image {
+			width: 100%;
+			max-width: 150px;
+			height: auto;
+		}
+	}
 }
