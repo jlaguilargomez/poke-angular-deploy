@@ -17,12 +17,6 @@ $radius: 2em;
 .cap {
 	text-transform: capitalize;
 }
-//Shadow
-.shadow {
-	padding: 0.5em;
-	background-color: rgba(0, 0, 0, 0.37);
-	border-radius: 2em;
-}
 
 //Containers
 .container {
@@ -166,4 +160,19 @@ table {
 	margin: 0 auto;
 	border-radius: 25px;
 	height: 40px;
+}
+
+.btn {
+	display: flex;
+	margin: 1rem 0;
+	align-items: center;
+	background-color: #ececec;
+	font-weight: bolder;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+
+	&--first {
+		margin: 0 0 1rem 0;
+	}
 }

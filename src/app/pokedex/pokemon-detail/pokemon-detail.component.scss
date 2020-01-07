@@ -2,7 +2,7 @@
 
 .component-box {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	height: 100%;
 	//width: 100%;
 	background-color: #db4545;
@@ -13,21 +13,9 @@
 	padding: 2rem;
 }
 
-.container-btn {
-	display: flex;
-}
-
-.btn {
-	display: flex;
-	margin: 1rem 0;
-	align-items: center;
-	background-color: #ececec;
-	font-weight: bolder;
-	font-size: 2rem;
-	padding: 1rem;
-	border-radius: 1rem;
-
-	&--first {
-		margin: 0 0 1rem 0;
-	}
+//Shadow
+.shadow {
+	padding: 0.5em;
+	background-color: rgba(0, 0, 0, 0.37);
+	border-radius: 2em;
 }

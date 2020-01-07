@@ -5,3 +5,18 @@
 .leaflet-popup-content-wrapper .leaflet-popup-content {
 	color: red;
 }
+
+.btn {
+	display: flex;
+	margin: 1rem 0;
+	align-items: center;
+	background-color: #ececec;
+	font-weight: bolder;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+
+	&--first {
+		margin: 0 0 1rem 0;
+	}
+}

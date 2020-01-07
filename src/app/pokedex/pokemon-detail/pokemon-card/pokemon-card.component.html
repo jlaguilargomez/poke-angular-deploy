@@ -1,4 +1,12 @@
-<div class="shadow" *ngIf="pokemonSelected != undefined">
+<div *ngIf="pokemonSelected != undefined">
+	<div class="container">
+		<h2 class="btn btn--first">
+			<img
+				src="./../../../assets/img/iconPokeData.svg"
+				alt="Icon Pokemon Data"
+			/>DATA
+		</h2>
+	</div>
 	<div
 		class="container container--general"
 		[style.background-color]="colorBackground(pokemonSelected.type[0])"
