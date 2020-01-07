@@ -27,10 +27,10 @@ export class PokemonMapComponent implements OnInit, DoCheck {
 		);
 	}
 
-	ngDoCheck() {
-		this.changePokemon();
-		console.log('hola');
-	}
+	// ngDoCheck() {
+	// 	this.changePokemon();
+	// 	console.log('hola');
+	// }
 
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
