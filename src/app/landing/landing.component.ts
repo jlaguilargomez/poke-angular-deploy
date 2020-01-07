@@ -6,7 +6,43 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
-	constructor() {}
+	pokemons: string[] = [];
+	currentPokemon: string;
+	oldPokemon: string;
+	imgSource: string;
 
-	ngOnInit() {}
+	constructor() {
+		this.pokemons = [
+			'bulbasaur',
+			'charmander',
+			'ditto',
+			'dratini',
+			'eevee',
+			'gengar',
+			'pikachu',
+			'poliwhirl',
+			'snorlax',
+		];
+		this.currentPokemon = this.pokemons[Math.floor(Math.random() * 10)];
+		this.imgSource = 'assets/img/gifs/' + this.currentPokemon + '.gif';
+	}
+
+	ngOnInit() {
+		//this.updatePokemon();
+	}
+
+	updatePokemon() {
+		setInterval(() => {
+			this.changeSrc();
+		}, 3000);
+	}
+
+	changeSrc() {
+		do {
+			this.oldPokemon = this.currentPokemon;
+			this.currentPokemon = this.pokemons[Math.floor(Math.random() * 9)];
+		} while (this.oldPokemon === this.currentPokemon);
+		this.imgSource = 'assets/img/gifs/' + this.currentPokemon + '.gif';
+		console.log(this.imgSource);
+	}
 }

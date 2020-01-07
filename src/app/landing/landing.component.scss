@@ -16,14 +16,26 @@
 }
 .main-left {
 	position: absolute;
+	width: 100%;
 	left: 30px;
-	bottom: 70px;
+	bottom: 0;
 	&__image {
 		display: inline-block;
 		width: 100%;
+		position: absolute;
+		bottom: 70px;
 		max-width: 240px;
 		height: auto;
 		transition: 0.7s;
+	}
+	&__pokemon {
+		display: inline-block;
+		position: absolute;
+		bottom: 20px;
+		left: 100px;
+		max-width: 280px;
+		transition: 0.7s;
+		width: 280px;
 	}
 	&__bubble {
 		display: inline-block;
@@ -242,11 +254,14 @@ p {
 
 @media (max-width: 1024px) {
 	.main-left {
-		bottom: 50px;
 		&__image {
 			width: 100%;
+			bottom: 50px;
 			max-width: 150px;
 			height: auto;
+		}
+		&__pokemon {
+			max-width: 200px;
 		}
 	}
 	.main-right {
