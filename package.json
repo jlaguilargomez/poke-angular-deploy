@@ -12,7 +12,8 @@
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "ng lint"
     }
   },
   "dependencies": {
@@ -24,8 +25,9 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "leaflet": "^1.6.0",
+    "@types/jquery": "^3.3.31",
     "file-loader": "^5.0.2",
+    "leaflet": "^1.6.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "url-loader": "^3.0.0",
@@ -33,7 +35,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.21",
-    "@angular/cli": "~8.3.20",
+    "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
@@ -47,7 +49,7 @@
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.0",
+    "karma-jasmine-html-reporter": "^1.5.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "protractor": "~5.4.0",

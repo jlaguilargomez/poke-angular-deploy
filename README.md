@@ -69,8 +69,13 @@ Testar estas funcionalidades.
 
 Maquetación con Flexbox (cada integrante debe maquetar al menos una vista).
 
+### ITERACIÓN 5
+
+Añadir un buscador de pokemons en el mapa (Buscador por nombre o tipo).
+
 ### BONUS
 
+Dar la opción de añadir un pokemon en algún punto del mapa.
 Realizar una Landing Inicial en la que expliquéis el funcionamiento de vuestra app.
 Realizar alguna funcionalidad extra al contenido.
 Completar un Readme explicativo.
