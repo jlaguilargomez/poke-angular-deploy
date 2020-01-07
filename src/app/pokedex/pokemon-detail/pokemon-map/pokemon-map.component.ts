@@ -9,7 +9,7 @@ import { PokedexService } from 'src/app/pokedex.service';
 	templateUrl: './pokemon-map.component.html',
 	styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit, DoCheck {
+export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
 	selectedPokemon = 0;
@@ -30,10 +30,6 @@ export class PokemonMapComponent implements OnInit, DoCheck {
 			],
 			13
 		);
-	}
-
-	ngDoCheck() {
-		console.log('something has happend!');
 	}
 
 	ngOnInit() {
