@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, DoCheck, OnChanges } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
 import { PokedexService } from 'src/app/pokedex.service';
@@ -9,11 +9,11 @@ import { PokedexService } from 'src/app/pokedex.service';
 	templateUrl: './pokemon-map.component.html',
 	styleUrls: ['./pokemon-map.component.scss'],
 })
-export class PokemonMapComponent implements OnInit, DoCheck {
+export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
 	pokemonSelected: Pokemon;
-	selectedPokemon = 0;
+	initializedSelection: boolean = false;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -27,28 +27,19 @@ export class PokemonMapComponent implements OnInit, DoCheck {
 		);
 	}
 
-	// ngDoCheck() {
-	// 	this.changePokemon();
-	// 	console.log('hola');
-	// }
-
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.route.params.subscribe((params: Params) => {
-			this.selectedPokemon = params['id'] - 1;
-			this.pokemonSelected = this.pokedexService.getPokemon(
-				this.selectedPokemon
-			);
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
 			this.pokemons = this.pokedexService.getPokemonList();
+			if (this.initializedSelection) this.changePokemon();
+			this.initializedSelection = true;
 		});
 
 		// Leaflet setting
 		const options = { attributionControl: false };
 		const map = L.map('map', options).setView(
-			[
-				this.pokemons[this.selectedPokemon].coord.lat,
-				this.pokemons[this.selectedPokemon].coord.long,
-			],
+			[this.pokemonSelected.coord.lat, this.pokemonSelected.coord.long],
 			15
 		);
 		const tileLayer = L.tileLayer(
