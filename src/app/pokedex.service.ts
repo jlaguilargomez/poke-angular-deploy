@@ -65,6 +65,11 @@ export class PokedexService {
 			this.pokemonList = newPokemon;
 		});
 	}
+
+	getPokemonList() {
+		return this.pokemonList;
+	}
+
 	getPokemon(index) {
 		return this.pokemonList[index];
 	}
