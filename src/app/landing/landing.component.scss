@@ -149,7 +149,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: auto;
+	min-height: calc(100vh - 70px);
 	background-color: $primary-color;
 	overflow: hidden;
 }
