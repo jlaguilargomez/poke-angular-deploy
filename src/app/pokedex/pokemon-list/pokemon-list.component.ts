@@ -1,18 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pokemon-list',
-  templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss'],
+	selector: 'app-pokemon-list',
+	templateUrl: './pokemon-list.component.html',
+	styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
-  @Input() pokemonList: Object[];
+	@Input() pokemonList: object[];
 
-  constructor() {}
+	public searchPokemonName: string;
+	dd;
 
-  renderPokemon(e) {
-    console.log(e);
-  }
+	constructor(private router: Router) {}
 
-  ngOnInit() {}
+	renderPokemon(index) {
+		this.router.navigate(['pokedex', index + 1]);
+	}
+
+	ngOnInit() {}
 }

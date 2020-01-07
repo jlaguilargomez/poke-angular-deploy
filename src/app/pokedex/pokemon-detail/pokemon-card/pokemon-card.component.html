@@ -1,76 +1,58 @@
-<div class="shadow">
-  <div class="container container--general">
-    <div class="container container--photo">
-      <div class="background-photo">
-        <img
-          class="sprite"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png"
-          alt="sprite"
-        />
-      </div>
+<div class="shadow" *ngIf="pokemonSelected != undefined">
+	<div
+		class="container container--general"
+		[style.background-color]="colorBackground(pokemonSelected.type[0])"
+	>
+		<div class="container container--photo">
+			<div class="background-photo">
+				<img
+					class="sprite"
+					src="{{ pokemonSelected.imagePath }}"
+					alt="img {{ pokemonSelected.name }}"
+				/>
+			</div>
 
-      <h2>Ditto</h2>
-      <div class="container container--row">
-        <div class="type type--normal">Grass</div>
-        <div class="type type--poison">Poison</div>
-      </div>
-    </div>
+			<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
+			<div class="container container--row">
+				<!-- Type For -->
+				<div
+					*ngFor="let type of pokemonSelected.type"
+					class="type type--{{ type }} cap"
+				>
+					{{ type }}
+				</div>
+			</div>
+		</div>
 
-    <div class="container container--info">
-      <h1>#5 Ditto</h1>
-      <ul>
-        <li>Ability: overgrow</li>
-        <li>Height: 1231231</li>
-        <li>Weight: 233223</li>
-      </ul>
+		<div class="container container--info">
+			<h1 class="title">#{{ pokemonSelected.name }}</h1>
+			<ul>
+				<!-- Ability has to be iterated-->
+				<li>
+					Ability:
+					<span class="cap" *ngFor="let ability of pokemonSelected.ability"
+						>{{ ability }}
+					</span>
+				</li>
+				<li>Height: {{ pokemonSelected.height }}</li>
+				<li>Weight: {{ pokemonSelected.weight }}</li>
+			</ul>
 
-      <table>
-        <tr>
-          <td>HP</td>
-          <td>50</td>
-          <div class="progress-bar">
-            <div class="progress-bar__skill--hp">
-              <div class="d-hidden">Skill</div>
-            </div>
-          </div>
-        </tr>
-        <tr>
-          <td>Attack</td>
-          <td>66</td>
-          <div class="progress-bar">
-            <div class="progress-bar__skill--attack">
-              <div class="d-hidden">Skill</div>
-            </div>
-          </div>
-        </tr>
-        <tr>
-          <td>S.Attack</td>
-          <td>44</td>
-          <div class="progress-bar">
-            <div class="progress-bar__skill--sattack">
-              <div class="d-hidden">Skill</div>
-            </div>
-          </div>
-        </tr>
-        <tr>
-          <td>S.Deffense</td>
-          <td>84</td>
-          <div class="progress-bar">
-            <div class="progress-bar__skill--sdeffense">
-              <div class="d-hidden">Skill</div>
-            </div>
-          </div>
-        </tr>
-        <tr>
-          <td>Speed</td>
-          <td>66</td>
-          <div class="progress-bar">
-            <div class="progress-bar__skill--speed">
-              <div class="d-hidden">Skill</div>
-            </div>
-          </div>
-        </tr>
-      </table>
-    </div>
-  </div>
+			<table>
+				<tr *ngFor="let stat of pokemonSelected.stats">
+					<td class="cap">{{ stat.name }}</td>
+					<td>{{ stat.base }}</td>
+					<div class="progress-bar">
+						<div
+							[style.width.%]="stat.base > 160 ? 160 : stat.base"
+							[style.background-color]="colorBar(stat.base)"
+							class="progress-bar__skill"
+						>
+							<div class="d-hidden">Skill</div>
+						</div>
+					</div>
+				</tr>
+			</table>
+		</div>
+	</div>
 </div>
