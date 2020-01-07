@@ -16,8 +16,8 @@
 	width: $box-sizes;
 	background-color: $secondary-color;
 	border-radius: 20px;
-	padding: 5px;
-	margin: 15px 0px 10px 0px;
+	padding: 5px 0 5px 5px;
+	margin: 0 0 10px 0px;
 	font-size: 7rem;
 	font-weight: 700;
 
@@ -54,7 +54,7 @@
 	border: 1px solid rgb(207, 205, 205);
 	background-color: white;
 	border-radius: 10px;
-	width: 80%;
+	width: 70%;
 	padding: 5px;
 	margin: 15px 0 10px 0;
 
@@ -74,10 +74,10 @@
 }
 
 .list-elem {
-	max-height: 60vh;
+	max-height: 56vh;
 	width: 80%;
 	overflow-y: scroll;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 
 	&::-webkit-scrollbar {
 		width: 15px;
