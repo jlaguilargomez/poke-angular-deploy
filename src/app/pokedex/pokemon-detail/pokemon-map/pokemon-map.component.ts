@@ -60,10 +60,11 @@ export class PokemonMapComponent implements OnInit, DoCheck {
 		// }).addTo(mymap);
 
 		const options = { attributionControl: false };
-		const map = L.map('map', options).setView(
-			[this.pokemonSelected.coord.lat, this.pokemonSelected.coord.long],
-			13
-		);
+		const map = L.map('map', options)
+			.setView
+			// [this.pokemonSelected.coord.lat, this.pokemonSelected.coord.long],
+			// 13
+			();
 		const tileLayer = L.tileLayer(
 			'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
 			{
