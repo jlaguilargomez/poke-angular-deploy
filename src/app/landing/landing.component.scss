@@ -1,0 +1,157 @@
+@import '../../commonStyles.scss';
+
+.main {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../../assets/img/pokemon-tog.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+.main-left {
+	display: flex;
+	flex-direction: row;
+}
+.main-image {
+	width: 16%;
+	height: 50%;
+	margin: 16em 1em;
+}
+.box {
+	width: 40%;
+	height: 35%;
+}
+.main-image2 {
+	margin: 2em 0em;
+	width: 60%;
+	height: 30%;
+	&--text {
+		position: absolute;
+		top: 22%;
+		left: 27%;
+		font-size: 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+.main-right {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 68%;
+	left: 79%;
+}
+
+.button-twist {
+	background: $primary-color;
+	width: 20%;
+	height: 40%;
+	border-radius: 43%;
+	opacity: 0.8;
+	animation: drift 3000ms infinite linear;
+	&__link {
+		width: 10%;
+		height: 10%;
+		margin-top: 0em 3em;
+		text-align: center;
+		font-size: 18px;
+		font-weight: bold;
+	}
+}
+
+.main-wave {
+	margin: 13em 0em 0em 0em;
+}
+
+@keyframes drift {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.main-down {
+	display: flex;
+	flex-flow: column;
+	height: 93vh;
+	background-color: $primary-color;
+}
+.personal-info-up {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 80vw;
+	height: 50vh;
+	background-color: $primary-color;
+	margin: 0em 9em;
+}
+.personal-info-down {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	width: 80vw;
+	height: 50vh;
+	background-color: $primary-color;
+	margin: 0em 8em;
+}
+.card {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	margin: 3em;
+}
+.card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+.card-front {
+	background-color: none;
+}
+.card-back {
+	background-color: none;
+	color: white;
+	transform: rotateY(180deg);
+}
+.card-image {
+	width: 70%;
+	height: 96%;
+	border-radius: 50%;
+	margin: 0 3em;
+}
+h1,
+p {
+	width: 96%;
+	height: 23%;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+}
+.title {
+	width: 96%;
+	height: 23%;
+	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	margin-top: 1em;
+}
