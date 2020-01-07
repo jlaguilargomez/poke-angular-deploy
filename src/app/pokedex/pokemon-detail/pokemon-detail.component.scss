@@ -3,15 +3,31 @@
 .component-box {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	height: 100%;
 	width: 100%;
+	background-color: #db4545;
+	border-radius: 20px;
+	padding: 2rem;
+}
+.container-box {
+	padding: 2rem;
 }
 
-app-pokemon-card {
-	width: $box-sizes;
+.container-btn {
+	display: flex;
 }
 
-app-pokemon-map {
-	width: $box-sizes;
+.btn {
+	display: flex;
+	margin: 1rem 0;
+	align-items: center;
+	background-color: #ececec;
+	font-weight: bolder;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+
+	&--first {
+		margin: 0 0 1rem 0;
+	}
 }
