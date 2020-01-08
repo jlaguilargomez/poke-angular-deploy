@@ -2,17 +2,19 @@
 
 .component-box {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-around;
+	align-items: center;
 	height: 100%;
 }
 
 .pokemon-list {
-	width: 40%;
+	flex-grow: 1;
+	// min-width: 350px;
 }
 
 .pokemon-detail {
-	width: 60%;
+	flex-grow: 2;
 }
 
 .loading-pokeball {
