@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
@@ -14,7 +14,7 @@ export class PokemonMapComponent implements OnInit {
 	pokemons: Pokemon[];
 	initializedSelection = false;
 
-	@Input() pokemonSelected: Pokemon;
+	pokemonSelected: Pokemon;
 
 	constructor(
 		private routerData: ActivatedRoute,
@@ -32,6 +32,8 @@ export class PokemonMapComponent implements OnInit {
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.routerData.params.subscribe((params: Params) => {
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemons = this.pokedexService.getPokemonList();
 			if (this.initializedSelection) {
 				this.changePokemon();
 			}
