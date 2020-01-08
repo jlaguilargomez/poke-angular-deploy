@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
@@ -12,8 +12,9 @@ import { PokedexService } from 'src/app/pokedex.service';
 export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
-	pokemonSelected: Pokemon;
 	initializedSelection = false;
+
+	pokemonSelected: Pokemon;
 
 	constructor(
 		private routerData: ActivatedRoute,
@@ -38,7 +39,6 @@ export class PokemonMapComponent implements OnInit {
 			}
 			this.initializedSelection = true;
 		});
-
 		// Leaflet setting
 		const options = { attributionControl: false };
 		const map = L.map('map', options).setView(
@@ -50,8 +50,8 @@ export class PokemonMapComponent implements OnInit {
 			{
 				attribution: '[...] GIS User Community',
 				/* 'Tiles &copy; Esri &mdash;
-		    Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping,
-		    Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',*/
+			Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping,
+			Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',*/
 			}
 		);
 		tileLayer.addTo(map);
