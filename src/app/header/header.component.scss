@@ -42,9 +42,23 @@
 	}
 }
 
+.hamburguer-icon {
+	display: none;
+}
+
 @media (max-width: 1024px) {
 	.header {
 		background-color: orange;
+	}
+	.menu {
+		height: 100%;
+		width: 50%;
+
+		&__item {
+			font-size: 1.2rem;
+			font-weight: 400;
+			padding: 0 14px;
+		}
 	}
 }
 
@@ -52,10 +66,49 @@
 	.header {
 		background-color: yellow;
 	}
+
+	.menu {
+		height: 100%;
+		width: 60%;
+
+		&__item {
+			font-size: 1.1rem;
+			font-weight: 400;
+			padding: 0 12px;
+		}
+	}
 }
 
 @media (max-width: 480px) {
 	.header {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		background-color: green;
+		height: auto;
+		padding-right: 0%;
+	}
+
+	.logo {
+		padding-left: 0%;
+	}
+
+	.menu {
+		height: 100%;
+		width: 40%;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-right: 0%;
+
+		&__item {
+			font-size: 1rem;
+			font-weight: 400;
+			padding: 10px 0;
+		}
+	}
+
+	.hamburguer-icon {
+		display: flex;
 	}
 }
