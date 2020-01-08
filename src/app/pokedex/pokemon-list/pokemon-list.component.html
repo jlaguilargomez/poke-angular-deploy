@@ -1,12 +1,12 @@
 <main class="component-box">
-	<header class="title-box">
+	<div class="title-box">
 		<img
-			class="logo"
+			class="title-box__logo"
 			src="./assets/img/pokeball-logo.png"
 			alt="pokeball-logo"
 		/>
 		<h1 class="title-box__title">Pokedex</h1>
-	</header>
+	</div>
 
 	<div class="list-container">
 		<form class="search-bar">
@@ -20,7 +20,7 @@
 			/>
 		</form>
 		<!--List of Pokemons-->
-		<div *ngIf="pokemonList != undefined" class="list-elem">
+		<div *ngIf="pokemonList != undefined" class="list">
 			<div
 				class="elem"
 				(click)="renderPokemon(elem.id - 1)"
