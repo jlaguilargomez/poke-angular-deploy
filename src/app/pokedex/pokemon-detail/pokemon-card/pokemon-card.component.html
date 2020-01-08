@@ -1,66 +1,9 @@
-<div *ngIf="pokemonSelected != undefined">
-	<div class="container">
-		<h2 class="btn btn--first">
-			<img
-				src="./../../../assets/img/iconPokeData.svg"
-				alt="Icon Pokemon Data"
-			/>DATA
-		</h2>
-	</div>
-	<div
-		class="container container--general"
-		[style.background-color]="colorBackground(pokemonSelected.type[0])"
-	>
-		<div class="container container--photo">
-			<div class="background-photo">
-				<img
-					class="sprite"
-					src="{{ pokemonSelected.imagePath }}"
-					alt="img {{ pokemonSelected.name }}"
-				/>
-			</div>
-
-			<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
-			<div class="container container--row">
-				<!-- Type For -->
-				<div
-					*ngFor="let type of pokemonSelected.type"
-					class="type type--{{ type }} cap"
-				>
-					{{ type }}
-				</div>
-			</div>
-		</div>
-
-		<div class="container container--info">
-			<h1 class="title">#{{ pokemonSelected.name }}</h1>
-			<ul>
-				<!-- Ability has to be iterated-->
-				<li>
-					Ability:
-					<span class="cap" *ngFor="let ability of pokemonSelected.ability"
-						>{{ ability }}
-					</span>
-				</li>
-				<li>Height: {{ pokemonSelected.height }}</li>
-				<li>Weight: {{ pokemonSelected.weight }}</li>
-			</ul>
-
-			<table>
-				<tr *ngFor="let stat of pokemonSelected.stats">
-					<td class="cap">{{ stat.name }}</td>
-					<td>{{ stat.base }}</td>
-					<div class="progress-bar">
-						<div
-							[style.width.%]="stat.base > 160 ? 160 : stat.base"
-							[style.background-color]="colorBar(stat.base)"
-							class="progress-bar__skill"
-						>
-							<div class="d-hidden">Skill</div>
-						</div>
-					</div>
-				</tr>
-			</table>
+<div class="container">
+	<div class="fliptest" style="padding: 10px;">
+		FLIPTEST
+		<div class="card">
+			<div class="card card__front">Front</div>
+			<div class="card card__back">Back</div>
 		</div>
 	</div>
 </div>
