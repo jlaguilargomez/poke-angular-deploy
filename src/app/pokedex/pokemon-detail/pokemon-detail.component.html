@@ -1,21 +1,21 @@
-<div class="container-box" *ngIf="pokemonSelected">
-	<div class="component-box">
-		<div class="shadow">
-			<div class="container">
+<div class="container" *ngIf="pokemonSelected">
+	<div class="container__selected">
+		<div class="panel">
+			<div class="panel__info">
 				<app-pokemon-card
 					[pokemonSelected]="pokemonSelected"
 				></app-pokemon-card>
 			</div>
-			<div class="container">
+			<div class="panel__info">
 				<app-pokemon-map></app-pokemon-map>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container-box" *ngIf="pokemonSelected === undefined">
+<div class="container" *ngIf="pokemonSelected === undefined">
 	<img
 		src="../../../assets/img/pikachu-search.png"
 		alt="Unselected picture"
-		class="unSelectedPokemon"
+		class="container__noSelected"
 	/>
 </div>

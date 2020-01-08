@@ -1,32 +1,28 @@
 @import '../../../commonStyles.scss';
 
-.component-box {
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-	//width: 100%;
-	background-color: #db4545;
-	border-radius: 20px;
+.container {
 	padding: 2rem;
-}
-.container-box {
-	padding: 2rem;
+
+	&__selected {
+		height: 100%;
+		background-color: #db4545;
+		border-radius: 20px;
+		padding: 2rem;
+	}
+
+	&__noSelected {
+		width: 55%;
+	}
 }
 
-//Shadow
-.shadow {
+.panel {
 	display: flex;
-	width: 100%;
 	padding: 0.5em;
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
-}
 
-.container {
-	width: 49%;
-}
-
-.unSelectedPokemon {
-	width: 60%;
+	&__info {
+		width: 49%;
+	}
 }
