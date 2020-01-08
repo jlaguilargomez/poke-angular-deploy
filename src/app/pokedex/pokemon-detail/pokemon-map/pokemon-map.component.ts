@@ -12,8 +12,9 @@ import { PokedexService } from 'src/app/pokedex.service';
 export class PokemonMapComponent implements OnInit {
 	map: any;
 	pokemons: Pokemon[];
-	pokemonSelected: Pokemon;
 	initializedSelection = false;
+
+	@Input() pokemonSelected: Pokemon;
 
 	constructor(
 		private routerData: ActivatedRoute,
@@ -31,14 +32,11 @@ export class PokemonMapComponent implements OnInit {
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
-			this.pokemons = this.pokedexService.getPokemonList();
 			if (this.initializedSelection) {
 				this.changePokemon();
 			}
 			this.initializedSelection = true;
 		});
-
 		// Leaflet setting
 		const options = { attributionControl: false };
 		const map = L.map('map', options).setView(
@@ -50,8 +48,8 @@ export class PokemonMapComponent implements OnInit {
 			{
 				attribution: '[...] GIS User Community',
 				/* 'Tiles &copy; Esri &mdash;
-		    Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping,
-		    Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',*/
+			Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping,
+			Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',*/
 			}
 		);
 		tileLayer.addTo(map);
