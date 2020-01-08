@@ -24,7 +24,7 @@
 		width: 100%;
 		position: absolute;
 		bottom: 70px;
-		max-width: 240px;
+		max-width: 170px;
 		height: auto;
 		transition: 0.7s;
 	}
@@ -33,7 +33,7 @@
 		position: absolute;
 		bottom: 20px;
 		left: 100px;
-		max-width: 280px;
+		max-width: 160px;
 		transition: 0.7s;
 		width: 280px;
 	}
@@ -57,12 +57,12 @@
 .main-right {
 	position: absolute;
 	bottom: 80px;
-	right: 135px;
+	right: 55px;
 	transition: 0.7s;
 	&__button {
 		cursor: pointer;
 		display: inline-block;
-		padding: 0.75rem 1.25rem;
+		padding: 1rem 2.25rem;
 		border-radius: 10px;
 		color: #fff;
 		font-weight: bold;
@@ -84,7 +84,7 @@
 			&:after {
 				content: '»';
 				position: absolute;
-				left: 8px;
+				left: 20px;
 				opacity: 1;
 				transition: all 0.4s;
 			}
@@ -120,13 +120,13 @@
 			.quote:before {
 				content: '»';
 				position: absolute;
-				left: 8px;
+				left: 20px;
 				opacity: 1;
 			}
 			.quote:after {
 				content: '»';
 				position: absolute;
-				left: 15px;
+				left: 35px;
 				opacity: 0;
 			}
 		}
@@ -275,7 +275,7 @@ p {
 			height: auto;
 		}
 		&__pokemon {
-			max-width: 200px;
+			max-width: 140px;
 		}
 	}
 	.main-right {
