@@ -3,7 +3,7 @@
 .intro-section {
 	position: relative;
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	height: calc(100vh - 70px);
 	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
@@ -423,6 +423,79 @@
 		right: 60px;
 		&__link {
 			font-size: 14px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.btn-landing {
+		position: absolute;
+		bottom: 50%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.oak-professor {
+		position: static;
+		&__image {
+			max-width: 99px;
+			height: auto;
+			position: static;
+			display: block;
+			margin: 0 auto;
+		}
+		&__pokemon {
+			max-width: 140px;
+			margin-left: 47px;
+		}
+	}
+	.btn-landing {
+		position: static;
+		width: 210px;
+		display: block;
+		margin: 20px auto;
+		&__link {
+			font-size: 14px;
+			padding: 10px 20px;
+		}
+		.quote {
+			&:before {
+				left: -30px;
+			}
+			&:after {
+				left: 10px;
+			}
+		}
+		&:hover {
+			.quote:before {
+				left: 10px;
+			}
+			.quote:after {
+				left: 35px;
+			}
+		}
+	}
+	.intro-section {
+		.titles {
+			padding: 0px;
+			padding-top: 20px;
+			margin: 0 auto;
+			width: 60vw;
+			line-height: 45px;
+			h1 {
+				font-size: 43px;
+			}
+			&__title {
+				&--black {
+					text-align: left;
+				}
+				&--gray {
+					text-align: left;
+				}
+				&--red {
+					text-align: left;
+				}
+			}
 		}
 	}
 }
