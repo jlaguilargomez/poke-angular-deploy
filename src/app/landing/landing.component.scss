@@ -295,7 +295,11 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	<<<<<<<HEAD
 	height: calc(100vh - 50px);
+	=======// width: 100%;
+	// min-height: calc(100vh - 70px);
+>>>>>>> 6a2db7cdfafc09a5f189af7bb47659535c63ee52
 	background-color: $primary-color;
 	overflow: hidden;
 	// padding: 1em 0;

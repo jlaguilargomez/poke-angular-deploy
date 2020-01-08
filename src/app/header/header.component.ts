@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+	selector: 'app-header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+	@ViewChild('hamburguerIcon', { static: true }) hamburguerIcon: ElementRef;
 
-  ngOnInit() {}
+	displayMenu = false;
+
+	constructor() {}
+
+	render() {
+		this.displayMenu = !this.displayMenu;
+	}
+
+	ngOnInit() {}
 }
