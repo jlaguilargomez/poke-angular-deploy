@@ -1,12 +1,21 @@
-<div class="container-box">
+<div class="container-box" *ngIf="pokemonSelected">
 	<div class="component-box">
 		<div class="shadow">
 			<div class="container">
-				<app-pokemon-card></app-pokemon-card>
+				<app-pokemon-card
+					[pokemonSelected]="pokemonSelected"
+				></app-pokemon-card>
 			</div>
 			<div class="container">
 				<app-pokemon-map></app-pokemon-map>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="container-box">
+	<img
+		src="../../../assets/img/pikachu-search.png"
+		alt="Unselected picture"
+		class="unSelectedPokemon"
+	/>
 </div>
