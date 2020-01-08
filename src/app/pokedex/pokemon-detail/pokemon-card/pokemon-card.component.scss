@@ -39,7 +39,6 @@
 	&__back {
 		position: absolute;
 		backface-visibility: hidden;
-		background-color: rgba(85, 85, 85, 0.5);
 		color: white;
 		transform: rotateY(180deg);
 	}
@@ -51,6 +50,15 @@
 		height: auto;
 		border-radius: 25%;
 	}
+
+	&__stats {
+		text-align: left;
+		border-radius: 2rem;
+		margin: 1rem;
+		display: inline-block;
+		background-color: #ececec;
+		padding: 1rem;
+	}
 }
 
 .card:hover .card__inner {
@@ -61,8 +69,9 @@
 
 // Text General
 .title {
-	font-size: 3em; //Pending general styles
+	font-size: 2em; //Pending general styles
 	font-weight: bold; //Pending general styles
+	color: black;
 }
 
 .subtitle {
@@ -76,6 +85,17 @@
 	text-transform: capitalize;
 }
 
+.ability {
+	color: black;
+
+	&__item {
+		margin: 0.2rem 0;
+	}
+	&__item--first {
+		margin: 0.2rem 0;
+	}
+}
+
 // Title Btn
 
 .btn {
@@ -87,6 +107,7 @@
 	font-size: 1.5rem;
 	padding: 0.5rem;
 	border-radius: 1rem;
+	color: black;
 
 	&--first {
 		margin: 0 1rem 1rem 1rem;
