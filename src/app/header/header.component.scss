@@ -42,6 +42,10 @@
 	}
 }
 
+.open {
+	display: flex;
+}
+
 .hamburguer-icon {
 	display: none;
 }
@@ -92,6 +96,7 @@
 	}
 
 	.menu {
+		display: none;
 		height: 100%;
 		width: 40%;
 		flex-direction: column;
