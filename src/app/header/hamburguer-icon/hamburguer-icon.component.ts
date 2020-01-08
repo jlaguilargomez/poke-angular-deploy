@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { fromEvent } from 'rxjs';
 
 @Component({
 	selector: 'app-hamburguer-icon',
@@ -7,10 +6,11 @@ import { fromEvent } from 'rxjs';
 	styleUrls: ['./hamburguer-icon.component.scss'],
 })
 export class HamburguerIconComponent implements OnInit {
+	displayMenu: boolean = false;
 	constructor() {}
 
-	renderSomething(e) {
-		console.log(e);
+	render() {
+		this.displayMenu = !this.displayMenu;
 	}
 
 	ngOnInit() {}
