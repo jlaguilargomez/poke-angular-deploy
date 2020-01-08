@@ -1,20 +1,21 @@
 @import '../../commonStyles.scss';
 
-.main {
+.intro-section {
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
 	height: calc(100vh - 70px);
 	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
-	&__wave {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: auto;
-	}
 }
-.main-left {
+
+.wave {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+}
+.oak-professor {
 	position: absolute;
 	width: 100%;
 	left: 30px;
@@ -54,12 +55,12 @@
 	height: 40%;
 }
 
-.main-right {
+.btn-landing {
 	position: absolute;
 	bottom: 80px;
 	right: 55px;
 	transition: 0.7s;
-	&__button {
+	&__link {
 		cursor: pointer;
 		display: inline-block;
 		padding: 1rem 2.25rem;
