@@ -160,7 +160,7 @@
 .main-bottom {
 	display: flex;
 	flex-direction: column;
-	// height: calc(100vh - 50px);
+	height: calc(100vh - 50px);
 	background-color: $primary-color;
 	overflow: hidden;
 	padding: 1em 0;
@@ -170,17 +170,17 @@
 	color: white;
 	font-size: 40px;
 	text-transform: uppercase;
-	margin-bottom: 1em;
+	margin: 1em 0em;
 }
 .info {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
 	max-width: 1000px;
 	height: auto;
 	background-color: $primary-color;
-	align-items: center;
 }
 
 .card {
@@ -266,5 +266,31 @@
 		&__button {
 			font-size: 14px;
 		}
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+	}
+}
+@media (max-width: 480px) {
+	.header {
+		margin: 0em 0em 1em 0em;
+	}
+	.main-bottom {
+		height: auto;
+		background-color: yellow;
+	}
+}
+@media (min-width: 1800px) {
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+	}
+	.info {
+		max-width: 1500px;
+	}
+	.card {
+		width: 400px;
+		height: 400px;
 	}
 }
