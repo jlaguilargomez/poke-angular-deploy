@@ -2,9 +2,9 @@
 
 .component-box {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	height: 100%;
-	width: 100%;
+	//width: 100%;
 	background-color: #db4545;
 	border-radius: 20px;
 	padding: 2rem;
@@ -13,25 +13,20 @@
 	padding: 2rem;
 }
 
-.container-btn {
+//Shadow
+.shadow {
 	display: flex;
+	width: 100%;
+	padding: 0.5em;
+	background-color: rgba(0, 0, 0, 0.37);
+	border-radius: 2em;
+	justify-content: space-between;
 }
 
-.btn {
-	display: flex;
-	margin: 1rem 0;
-	align-items: center;
-	background-color: #ececec;
-	font-weight: bolder;
-	font-size: 2rem;
-	padding: 1rem;
-	border-radius: 1rem;
-
-	&--first {
-		margin: 0 0 1rem 0;
-	}
+.container {
+	width: 49%;
 }
 
 .unSelectedPokemon {
-	width: 80%;
+	width: 60%;
 }
