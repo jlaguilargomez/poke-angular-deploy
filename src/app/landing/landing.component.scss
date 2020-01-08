@@ -454,6 +454,7 @@
 	.main-bottom {
 		box-sizing: border-box;
 		justify-content: center;
+		height: auto;
 	}
 }
 @media (max-width: 480px) {
@@ -468,10 +469,13 @@
 	.main-bottom {
 		box-sizing: border-box;
 		justify-content: center;
+		height: auto;
+		&__rights {
+			margin: 1em;
+		}
 	}
 	.info {
 		max-width: 1500px;
-		padding-top: 10em;
 	}
 	.card {
 		width: 350px;
