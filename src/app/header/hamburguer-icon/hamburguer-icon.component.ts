@@ -9,19 +9,9 @@ import { fromEvent } from 'rxjs';
 export class HamburguerIconComponent implements OnInit {
 	constructor() {}
 
-	icon: HTMLElement;
-	menu: HTMLElement;
-
 	renderSomething(e) {
 		console.log(e);
 	}
 
-	ngOnInit() {
-		this.icon = document.querySelector('.hamburguer-icon');
-		this.menu = document.querySelector('.hamburguer-icon');
-
-		console.log(this.icon);
-
-		fromEvent(this.icon, 'click').subscribe(() => console.log('clicked'));
-	}
+	ngOnInit() {}
 }
