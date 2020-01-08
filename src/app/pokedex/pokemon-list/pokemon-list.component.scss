@@ -4,7 +4,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	// align-items: center;
 	width: 100%;
 	height: 100%;
 	padding: 10px;
@@ -22,6 +21,11 @@
 	font-size: 7rem;
 	font-weight: 700;
 
+	&__logo {
+		height: 40px;
+		margin: 5px;
+	}
+
 	&__title {
 		font-size: 1.5rem;
 		font-family: 'Roboto Condensed';
@@ -32,11 +36,6 @@
 			font-size: 2rem;
 		}
 	}
-}
-
-.logo {
-	height: 40px;
-	margin: 5px;
 }
 
 .list-container {
@@ -74,7 +73,7 @@
 	}
 }
 
-.list-elem {
+.list {
 	max-height: 56vh;
 	width: 80%;
 	overflow-y: scroll;
