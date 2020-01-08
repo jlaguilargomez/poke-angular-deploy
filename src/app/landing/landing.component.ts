@@ -23,7 +23,11 @@ export class LandingComponent implements OnInit {
 			'poliwhirl',
 			'snorlax',
 		];
-		this.currentPokemon = this.pokemons[Math.floor(Math.random() * 10)];
+		let num = Math.floor(Math.random() * 9);
+		this.currentPokemon = this.pokemons[num];
+		if (this.currentPokemon === undefined) {
+			console.log(num);
+		}
 		this.imgSource = 'assets/img/gifs/' + this.currentPokemon + '.gif';
 	}
 
