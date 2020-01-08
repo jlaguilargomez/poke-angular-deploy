@@ -1,7 +1,7 @@
 /* Flip Logic */
 
 .card-container {
-	width: 100%; //Has to be in order to flip work correctly
+	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
@@ -27,6 +27,12 @@
 	&__front--bg {
 		height: calc(100% - 4rem);
 		border-radius: 2rem;
+
+		//Pokeball SVG background
+		background-image: url(./../../../../assets/img/pokeball-bg.svg);
+		background-repeat: no-repeat;
+		background-size: 150%; // Size pokeball bg
+		background-position: 0 100%; // Placed left bottom
 	}
 
 	&__front--data-bg {
@@ -56,8 +62,14 @@
 		border-radius: 2rem;
 		margin: 1rem;
 		display: inline-block;
-		background-color: #ececec;
+		background-color: #ffffff9f;
 		padding: 1rem;
+		width: calc(100% - 4rem);
+		height: calc(100% - 4rem);
+	}
+
+	&__table {
+		width: 100%;
 	}
 }
 
@@ -79,6 +91,10 @@
 	font-weight: bolder;
 	margin: 1rem 0 0.5rem 0;
 	font-size: 2em;
+}
+
+.text-color-primary {
+	color: black;
 }
 
 .cap {
@@ -177,4 +193,25 @@
 .icon-img {
 	width: 32px;
 	height: 32px;
+}
+
+//Skill Bar types
+.progress-bar {
+	width: 100%;
+	padding: 5px;
+
+	&__skill {
+		border-radius: 0.5rem;
+	}
+}
+.d-hidden {
+	visibility: hidden;
+}
+
+// Loading Pokeball
+.loading-pokeball {
+	display: block;
+	margin: 0 auto;
+	border-radius: 25px;
+	height: 40px;
 }
