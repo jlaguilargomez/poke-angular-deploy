@@ -1,0 +1,54 @@
+.hamburguer-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// background-color: blue;
+	width: 40px;
+	height: 40px;
+}
+
+.hamburguer-open {
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	// background-color: pink;
+	width: 30px;
+	height: 30px;
+
+	&__bar {
+		background-color: #353535;
+		border-radius: 100px;
+		width: 30px;
+		height: 4px;
+	}
+}
+
+.hamburguer-close {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	// background-color: pink;
+	width: 30px;
+	height: 30px;
+
+	&__bar {
+		background-color: #353535;
+		border-radius: 100px;
+		width: 30px;
+		height: 4px;
+
+		&--right {
+			position: absolute;
+			transform-origin: 50%;
+			transform: rotate(-45deg);
+		}
+
+		&--left {
+			position: absolute;
+			transform-origin: 50%;
+			transform: rotate(45deg);
+		}
+	}
+}
