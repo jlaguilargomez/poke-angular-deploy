@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SearchFilterPipe } from './pokedex/pipes/search-filter.pipe';
+import { HamburguerIconComponent } from './header/hamburguer-icon/hamburguer-icon.component';
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { SearchFilterPipe } from './pokedex/pipes/search-filter.pipe';
 		HeaderComponent,
 		FooterComponent,
 		SearchFilterPipe,
+		HamburguerIconComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
 	providers: [],

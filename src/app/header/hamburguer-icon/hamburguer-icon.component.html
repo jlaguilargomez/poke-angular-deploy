@@ -1,0 +1,19 @@
+<div id="icon" class="hamburguer-box">
+	<div
+		(click)="render()"
+		[ngClass]="{ render: displayMenu === false }"
+		class="icon hamburguer-open "
+	>
+		<span class="hamburguer-open__bar"></span>
+		<span class="hamburguer-open__bar"></span>
+		<span class="hamburguer-open__bar"></span>
+	</div>
+	<div
+		(click)="render()"
+		[ngClass]="{ render: displayMenu === true }"
+		class="icon hamburguer-close "
+	>
+		<span class="hamburguer-close__bar hamburguer-close__bar--left"></span>
+		<span class="hamburguer-close__bar hamburguer-close__bar--right"></span>
+	</div>
+</div>
