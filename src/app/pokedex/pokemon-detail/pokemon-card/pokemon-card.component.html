@@ -72,6 +72,22 @@
 									Weight: {{ pokemonSelected.weight }}
 								</li>
 							</ul>
+							<!-- CARD BARS Stats -->
+							<table class="card__table">
+								<tr *ngFor="let stat of pokemonSelected.stats">
+									<td class="cap text-color-primary">{{ stat.name }}</td>
+									<td class="text-color-primary">{{ stat.base }}</td>
+									<div class="progress-bar">
+										<div
+											[style.width.%]="stat.base > 100 ? 100 : stat.base"
+											[style.background-color]="colorBar(stat.base)"
+											class="progress-bar__skill"
+										>
+											<div class="d-hidden">Skill</div>
+										</div>
+									</div>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>
