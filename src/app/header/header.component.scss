@@ -42,10 +42,6 @@
 	}
 }
 
-.open {
-	display: flex;
-}
-
 .hamburguer-icon {
 	display: none;
 }
@@ -112,6 +108,10 @@
 	}
 
 	.hamburguer-icon {
+		display: flex;
+	}
+
+	.open {
 		display: flex;
 	}
 }

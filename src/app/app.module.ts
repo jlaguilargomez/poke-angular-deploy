@@ -16,7 +16,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SearchFilterPipe } from './pokedex/pipes/search-filter.pipe';
 import { HamburguerIconComponent } from './header/hamburguer-icon/hamburguer-icon.component';
-import { DropDownDirective } from 'src/directives/dropdown.directive';
 
 @NgModule({
 	declarations: [
@@ -31,7 +30,6 @@ import { DropDownDirective } from 'src/directives/dropdown.directive';
 		FooterComponent,
 		SearchFilterPipe,
 		HamburguerIconComponent,
-		DropDownDirective,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
 	providers: [],
