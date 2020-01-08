@@ -11,23 +11,50 @@
 	color: white;
 	height: 50px;
 
-	&__decorator {
-		max-height: 25px;
+	&__title {
+		height: 80%;
+		width: auto;
 	}
 }
 
 .pokeball-img,
 .pokemon-img {
-	height: 90%;
+	height: 80%;
 	width: auto;
 }
 
-@media only screen and (max-width: 480px) {
-	.footer {
-		&__decorator {
-			&--secondary {
-				display: none;
-			}
+@media (max-width: 1024px) {
+	.pokemon-img {
+		&--hidden-1 {
+			display: none;
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		&__title {
+			height: 70%;
+			width: auto;
+		}
+	}
+
+	.pokemon-img {
+		&--hidden-2 {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		&__title {
+			height: 60%;
+			width: auto;
+		}
+	}
+
+	.pokeball-img {
+		height: 60%;
 	}
 }
