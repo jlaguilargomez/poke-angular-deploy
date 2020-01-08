@@ -303,15 +303,24 @@
 		position: absolute;
 		top: 0;
 	}
-	&__title {
-		position: absolute;
-		top: 5%;
-		left: 50%;
+	&__rights {
+		width: 100%;
+		height: 3%;
+		font-size: 15px;
 		text-align: center;
 		color: white;
-		font-size: 40px;
-		text-transform: uppercase;
+		margin: 10em 0em 1em 0em;
 	}
+}
+.title {
+	width: 100%;
+	height: 23%;
+	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	margin-top: 1em;
+	z-index: 1;
 }
 
 .info {
@@ -413,15 +422,14 @@
 	border-radius: 50%;
 }
 
-.title {
-	width: 100%;
-	height: 23%;
-	font-size: 40px;
-	text-align: center;
-	text-transform: uppercase;
-	color: white;
-	margin-top: 1em;
-}
+// .rights-text{
+// 	width: 100%;
+// 	height: 5%;
+// 	font-size: 15px;
+// 	text-align: center;
+// 	color: white;
+// 	margin-bottom: 1em;
+// }
 
 @media (max-width: 1024px) {
 	.oak-professor {
