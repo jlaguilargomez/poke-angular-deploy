@@ -23,7 +23,7 @@ export class LandingComponent implements OnInit {
 			'poliwhirl',
 			'snorlax',
 		];
-		let num = Math.floor(Math.random() * 9);
+		const num = Math.floor(Math.random() * 9);
 		this.currentPokemon = this.pokemons[num];
 		if (this.currentPokemon === undefined) {
 			console.log(num);
