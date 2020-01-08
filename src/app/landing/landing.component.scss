@@ -1,6 +1,6 @@
 @import '../../commonStyles.scss';
 
-.main {
+.intro-section {
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
@@ -9,12 +9,137 @@
 	background-size: cover;
 	&__wave {
 		position: absolute;
-		bottom: 0;
+		bottom: -3px;
 		width: 100%;
 		height: auto;
+		animation: scaleY-animation 1s;
+	}
+	.titles {
+		letter-spacing: 0.055em;
+		width: 30vw;
+		padding: 25px 40px;
+		margin-left: 100px;
+		h1 {
+			display: inline-block;
+			width: 100%;
+			font-size: 55px;
+			font-weight: bold;
+		}
+		&__title {
+			&--black {
+				color: $secondary-color;
+				text-align: left;
+				opacity: 0;
+				animation: opacity-animation 1s 2s forwards;
+			}
+			&--gray {
+				color: #868686;
+				text-align: center;
+				opacity: 0;
+				animation: opacity-animation 1s 2.5s forwards;
+			}
+			&--red {
+				color: $primary-color;
+				text-align: right;
+				opacity: 0;
+				animation: opacity-animation 1s 3s forwards;
+			}
+		}
 	}
 }
-.main-left {
+
+@keyframes scaleY-animation {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes opacity-animation {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.functionality-section {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	.functionalities {
+		display: flex;
+		flex-flow: row wrap;
+		.explanation-card {
+			display: flex;
+			flex-flow: column nowrap;
+			flex: 3;
+			padding: 50px;
+			&--double {
+				padding: 50px;
+				flex: 4;
+			}
+			&__img {
+				border-radius: 15px;
+				display: block;
+				margin: 15px auto;
+			}
+		}
+		.bubble-text {
+			background-color: #c4c4c4;
+			border-radius: 15px;
+			padding: 25px;
+			color: #202020;
+			text-align: justify;
+		}
+	}
+	&__wave {
+		position: absolute;
+		top: 0;
+	}
+	.title {
+		color: white;
+		position: absolute;
+		top: 0;
+		margin-top: 3vh;
+		font-weight: bold;
+	}
+
+	.pokedex-title {
+		background-color: $primary-color;
+		border-radius: 15px;
+		display: flex;
+		text-transform: uppercase;
+		&__num {
+			background-color: $secondary-color;
+			width: 80px;
+			height: 100%;
+			padding: 12px 0px;
+			border-radius: 15px 0px 0px 15px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 23px;
+			span {
+				color: white;
+				display: inline;
+			}
+		}
+		&__text {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 16px;
+			padding: 0px 25px;
+		}
+	}
+}
+
+.oak-professor {
 	position: absolute;
 	width: 100%;
 	left: 30px;
@@ -24,19 +149,33 @@
 		width: 100%;
 		position: absolute;
 		bottom: 70px;
-		max-width: 240px;
+		max-width: 170px;
 		height: auto;
 		transition: 0.7s;
+		opacity: 0;
+		animation: opacity-animation 1s 1s forwards;
 	}
 	&__pokemon {
 		display: inline-block;
 		position: absolute;
 		bottom: 20px;
 		left: 100px;
-		max-width: 280px;
+		max-width: 160px;
 		transition: 0.7s;
 		width: 280px;
+		opacity: 0;
+		animation: pokemon-animation 1s forwards;
 	}
+	@keyframes pokemon-animation {
+		from {
+			left: -200px;
+		}
+		to {
+			left: 100px;
+			opacity: 1;
+		}
+	}
+
 	&__bubble {
 		display: inline-block;
 		position: absolute;
@@ -54,15 +193,26 @@
 	height: 40%;
 }
 
-.main-right {
+.btn-landing {
 	position: absolute;
 	bottom: 80px;
-	right: 135px;
+	right: 55px;
 	transition: 0.7s;
-	&__button {
+	opacity: 0;
+	animation: btn-animation 1s forwards;
+	@keyframes btn-animation {
+		from {
+			right: 0;
+		}
+		to {
+			right: 55px;
+			opacity: 1;
+		}
+	}
+	&__link {
 		cursor: pointer;
 		display: inline-block;
-		padding: 0.75rem 1.25rem;
+		padding: 1rem 2.25rem;
 		border-radius: 10px;
 		color: #fff;
 		font-weight: bold;
@@ -84,7 +234,7 @@
 			&:after {
 				content: '»';
 				position: absolute;
-				left: 8px;
+				left: 20px;
 				opacity: 1;
 				transition: all 0.4s;
 			}
@@ -120,33 +270,17 @@
 			.quote:before {
 				content: '»';
 				position: absolute;
-				left: 8px;
+				left: 20px;
 				opacity: 1;
 			}
 			.quote:after {
 				content: '»';
 				position: absolute;
-				left: 15px;
+				left: 35px;
 				opacity: 0;
 			}
 		}
 	}
-	// &__button{
-	//     background: $primary-color;
-	//     width: 180px;
-	//     height: 180px;
-	//     border-radius: 40%;
-	//     opacity: 0.8;
-	//     animation: drift 3000ms infinite linear;
-	// }
-	// &__link {
-	//     color: white;
-	//     display: block;
-	//     margin: 0 auto;
-	//     text-align: center;
-	//     font-size: 18px;
-	//     font-weight: bold;
-	// }
 }
 
 @keyframes drift {
@@ -185,12 +319,14 @@
 	justify-content: center;
 	flex-grow: 1;
 }
+
 .main-down-info-first {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 	margin: 2em 0em;
 }
+
 .main-down-info-second {
 	display: flex;
 	flex-wrap: wrap;
@@ -199,11 +335,13 @@
 	margin: 2em 0em;
 	background-color: $primary-color;
 }
+
 .card {
 	background-color: transparent;
 	width: 350px;
 	height: 250px;
 }
+
 .card-inner {
 	position: relative;
 	width: 100%;
@@ -224,6 +362,13 @@
 }
 .card-front {
 	background-color: none;
+	h1 {
+		width: 100%;
+		height: 23%;
+		font-size: 24px;
+		text-align: center;
+		color: white;
+	}
 }
 .card-back {
 	background-color: rgba(85, 85, 85, 0.5);
@@ -236,26 +381,20 @@
 	height: 300px;
 	border-radius: 50%;
 	transform: rotateY(180deg);
+	p {
+		width: 100%;
+		height: 23%;
+		font-size: 22px;
+		text-align: center;
+		color: white;
+	}
 }
 .card-image {
 	width: 70%;
 	height: auto;
 	border-radius: 50%;
 }
-h1 {
-	width: 100%;
-	height: 23%;
-	font-size: 24px;
-	text-align: center;
-	color: white;
-}
-p {
-	width: 100%;
-	height: 23%;
-	font-size: 22px;
-	text-align: center;
-	color: white;
-}
+
 .title {
 	width: 100%;
 	height: 23%;
@@ -267,7 +406,7 @@ p {
 }
 
 @media (max-width: 1024px) {
-	.main-left {
+	.oak-professor {
 		&__image {
 			width: 100%;
 			bottom: 50px;
@@ -275,14 +414,14 @@ p {
 			height: auto;
 		}
 		&__pokemon {
-			max-width: 200px;
+			max-width: 140px;
 		}
 	}
-	.main-right {
+	.btn-landing {
 		position: absolute;
 		bottom: 50px;
 		right: 60px;
-		&__button {
+		&__link {
 			font-size: 14px;
 		}
 	}

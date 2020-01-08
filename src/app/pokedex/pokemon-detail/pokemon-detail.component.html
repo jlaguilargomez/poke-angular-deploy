@@ -1,26 +1,18 @@
 <div class="container-box" *ngIf="pokemonSelected">
 	<div class="component-box">
-		<div class="container-btn">
-			<h2 class="btn btn--first">
-				<img
-					src="./../../../assets/img/iconPokeData.svg"
-					alt="Icon Pokemon Data"
-				/>DATA
-			</h2>
+		<div class="shadow">
+			<div class="container">
+				<app-pokemon-card
+					[pokemonSelected]="pokemonSelected"
+				></app-pokemon-card>
+			</div>
+			<div class="container">
+				<app-pokemon-map></app-pokemon-map>
+			</div>
 		</div>
-		<app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
-		<div class="container-btn">
-			<h2 class="btn">
-				<img
-					src="./../../../assets/img/iconPointerMap.svg"
-					alt="Icon pointer map"
-				/>LOCATION
-			</h2>
-		</div>
-		<app-pokemon-map></app-pokemon-map>
 	</div>
 </div>
-<div class="container-box">
+<div class="container-box" *ngIf="pokemonSelected === undefined">
 	<img
 		src="../../../assets/img/pikachu-search.png"
 		alt="Unselected picture"

@@ -1,100 +1,141 @@
-//Variables
-$radius: 2em;
+/* Flip Logic */
 
-//Text General
+.card-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+
+	&__inner {
+		position: relative;
+		text-align: center;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+	}
+
+	&__front {
+		position: absolute;
+		backface-visibility: hidden;
+		background-color: none;
+	}
+
+	&__front--bg {
+		height: calc(100% - 4rem);
+		border-radius: 2rem;
+
+		//Pokeball SVG background
+		background-image: url(./../../../../assets/img/pokeball-bg.svg);
+		background-repeat: no-repeat;
+		background-size: 150%; // Size pokeball bg
+		background-position: 0 100%; // Placed left bottom
+	}
+
+	&__front--data-bg {
+		height: calc(100% - 1rem);
+		border-radius: 2rem;
+		padding: 1rem 0 0 0;
+		background-color: #555555;
+	}
+
+	&__back {
+		position: absolute;
+		backface-visibility: hidden;
+		color: white;
+		transform: rotateY(180deg);
+	}
+
+	&__image {
+		margin-top: 1rem;
+		background-color: white;
+		width: 50%;
+		height: auto;
+		border-radius: 25%;
+	}
+
+	&__stats {
+		text-align: left;
+		border-radius: 2rem;
+		margin: 1rem;
+		display: inline-block;
+		background-color: #ffffff9f;
+		padding: 1rem;
+		width: calc(100% - 4rem);
+		height: calc(100% - 4rem);
+	}
+
+	&__table {
+		width: 100%;
+	}
+}
+
+.card:hover .card__inner {
+	transform: rotateY(180deg);
+}
+
+/* END Fliplogic */
+
+// Text General
 .title {
-	font-size: 3em; //Pending general styles
-	font-weight: bold; ////Pending general styles
+	font-size: 2em; //Pending general styles
+	font-weight: bold; //Pending general styles
+	color: black;
 }
 
 .subtitle {
 	color: white;
 	font-weight: bolder;
-	margin: 0.3em 0;
+	margin: 1rem 0 0.5rem 0;
 	font-size: 2em;
+}
+
+.text-color-primary {
+	color: black;
 }
 
 .cap {
 	text-transform: capitalize;
 }
-//Shadow
-.shadow {
-	padding: 0.5em;
-	background-color: rgba(0, 0, 0, 0.37);
-	border-radius: 2em;
+
+.ability {
+	color: black;
+
+	&__item {
+		margin: 0.2rem 0;
+	}
+	&__item--first {
+		margin: 0.2rem 0;
+	}
 }
 
-//Containers
-.container {
+// Title Btn
+
+.btn {
 	display: flex;
+	margin: 1rem 0;
+	align-items: center;
+	background-color: #ececec;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	color: black;
 
-	&--general {
-		border-radius: $radius;
-		background-color: #9b9b9b; //pending from Javascript Service
-		background-image: url(./../../../../assets/img/pokeball-bg.svg);
-		background-repeat: no-repeat;
-		background-size: 80%; // Size pokeball bg
-		background-position: 0 100%; // Placed left bottom
-	}
-
-	&--info {
-		border-radius: $radius;
-		flex-direction: column;
-		background-color: #ececec;
-		width: 60%;
-		padding: 1em 2em 2em 2em; //It sets general Size.
-	}
-
-	&--photo {
-		flex-direction: column;
-		align-items: center;
-		width: 40%;
-		padding: 1em 0 2em 0em;
-	}
-
-	&--row {
-		width: 100%;
-		justify-content: space-evenly;
-	}
-
-	//Managing the margin inside Container
-	ul {
-		margin: 1em 0;
-		li:last-child {
-			margin-bottom: 0; //Eliminate margin to proper vertical align
-		}
-	}
-	ul:last-child {
-		margin-bottom: 0; //Eliminate margin to proper vertical align
-	}
-	li {
-		margin: 0.5em 0;
+	&--first {
+		margin: 0 1rem 1rem 1rem;
 	}
 }
 
-table {
-	border-collapse: separate;
-	border-spacing: 0 0.5em; //Space beetwen tr
-}
-
-//Pokemon img
-.sprite {
-	border-radius: 1.5em;
-	width: 10em; //Size img, pending mediaquerys
-}
-
-//Div Background White
-.background-photo {
-	display: flex;
-	justify-content: center;
-	background-color: white;
-	border-radius: 2em;
-}
-
-//pokemon types classes
+// Pokemon Types
 .type {
+	display: inline-block;
 	background-color: rgba(255, 255, 255, 0.363);
-	padding: 0.3em;
+	padding: 0.8rem;
+	margin: 0.2rem;
 	border-radius: 0.3em;
 	color: white;
 
@@ -148,6 +189,12 @@ table {
 	}
 }
 
+// Icon Size on Titles
+.icon-img {
+	width: 32px;
+	height: 32px;
+}
+
 //Skill Bar types
 .progress-bar {
 	width: 100%;
@@ -161,6 +208,7 @@ table {
 	visibility: hidden;
 }
 
+// Loading Pokeball
 .loading-pokeball {
 	display: block;
 	margin: 0 auto;
