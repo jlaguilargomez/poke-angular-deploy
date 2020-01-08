@@ -1,4 +1,4 @@
-<div class="container-box">
+<div class="container-box" *ngIf="pokemonSelected">
 	<div class="component-box">
 		<div class="container-btn">
 			<h2 class="btn btn--first">
@@ -8,7 +8,7 @@
 				/>DATA
 			</h2>
 		</div>
-		<app-pokemon-card></app-pokemon-card>
+		<app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
 		<div class="container-btn">
 			<h2 class="btn">
 				<img
@@ -19,4 +19,11 @@
 		</div>
 		<app-pokemon-map></app-pokemon-map>
 	</div>
+</div>
+<div class="container-box">
+	<img
+		src="../../../assets/img/pikachu-search.png"
+		alt="Unselected picture"
+		class="unSelectedPokemon"
+	/>
 </div>
