@@ -6,7 +6,7 @@ import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 	styleUrls: ['./hamburguer-icon.component.scss'],
 })
 export class HamburguerIconComponent implements OnInit {
-	displayMenu: boolean = false;
+	displayMenu = false;
 	constructor() {}
 
 	render() {

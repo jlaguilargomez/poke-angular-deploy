@@ -8,7 +8,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class HeaderComponent implements OnInit {
 	@ViewChild('hamburguerIcon', { static: true }) hamburguerIcon: ElementRef;
 
-	displayMenu: boolean = false;
+	displayMenu = false;
 
 	constructor() {}
 
