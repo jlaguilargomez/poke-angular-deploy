@@ -1,11 +1,41 @@
-<div class="card-container">
+<div *ngIf="pokemonSelected != undefined" class="card-container">
 	<div class="card">
-		<div class="card-inner">
-			<div class="card-front">
-				<img class="card-image" src="../../assets/img/person-icon.png" />
-				<h1>Juan Pablo Amador Díaz</h1>
+		<div class="card card__inner">
+			<!-- CARD FRONT -->
+			<div class="card card__front">
+				<div class="card__front--data-bg">
+					<!-- Card Title -->
+					<h2 class="btn btn--first">
+						<img
+							src="./../../../assets/img/iconPokeData.svg"
+							alt="Icon Pokemon Data"
+						/>DATA
+					</h2>
+					<!-- Background Color -->
+					<div
+						class="card__front--bg"
+						[style.background-color]="colorBackground(pokemonSelected.type[0])"
+					>
+						<!-- Image -->
+						<img
+							class="card__image"
+							src="{{ pokemonSelected.imagePath }}"
+							alt="img {{ pokemonSelected.name }}"
+						/>
+						<!-- Pokemon Title -->
+						<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
+						<div
+							*ngFor="let type of pokemonSelected.type"
+							class="type type--{{ type }} cap"
+						>
+							{{ type }}
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="card-back">
+
+			<!-- CARD BACK -->
+			<div class="card card__back">
 				<br /><br />
 				<h1>Juan Pablo Amador Díaz</h1>
 				<p>Software Developer</p>
