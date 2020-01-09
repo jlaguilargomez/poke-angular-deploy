@@ -12,8 +12,8 @@ describe('PokemonCardComponent', () => {
 	});
 
 	it('Component PokemonCardComponent works!', () => {
-		let fixture = TestBed.createComponent(PokemonCardComponent);
-		let component = fixture.debugElement.componentInstance;
+		const fixture = TestBed.createComponent(PokemonCardComponent);
+		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});
 });

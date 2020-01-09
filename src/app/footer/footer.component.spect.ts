@@ -10,8 +10,8 @@ describe('FooterComponent', () => {
 	});
 
 	it('Component Footer works!', () => {
-		let fixture = TestBed.createComponent(FooterComponent);
-		let component = fixture.debugElement.componentInstance;
+		const fixture = TestBed.createComponent(FooterComponent);
+		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});
 });

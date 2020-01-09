@@ -10,8 +10,8 @@ describe('HamburguerIconComponent', () => {
 	});
 
 	it('Component HamburguerIcon works!', () => {
-		let fixture = TestBed.createComponent(HamburguerIconComponent);
-		let component = fixture.debugElement.componentInstance;
+		const fixture = TestBed.createComponent(HamburguerIconComponent);
+		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});
 });
