@@ -309,7 +309,7 @@
 .main-bottom {
 	position: relative;
 	display: flex;
-	height: 100vh;
+	height: calc(100vh - 50px);
 	flex-direction: column;
 	background-color: $primary-color;
 	overflow: hidden;
@@ -345,8 +345,7 @@
 	align-items: center;
 	margin: 20px auto;
 	margin-top: 50px;
-	max-width: 1000px;
-	height: auto;
+	max-width: 1500px;
 	background-color: $primary-color;
 }
 
@@ -462,12 +461,19 @@
 		justify-content: center;
 		height: auto;
 	}
-	.info {
-		margin: 100px auto;
-	}
 	.card {
 		width: 250px;
 		height: 250px;
+		&__front {
+			&--text {
+				font-size: 18px;
+			}
+		}
+		&__back {
+			&--text {
+				font-size: 17px;
+			}
+		}
 	}
 }
 
@@ -631,28 +637,5 @@
 	}
 	.info {
 		max-width: 400px;
-	}
-}
-
-@media (min-width: 1300px) {
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		height: calc(100vh - 50px);
-		&__rights {
-			font-size: 20px;
-		}
-		.card {
-			width: 400px !important;
-			height: 400px !important;
-		}
-	}
-	.title {
-		position: absolute;
-		top: 0;
-	}
-
-	.info {
-		max-width: 1300px;
 	}
 }
