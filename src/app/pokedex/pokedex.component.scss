@@ -9,18 +9,18 @@
 
 .pokedex {
 	display: flex;
-	// flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	width: 100%;
+	max-width: 1280px;
 
 	&__pokemon-list {
 		flex-grow: 1;
 	}
 
 	&__pokemon-detail {
-		flex-grow: 3;
-		// display: flex;
+		flex-grow: 6;
 	}
 }
 
@@ -33,5 +33,15 @@
 		margin: 0 auto;
 		border-radius: 100px;
 		height: 60px;
+	}
+}
+
+@media (max-width: 768px) {
+	.pokedex {
+		flex-direction: column;
+
+		&__pokemon-list {
+			width: 100%;
+		}
 	}
 }

@@ -21,8 +21,23 @@
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
+	min-width: 500px;
 
 	&__info {
 		width: 49%;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 90vw;
+	}
+	.panel {
+		min-width: 0;
+		flex-flow: column wrap;
+
+		&__info {
+			width: 100%;
+		}
 	}
 }
