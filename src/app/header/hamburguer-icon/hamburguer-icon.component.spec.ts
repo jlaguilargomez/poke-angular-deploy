@@ -3,22 +3,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HamburguerIconComponent } from './hamburguer-icon.component';
 
 describe('HamburguerIconComponent', () => {
-	let component: HamburguerIconComponent;
-	let fixture: ComponentFixture<HamburguerIconComponent>;
-
-	beforeEach(async(() => {
+	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [HamburguerIconComponent],
 		}).compileComponents();
-	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(HamburguerIconComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
 	});
 
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
+	it('Component HamburguerIcon works!', () => {
+		let fixture = TestBed.createComponent(HamburguerIconComponent);
+		let component = fixture.debugElement.componentInstance;
+		expect(component).toBeTruthy();
+	});
 });

@@ -1,24 +1,29 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+	async,
+	ComponentFixture,
+	TestBed,
+	inject,
+} from '@angular/core/testing';
 
 import { PokedexComponent } from './pokedex.component';
+import { PokedexService } from '../pokedex.service';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { RouterOutlet } from '@angular/router';
+import { NgModel } from '@angular/forms';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 describe('PokedexComponent', () => {
-	let component: PokedexComponent;
-	let fixture: ComponentFixture<PokedexComponent>;
-
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [PokedexComponent],
-		}).compileComponents();
-	}));
-
 	beforeEach(() => {
-		fixture = TestBed.createComponent(PokedexComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		TestBed.configureTestingModule({
+			declarations: [
+				PokedexComponent,
+				PokemonListComponent,
+				RouterOutlet,
+				NgModule,
+			],
+			imports: [HttpClientModule],
+		}).compileComponents();
 	});
-
-	// it('should create', () => {
-	//   expect(component).toBeTruthy();
-	// });
 });

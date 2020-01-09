@@ -3,22 +3,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
-	let component: FooterComponent;
-	let fixture: ComponentFixture<FooterComponent>;
-
-	beforeEach(async(() => {
+	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [FooterComponent],
 		}).compileComponents();
-	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(FooterComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
 	});
 
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
+	it('Component Footer works!', () => {
+		let fixture = TestBed.createComponent(FooterComponent);
+		let component = fixture.debugElement.componentInstance;
+		expect(component).toBeTruthy();
+	});
 });

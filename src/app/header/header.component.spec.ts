@@ -4,35 +4,15 @@ import { HeaderComponent } from './header.component';
 import { HamburguerIconComponent } from './hamburguer-icon/hamburguer-icon.component';
 
 describe('HeaderComponent', () => {
-	let component: HeaderComponent;
-	let hamburguerIcon: HamburguerIconComponent;
-	let fixture: ComponentFixture<HeaderComponent>;
-
-	// beforeEach(async(() => {
-	//   TestBed.configureTestingModule({
-	//     declarations: [HeaderComponent],
-	//   }).compileComponents();
-	// }));
-
-	// beforeEach(() => {
-	//   fixture = TestBed.createComponent(HeaderComponent);
-	//   component = fixture.componentInstance;
-	//   fixture.detectChanges();
-	// });
-
-	// it('should create', () => {
-	//   expect(component).toBeTruthy();
-	// });
-
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [HeaderComponent, HamburguerIconComponent],
 		}).compileComponents();
 	});
 
-	it('test testing', () => {
+	it('Component Header works!', () => {
 		let fixture = TestBed.createComponent(HeaderComponent);
-		let app = fixture.debugElement.componentInstance;
-		expect(app).toBeTruthy();
+		let component = fixture.debugElement.componentInstance;
+		expect(component).toBeTruthy();
 	});
 });
