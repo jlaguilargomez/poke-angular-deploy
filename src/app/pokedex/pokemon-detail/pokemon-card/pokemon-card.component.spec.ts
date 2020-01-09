@@ -1,24 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonCardComponent } from './pokemon-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PokemonCardComponent', () => {
-  let component: PokemonCardComponent;
-  let fixture: ComponentFixture<PokemonCardComponent>;
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [PokemonCardComponent],
+			imports: [HttpClientModule],
+		}).compileComponents();
+	});
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [PokemonCardComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('Component PokemonCardComponent works!', () => {
+		const fixture = TestBed.createComponent(PokemonCardComponent);
+		const component = fixture.debugElement.componentInstance;
+		expect(component).toBeTruthy();
+	});
 });
