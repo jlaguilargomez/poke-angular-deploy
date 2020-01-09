@@ -10,8 +10,8 @@ describe('LandingComponent', () => {
 	});
 
 	it('Component Header works!', () => {
-		let fixture = TestBed.createComponent(LandingComponent);
-		let component = fixture.debugElement.componentInstance;
+		const fixture = TestBed.createComponent(LandingComponent);
+		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});
 });
