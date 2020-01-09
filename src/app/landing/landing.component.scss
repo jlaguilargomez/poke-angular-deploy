@@ -72,13 +72,13 @@
 	width: 100%;
 	.functionalities {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
 		justify-content: center;
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
-			//flex: 3;
+			flex: 3;
 			padding: 50px;
 			&--double {
 				padding: 50px;
@@ -86,13 +86,13 @@
 			}
 			&__img-group {
 				display: flex;
-				flex-flow: row wrap;
+				flex-flow: row nowrap;
 				img {
-					max-height: 280px;
+					max-height: 240px;
 				}
 			}
 			&__img {
-				max-height: 280px;
+				max-height: 240px;
 				border-radius: 15px;
 				display: block;
 				margin: 15px auto;
@@ -124,11 +124,11 @@
 		border-radius: 15px;
 		display: flex;
 		text-transform: uppercase;
+		height: 50px;
 		&__num {
 			background-color: $secondary-color;
 			width: 80px;
 			height: 100%;
-			padding: 12px 0px;
 			border-radius: 15px 0px 0px 15px;
 			display: flex;
 			align-items: center;
@@ -433,12 +433,16 @@
 			font-size: 25px;
 		}
 	}
+	.functionalities {
+		flex-flow: row wrap !important;
+	}
 	.explanation-card {
 		&--double {
 			flex: 2;
 		}
 		&__img-group {
 			flex-flow: row nowrap;
+			max-height: 240px !important;
 			img {
 				max-width: 160px !important;
 			}
@@ -482,6 +486,26 @@
 			font-size: 23px;
 			margin-top: 1vh;
 		}
+	}
+
+	.pokedex-title {
+		&__num {
+			font-size: 18px !important;
+		}
+		&__text {
+			font-size: 13px !important;
+		}
+	}
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+	}
+	.bubble-text {
+		font-size: 12px !important;
+		padding: 15px !important;
 	}
 }
 
@@ -548,7 +572,8 @@
 		&__img-group {
 			flex-flow: row nowrap;
 			img {
-				max-width: 160px !important;
+				max-width: 140px !important;
+				max-height: 180px !important;
 			}
 		}
 		&__img {
@@ -564,6 +589,12 @@
 		}
 	}
 	@media (max-width: 480px) {
+		.functionality-section {
+			.title {
+				font-size: 14px;
+				margin-top: 0;
+			}
+		}
 		.main-bottom {
 			box-sizing: border-box;
 			justify-content: center;
