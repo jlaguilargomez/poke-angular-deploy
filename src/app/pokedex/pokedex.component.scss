@@ -2,14 +2,14 @@
 
 .component-box {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	height: calc(100vh - 100px);
+	min-height: calc(100vh - 100px);
 }
 
 .pokedex {
 	display: flex;
+	// flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
@@ -19,7 +19,8 @@
 	}
 
 	&__pokemon-detail {
-		flex-grow: 2;
+		flex-grow: 3;
+		// display: flex;
 	}
 }
 
