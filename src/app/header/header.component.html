@@ -24,7 +24,11 @@
 			routerLinkActive="menu__item--active"
 			>Home</a
 		>
-		<a class="menu__item" href="#main-down">Info</a>
-		<a class="menu__item" href="#main-down">About us</a>
+		<a class="menu__item" [routerLink]="'landing'" [fragment]="'section-2'"
+			>Info</a
+		>
+		<a class="menu__item" routerLink="/landing" [fragment]="'section-3'"
+			>About us</a
+		>
 	</nav>
 </header>

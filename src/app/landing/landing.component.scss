@@ -72,13 +72,13 @@
 	width: 100%;
 	.functionalities {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
 		justify-content: center;
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
-			//flex: 3;
+			flex: 3;
 			padding: 50px;
 			&--double {
 				padding: 50px;
@@ -86,13 +86,13 @@
 			}
 			&__img-group {
 				display: flex;
-				flex-flow: row wrap;
+				flex-flow: row nowrap;
 				img {
-					max-height: 280px;
+					max-height: 240px;
 				}
 			}
 			&__img {
-				max-height: 280px;
+				max-height: 240px;
 				border-radius: 15px;
 				display: block;
 				margin: 15px auto;
@@ -105,6 +105,10 @@
 			color: #202020;
 			text-align: justify;
 		}
+	}
+	.svg-wrapper {
+		position: absolute;
+		bottom: 0;
 	}
 	&__wave {
 		position: absolute;
@@ -124,11 +128,11 @@
 		border-radius: 15px;
 		display: flex;
 		text-transform: uppercase;
+		height: 50px;
 		&__num {
 			background-color: $secondary-color;
 			width: 80px;
 			height: 100%;
-			padding: 12px 0px;
 			border-radius: 15px 0px 0px 15px;
 			display: flex;
 			align-items: center;
@@ -305,8 +309,8 @@
 .main-bottom {
 	position: relative;
 	display: flex;
+	height: calc(100vh - 50px);
 	flex-direction: column;
-	height: calc(100vh - 100px);
 	background-color: $primary-color;
 	overflow: hidden;
 	&__wave {
@@ -316,15 +320,16 @@
 	&__rights {
 		width: 100%;
 		height: 3%;
-		font-size: 15px;
+		font-size: 12px;
 		text-align: center;
 		color: white;
-		margin: 10em 0em 1em 0em;
+		margin-bottom: 15px;
 	}
 }
 .title {
 	width: 100%;
 	height: 23%;
+	font-weight: bold;
 	font-size: 40px;
 	text-align: center;
 	text-transform: uppercase;
@@ -338,9 +343,9 @@
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
-	max-width: 1000px;
-	height: auto;
+	margin: 20px auto;
+	margin-top: 50px;
+	max-width: 1500px;
 	background-color: $primary-color;
 }
 
@@ -348,8 +353,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
-	height: 300px;
+	width: 260px;
+	height: 260px;
 	margin: 0 15px;
 
 	&__container {
@@ -389,6 +394,7 @@
 		height: 70%;
 		border-radius: 50%;
 		transform: rotateY(180deg);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 		background-color: rgba(85, 85, 85, 0.5);
 		background-image: url(../../assets/img/pokeball-card.png);
 		opacity: 0.5;
@@ -402,6 +408,7 @@
 		}
 	}
 	&__image {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 		width: 70%;
 		height: auto;
 		border-radius: 50%;
@@ -428,10 +435,11 @@
 			font-size: 14px;
 		}
 	}
-	.functionality-section {
-		.title {
-			font-size: 25px;
-		}
+	.title {
+		font-size: 25px;
+	}
+	.functionalities {
+		flex-flow: row wrap !important;
 	}
 	.explanation-card {
 		&--double {
@@ -439,12 +447,32 @@
 		}
 		&__img-group {
 			flex-flow: row nowrap;
+			max-height: 240px !important;
 			img {
 				max-width: 160px !important;
 			}
 		}
 		&__img {
 			max-width: 160px !important;
+		}
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		height: auto;
+	}
+	.card {
+		width: 250px;
+		height: 250px;
+		&__front {
+			&--text {
+				font-size: 18px;
+			}
+		}
+		&__back {
+			&--text {
+				font-size: 17px;
+			}
 		}
 	}
 }
@@ -477,10 +505,43 @@
 			}
 		}
 	}
-	.functionality-section {
-		.title {
-			font-size: 23px;
-			margin-top: 1vh;
+	.title {
+		font-size: 23px;
+		margin-top: 1vh;
+	}
+
+	.pokedex-title {
+		&__num {
+			font-size: 18px !important;
+		}
+		&__text {
+			font-size: 13px !important;
+		}
+	}
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+	}
+	.bubble-text {
+		font-size: 12px !important;
+		padding: 15px !important;
+	}
+	.info {
+		margin: 50px auto;
+	}
+	.card {
+		&__front {
+			&--text {
+				font-size: 18px;
+			}
+		}
+		&__back {
+			&--text {
+				font-size: 18px;
+			}
 		}
 	}
 }
@@ -531,14 +592,10 @@
 			}
 		}
 	}
-
-	.functionality-section {
-		.title {
-			font-size: 18px;
-			margin-top: 0;
-		}
+	.title {
+		font-size: 18px !important;
+		margin-top: 1vh !important;
 	}
-
 	.explanation-card {
 		padding: 20px !important;
 		&--double {
@@ -548,50 +605,37 @@
 		&__img-group {
 			flex-flow: row nowrap;
 			img {
-				max-width: 160px !important;
+				max-width: 140px !important;
+				max-height: 180px !important;
 			}
 		}
 		&__img {
 			max-width: 160px !important;
 		}
-		.main-bottom {
-			box-sizing: border-box;
-			justify-content: center;
-			&__rights {
-				margin-bottom: 0em;
-				font-size: 10px;
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		height: auto;
+		&__rights {
+			font-size: 8px;
+		}
+	}
+	.card {
+		width: 220px !important;
+		height: 220px !important;
+		&__front {
+			&--text {
+				font-size: 15px;
+			}
+		}
+		&__back {
+			&--text {
+				font-size: 14px;
 			}
 		}
 	}
-	@media (max-width: 480px) {
-		.main-bottom {
-			box-sizing: border-box;
-			justify-content: center;
-			height: auto;
-			&__rights {
-				margin-bottom: 0em;
-				font-size: 8px;
-			}
-		}
-		.info {
-			max-width: 400px;
-		}
-	}
-	@media (max-width: 3000px) {
-		.main-bottom {
-			box-sizing: border-box;
-			justify-content: center;
-			&__rights {
-				margin-bottom: 0em;
-				font-size: 20px;
-			}
-		}
-		.info {
-			max-width: 1500px;
-		}
-		.card {
-			width: 350px;
-			height: 350px;
-		}
+	.info {
+		max-width: 400px;
 	}
 }
