@@ -1,24 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonMapComponent } from './pokemon-map.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('PokemonMapComponent', () => {
-	let component: PokemonMapComponent;
-	let fixture: ComponentFixture<PokemonMapComponent>;
-
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [PokemonMapComponent],
-		}).compileComponents();
-	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(PokemonMapComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
-
-	// it('should create', () => {
-	//   expect(component).toBeTruthy();
+	// beforeEach(() => {
+	// 	TestBed.configureTestingModule({
+	// 		declarations: [PokemonMapComponent],
+	// 		providers: [ActivatedRoute]
+	// 	}).compileComponents();
+	// });
+	// it('Component Header works!', () => {
+	// 	let fixture = TestBed.createComponent(PokemonMapComponent);
+	// 	let component = fixture.debugElement.componentInstance;
+	// 	expect(component).toBeTruthy();
 	// });
 });
