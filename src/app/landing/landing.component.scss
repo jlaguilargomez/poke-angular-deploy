@@ -600,13 +600,17 @@
 			&__rights {
 				font-size: 8px;
 			}
-			.card {
-				width: 220px !important;
-				height: 220px !important;
+		}
+		.card {
+			width: 220px !important;
+			height: 220px !important;
+			&--text {
+				font-size: 15px;
 			}
 		}
 		.info {
 			max-width: 400px;
+			background-color: yellow;
 		}
 	}
 
