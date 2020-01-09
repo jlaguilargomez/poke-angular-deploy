@@ -72,10 +72,6 @@
 	}
 }
 
-.card:hover .card__inner {
-	transform: rotateY(180deg);
-}
-
 /* END Fliplogic */
 
 // Text General
@@ -213,4 +209,33 @@
 	margin: 0 auto;
 	border-radius: 25px;
 	height: 40px;
+}
+
+//MEDIA
+
+@media (max-height: 650px) {
+	.title {
+		font-size: 1em; //Pending general styles
+	}
+
+	.subtitle {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 768px) {
+	.card__front,
+	.card__back {
+		position: static;
+	}
+	.card__back {
+		backface-visibility: visible;
+		transform: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.card:hover .card__inner {
+		transform: rotateY(180deg);
+	}
 }
