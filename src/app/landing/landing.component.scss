@@ -309,8 +309,8 @@
 .main-bottom {
 	position: relative;
 	display: flex;
+	height: 100vh;
 	flex-direction: column;
-	height: calc(100vh - 100px);
 	background-color: $primary-color;
 	overflow: hidden;
 	&__wave {
@@ -342,7 +342,8 @@
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
+	margin: 20px auto;
+	margin-top: 50px;
 	max-width: 1000px;
 	height: auto;
 	background-color: $primary-color;
@@ -352,8 +353,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
-	height: 300px;
+	width: 260px;
+	height: 260px;
 	margin: 0 15px;
 
 	&__container {
@@ -610,13 +611,17 @@
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1300px) {
 		.main-bottom {
 			box-sizing: border-box;
 			justify-content: center;
 			&__rights {
 				margin-bottom: 0em;
 				font-size: 20px;
+			}
+			.card {
+				width: 300px !important;
+				height: 300px !important;
 			}
 		}
 		.info {
