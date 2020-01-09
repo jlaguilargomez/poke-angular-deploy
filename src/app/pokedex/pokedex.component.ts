@@ -22,7 +22,7 @@ export class PokedexComponent implements OnInit {
 			this.pokemons = dataSet;
 			setTimeout(() => {
 				this.pokemonLoaded = true;
-			}, 200000);
+			}, 200);
 		});
 	}
 }
