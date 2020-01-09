@@ -35,6 +35,7 @@
 @media (max-width: 768px) {
 	.container {
 		width: 90vw;
+		padding-left: 2rem;
 	}
 	.panel {
 		min-width: 0;
@@ -43,5 +44,11 @@
 		&__info {
 			width: 100%;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0.5rem;
 	}
 }
