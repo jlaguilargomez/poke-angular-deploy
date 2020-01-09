@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandingComponent } from './landing.component';
+import { FooterComponent } from './footer.component';
 
-describe('LandingComponent', () => {
+describe('FooterComponent', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			declarations: [LandingComponent],
+			declarations: [FooterComponent],
 		}).compileComponents();
 	});
 
-	it('Component Header works!', () => {
-		const fixture = TestBed.createComponent(LandingComponent);
+	it('Component Footer works!', () => {
+		const fixture = TestBed.createComponent(FooterComponent);
 		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});

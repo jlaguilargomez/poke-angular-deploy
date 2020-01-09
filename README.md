@@ -1,3 +1,121 @@
+### GIT FLOW
+
+El presente repo del proyecto **_poke-angular-api_** se compone de una rama principal `develop`, sobre la que sale nuestra rama **master** `feature\develop-group-3` (así como las del resto de grupos). De esta se ha creado la rama `develop-3`, que es sobre la que haremos las `pull request` de nuestros desarrollos en base a la siguiente sintaxis:
+
+`feature-3_name-of-feature`
+
+![image](/uploads/d6e969522b583dfeef8c91358b58e749/image.png)
+
+En caso de dudas de cómo funciona la metodología _git flow_, echar un ojo al siguiente artículo: https://gfourmis.co/gitflow-sin-morir-en-el-intento/
+
+**IMPORTANTE: el proceso de trabajo para cualquier desarrollo será siempre el siguiente:**
+
+1.  Crear una rama local `git checkout -b`feature-3_name-of-feature`
+2.  Traerse el repo de GitLab a nuestra rama para poder trabajar con la última versión del proyecto: `git pull origin develop-3`
+3.  Trabajar en el desarrollo de la _feature_ seleccionada hasta cumplir con las expectativas establecidad. **_No incluir trabajo adicional que no esté relacionado con la "feature" sobre la que estamos trabajando_**.
+4.  Commitear cambios de forma periódica para poder ir generando un proceso de trabajo que sea facilmente identificable para futuras revisiones. NOTA: los commits deben ser identificativos en su descripción y usando siempre verbos en presente.
+5.  Antes de lanzar la pull request, traerse la última versión de los cambios del proyecto a local `git pull origin develop-3` y solucionar los posibles conflictos existentes entre archivos
+6.  Una vez que los conflictos se han resuelto, lanzar la _pull request_: `git push origin feature-3_name-of-feature`
+7.  Ir al repo del proyecto y en clicar en "merge request"
+
+![image](/uploads/52234716a1569061ee0baaf7043a1d8e/image.png)
+
+Seleccionar el _branch_ en el que hemos trabajado y solicitar una **_merge request_** sobre `develop-3`
+
+![image](/uploads/32aaaf1e26f8e90dd65300db54d5ea97/image.png)
+
+8.  Mover nuestra tarjeta de Trello de _to do_ a _to review_.
+9.  Estar pendiente de la revisión de la tarea por parte de nuestros compañeros. En caso de que haga falta una revisión de la tarea, trabajar sobre ella y darle solución lo antes posible. Iniciar el proceso una vez que hayamos terminado.
+10. ¡Trabajo terminado!, ¡bien hecho!, ahora ya puedes seleccionar una nueva tarea para desarrollar.
+
+---
+
+### TRELLO
+
+La gestión del trabajo en curso se llevará a cabo mediante el siguiente tablero de trello: https://trello.com/invite/b/7tyYNYmQ/6995c7fde94bd8ba02c7178feed3c0ac/poke-angular.
+
+Las iteraciones o sprints del proyecto se atrupan en la pestaña **_Iterations_**, donde están asignados todos los miembros del equipo y que muestra los hitos pendientes del sprint semanal:
+
+![image](/uploads/e502bf4adaba76be3a40f4b11d7bd5f0/image.png)
+
+Estos hitos definirán la pila del **_backlog_**, agrupados en la pestaña **_to do_**.
+
+Al asignarse una tarea o "feature", se deberá crear una **etiqueta** con el nombre de esta que coincidirá con el "branch" en el que se llevará a cabo el desarrollo de la misma. El formato será el siguiente:
+
+`feature-3_name-of-feature`
+
+![image](/uploads/d6c9fba33268532d9cfd1345bb21271c/image.png)
+
+Una vez finalizada la tarea y lanzada la `pull-request`, se llevará la tarea a la lista **_to review_** para que el resto de compañeros del equipo sepan que debe ser revisada antes del merge final sobre `develop-3`.
+
+---
+
+### PROCESO TRABAJO
+
+- _No trabajar en características o desarrollos que no correspondan con la rama sobre la que estamos llevando a cabo nuestra tarea_
+
+---
+
+### GENERAL
+
+El proyecto cuenta con un formateador de código (**Prettier**) y un programa de lintado automático (**TSLint**) instalados.
+
+![image](/uploads/37fb2aa85e9d3d580548c6d6e529fcfa/image.png)
+
+_Prettier_
+https://www.npmjs.com/package/prettier
+
+_TSLint_
+https://www.npmjs.com/package/tslint
+
+Mediante Husky, se han añadido algunas reglas para que se autoformatee de forma adecuada en los siguientes casos:
+
+`"pre-commit": "pretty-quick --staged"`
+
+`"pre-push": "ng lint"`
+
+La configuración de TSLint se encuentra en `tslint.json` y la de prettier en `prettierrc`, ambos en la raíz de proyecto. Para modificar la forma en la que actúan estos deberá haber un consenso entre los integrantes del proyecto.
+
+---
+
+![image](/uploads/04be5c2f767b5264b876f59b48c5370d/image.png)
+
+Se usará, en la medida de lo posible, HTML5 semántico, evitando la reiteración de etiquetas `<div>` y `<p>` y en su lugar usando aquellas que más describan el elemento sobre el que estamos trabajando.
+
+En caso de ayudar, utilizar la siguiente guía:
+
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+---
+
+![image](/uploads/7aaa3c9e63f77289bafd1b42f3ac8b4c/image.png)
+
+El proyecto se llevará a cabo mediante SASS y siguiendo la metodología BEM (http://getbem.com/introduction/), prestando especial atención a la forma en la que se declaran BLOQUES, ELEMENTOS y MODIFICADORES.
+
+**Para mejorar la especificidad de los selectores, se tendrán en cuenta las siguientes normas:**
+
+- No se usarán ID's ni elementos (salvo para estilos generales definidos por proyecto. p.ej: `body {font-size: 16px}` como selectores y siguiendo BEM.
+
+En la raíz del proyecto, además del archivo `style.scss`, se ha creado un `reset.scss` y otro `commonStyles.scss`.
+
+- Como norma general se usará kebap-case para el nombrado de elementos en SCSS combinado con la metodología BEM.
+
+El archivo _reset_ resetea todo el formato previo que pueda existit en el navegador por defecto, y el de _commonStyles_ se encarga de importar este y de generar unos estilos globales para todo el proyecto, como las variables y aquellos estilos sobre selectores que vamos a utilizar de forma redundante. **_Este estilo siempre se importará en todas las hojas de estilo que se creen `@import '../../commonStyles.scss';`_**
+
+Se maquetará aplicando `display:flex` para un código más limpio y que sea más sencilla la aplicación del responsive. Puede servir como bibliografía de consulta el siguiente enlace : https://css-tricks.com/snippets/css/a-guide-to-flexbox/ donde se explican todos los casos y se exponen **_ejemplos visuales_** de su funcionamiento.
+
+---
+
+![image](/uploads/12cfccd434a68ad279bc639a4ea26b43/image.png)
+
+Se tendrá en cuenta lo ya comentado del formateo en cada commit por parte de _prettier_ y además, durante la escritura de código se deberá llevar a cabo las siguientes prácticas:
+
+- Dado que el proyecto cuenta con transcriptores de JS, todo el proyecto se realiza con TypeScript y siguiendo los estándares de ES6 en cuanto al uso de nuevas funcionalidad, variables (let y const) ...
+- Se usará `;` al finalizar cada línea de código.
+- En general se usará camelCase como convención en el nombrado de variables en TypeScript.
+
+---
+
 # PokeAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
