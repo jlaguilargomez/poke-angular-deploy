@@ -295,14 +295,9 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	<<<<<<<HEAD
-	height: calc(100vh - 50px);
-	=======// width: 100%;
-	// min-height: calc(100vh - 70px);
->>>>>>> 6a2db7cdfafc09a5f189af7bb47659535c63ee52
+	height: calc(100vh - 100px);
 	background-color: $primary-color;
 	overflow: hidden;
-	// padding: 1em 0;
 	&__wave {
 		position: absolute;
 		top: 0;
@@ -401,39 +396,6 @@
 		border-radius: 50%;
 	}
 }
-.card-back {
-	background-color: rgba(85, 85, 85, 0.5);
-	background-image: url(../../assets/img/pokeball-bg.svg);
-	background-repeat: no-repeat;
-	background-size: 60%;
-	background-position: 0 100%;
-	color: white;
-	width: 300px;
-	height: 300px;
-	border-radius: 50%;
-	transform: rotateY(180deg);
-	p {
-		width: 100%;
-		height: 23%;
-		font-size: 22px;
-		text-align: center;
-		color: white;
-	}
-}
-.card-image {
-	width: 70%;
-	height: auto;
-	border-radius: 50%;
-}
-
-// .rights-text{
-// 	width: 100%;
-// 	height: 5%;
-// 	font-size: 15px;
-// 	text-align: center;
-// 	color: white;
-// 	margin-bottom: 1em;
-// }
 
 @media (max-width: 1024px) {
 	.oak-professor {
@@ -458,24 +420,33 @@
 	.main-bottom {
 		box-sizing: border-box;
 		justify-content: center;
-		height: auto;
+		&__rights {
+			margin-bottom: 0em;
+			font-size: 10px;
+		}
 	}
 }
 @media (max-width: 480px) {
-	.header {
-		margin: 0em 0em 1em 0em;
-	}
 	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
 		height: auto;
+		&__rights {
+			margin-bottom: 0em;
+			font-size: 8px;
+		}
+	}
+	.info {
+		max-width: 400px;
 	}
 }
 @media (max-width: 3000px) {
 	.main-bottom {
 		box-sizing: border-box;
 		justify-content: center;
-		height: auto;
 		&__rights {
-			margin: 1em;
+			margin-bottom: 0em;
+			font-size: 20px;
 		}
 	}
 	.info {

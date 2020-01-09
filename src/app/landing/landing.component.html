@@ -87,7 +87,6 @@
 	</div>
 </section>
 
-<<<<<<< HEAD
 <section class="main-bottom">
 	<svg
 		class="main-bottom__wave"
@@ -102,111 +101,21 @@
 	</svg>
 	<h2 class="title">our team</h2>
 	<div class="info">
-		<div class="card">
+		<div class="card" *ngFor="let person of team">
 			<div class="card__container">
 				<div class="card__front">
-					<img class="card__image" src="../../assets/img/icon-profile1.png" />
-					<h3 class="card__front--text">Jose Angel Cívico Martos</h3>
+					<img class="card__image" [src]="person.img" />
+					<h3 class="card__front--text">{{ person.name }}</h3>
 				</div>
 				<div class="card__back">
-					<p class="card__back--text">Jose Angel Cívico Martos</p>
-					<p class="card__back--text">Software Developer</p>
-					=======
-					<section id="main-down" class="main-down">
-						<div class="main-down-title">
-							<p class="title">our team</p>
-						</div>
-						<div class="main-down-info">
-							<div class="main-down-info-first">
-								<div class="card-container">
-									<div class="card">
-										<div class="card-inner">
-											<div class="card-front">
-												<img
-													class="card-image"
-													src="../../assets/img/person-icon.png"
-												/>
-												<h1>Jose Angel Cívico Martín</h1>
-											</div>
-											<div class="card-back">
-												<br /><br />
-												<br /><br />
-												<p>Jose Angel Cívico Martín</p>
-												<p>Software Developer</p>
-											</div>
-										</div>
-										>>>>>>> 6a2db7cdfafc09a5f189af7bb47659535c63ee52
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card__container">
-									<div class="card__front">
-										<img
-											class="card__image"
-											src="../../assets/img/icon-profile2.jpg"
-										/>
-										<h3 class="card__front--text">Gabriel García Rodríguez</h3>
-									</div>
-									<div class="card__back">
-										<p class="card__back--text">Gabriel García Rodríguez</p>
-										<p class="card__back--text">Software Developer</p>
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card__container">
-									<div class="card__front">
-										<img
-											class="card__image"
-											src="../../assets/img/icon-profile3.jpg"
-										/>
-										<h3 class="card__front--text">Guadalupe García Plaza</h3>
-									</div>
-									<div class="card__back">
-										<p class="card__back--text">Guadalupe García Plaza</p>
-										<p class="card__back--text">Software Developer</p>
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card__container">
-									<div class="card__front">
-										<img
-											class="card__image"
-											src="../../assets/img/guybrush_small.jpg"
-										/>
-										<h3 class="card__front--text">Jose Luis Aguilar Gómez</h3>
-									</div>
-									<div class="card__back">
-										<p class="card__back--text">Jose Luis Aguilar Gómez</p>
-										<p class="card__back--text">Software Developer</p>
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card__container">
-									<div class="card__front">
-										<img
-											class="card__image"
-											src="../../assets/img/icon-profile3.jpg"
-										/>
-										<h3 class="card__front--text">Juan Pablo Amador Díaz</h3>
-									</div>
-									<div class="card__back">
-										<p class="card__back--text">Juan Pablo Amador Díaz</p>
-										<p class="card__back--text">Software Developer</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<p class="main-bottom__rights">
-							This is a not-for-profit project. None of the images used in this
-							projects below us. All rights are reserved to The Pokemon Company
-						</p>
-					</section>
+					<p class="card__back--text">{{ person.name }}</p>
+					<p class="card__back--text">{{ person.position }}</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	<p class="main-bottom__rights">
+		This is a not-for-profit project. None of the images used in this projects
+		below us. All rights are reserved to The Pokemon Company
+	</p>
 </section>
