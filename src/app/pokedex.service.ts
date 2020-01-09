@@ -61,6 +61,7 @@ export class PokedexService {
 		Promise.all(this.promises).then((newPokemon: Pokemon[]) => {
 			this.pokemonsLoaded.next(newPokemon);
 			this.pokemonList = newPokemon;
+			console.log(this.pokemonList);
 		});
 	}
 
@@ -70,5 +71,9 @@ export class PokedexService {
 
 	getPokemon(index) {
 		return this.pokemonList[index];
+	}
+
+	testConection() {
+		return 'it works!';
 	}
 }

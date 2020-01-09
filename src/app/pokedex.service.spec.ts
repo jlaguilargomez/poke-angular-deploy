@@ -1,24 +1,30 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { PokedexService } from './pokedex.service';
+import { HttpClientModule } from '@angular/common/http';
 
-// describe('PokedexService', () => {
-//   let pokedexService: PokedexService;
+describe('Service: PokedexService', () => {
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			imports: [HttpClientModule],
+		});
+	});
 
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [PokedexService]
-//     })
-//   });
+	it('should check if the test is correctly config', inject(
+		[PokedexService, HttpClientModule],
+		(service: PokedexService) => {
+			expect(service.testConection()).toBe('it works!');
+		}
+	));
 
-//   pokedexService = TestBed.get(PokedexService);
+	it('the service works correctly', inject(
+		[PokedexService],
+		(service: PokedexService) => {
+			expect(service).toBeTruthy();
+		}
+	));
 
-//   it('should be created', () => {
-//     expect(pokedexService).toBeTruthy();
-//   });
-// 	// beforeEach(() => TestBed.configureTestingModule({}));
-// 	// it('should be created', () => {
-// 	//   const service: PokedexService = TestBed.get(PokedexService);
-// 	//   expect(service).toBeTruthy();
-// 	// });
-// });
+	it('', inject([PokedexService], (service: PokedexService) => {
+		expect(service.getPokemonList()).toBeTruthy();
+	}));
+});
