@@ -9,9 +9,10 @@
 		</svg>
 	</div>
 
-	<div class="oak-professor">
-		<img class="oak-professor__image" src="../../assets/img/pokemon-prof.png" />
-		<img class="oak-professor__pokemon" [src]="imgSource" alt="" />
+	<div class="titles">
+		<h1 class="titles__title--black">Discover</h1>
+		<h1 class="titles__title--gray">Learn</h1>
+		<h1 class="titles__title--red">Explore</h1>
 	</div>
 
 	<div class="btn-landing">
@@ -19,10 +20,10 @@
 			><span class="quote"></span>Find your Pokemon</a
 		>
 	</div>
-	<div class="titles">
-		<h1 class="titles__title--black">Discover</h1>
-		<h1 class="titles__title--gray">Learn</h1>
-		<h1 class="titles__title--red">Explore</h1>
+
+	<div class="oak-professor">
+		<img class="oak-professor__image" src="../../assets/img/pokemon-prof.png" />
+		<img class="oak-professor__pokemon" [src]="imgSource" alt="" />
 	</div>
 </section>
 
@@ -60,11 +61,19 @@
 				<div class="pokedex-title__num"><span>2</span></div>
 				<p class="pokedex-title__text">Analyse your selected Pokemon...</p>
 			</div>
-			<img
-				class="explanation-card__img"
-				src="assets/img/functionality-2.jpg"
-				alt=""
-			/>
+
+			<div class="explanation-card__img-group">
+				<img
+					class="explanation-card__img"
+					src="assets/img/functionality-2_1.jpg"
+					alt=""
+				/>
+				<img
+					class="explanation-card__img"
+					src="assets/img/functionality-2_2.jpg"
+					alt=""
+				/>
+			</div>
 			<div class="bubble-text">
 				Just point the cursor on the card and you will see all the data
 				available: Name, ability, height, weight, types and stats!

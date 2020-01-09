@@ -3,7 +3,7 @@
 .intro-section {
 	position: relative;
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	height: calc(100vh - 70px);
 	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
@@ -73,16 +73,26 @@
 	.functionalities {
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
-			flex: 3;
+			align-items: center;
+			//flex: 3;
 			padding: 50px;
 			&--double {
 				padding: 50px;
 				flex: 4;
 			}
+			&__img-group {
+				display: flex;
+				flex-flow: row wrap;
+				img {
+					max-height: 280px;
+				}
+			}
 			&__img {
+				max-height: 280px;
 				border-radius: 15px;
 				display: block;
 				margin: 15px auto;
@@ -106,6 +116,7 @@
 		top: 0;
 		margin-top: 3vh;
 		font-weight: bold;
+		transition: 0.7s;
 	}
 
 	.pokedex-title {
@@ -417,43 +428,170 @@
 			font-size: 14px;
 		}
 	}
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		&__rights {
-			margin-bottom: 0em;
-			font-size: 10px;
+	.functionality-section {
+		.title {
+			font-size: 25px;
+		}
+	}
+	.explanation-card {
+		&--double {
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			img {
+				max-width: 160px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
 		}
 	}
 }
-@media (max-width: 480px) {
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		height: auto;
-		&__rights {
-			margin-bottom: 0em;
-			font-size: 8px;
+
+@media (max-width: 768px) {
+	.btn-landing {
+		position: absolute;
+		bottom: 50%;
+	}
+	.intro-section {
+		.titles {
+			padding: 0px;
+			padding-top: 20px;
+			margin: 0 auto;
+			width: 60vw;
+			line-height: 45px;
+			h1 {
+				font-size: 43px;
+			}
+			&__title {
+				&--black {
+					text-align: left;
+				}
+				&--gray {
+					text-align: left;
+				}
+				&--red {
+					text-align: left;
+				}
+			}
 		}
 	}
-	.info {
-		max-width: 400px;
+	.functionality-section {
+		.title {
+			font-size: 23px;
+			margin-top: 1vh;
+		}
 	}
 }
-@media (max-width: 3000px) {
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		&__rights {
-			margin-bottom: 0em;
-			font-size: 20px;
+
+@media screen and (max-width: 480px) {
+	.oak-professor {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		&__image {
+			max-width: 99px;
+			height: auto;
+			position: static;
+			display: block;
+			margin: 0 auto;
+		}
+		&__pokemon {
+			max-width: 100px;
+			height: auto;
+			position: absolute;
+			display: block;
+			margin: 0 auto;
 		}
 	}
-	.info {
-		max-width: 1500px;
+	.btn-landing {
+		position: static;
+		width: 210px;
+		display: block;
+		margin: 20px auto;
+		&__link {
+			font-size: 14px;
+			padding: 10px 20px;
+		}
+		.quote {
+			&:before {
+				left: -30px;
+			}
+			&:after {
+				left: 10px;
+			}
+		}
+		&:hover {
+			.quote:before {
+				left: 10px;
+			}
+			.quote:after {
+				left: 35px;
+			}
+		}
 	}
-	.card {
-		width: 350px;
-		height: 350px;
+
+	.functionality-section {
+		.title {
+			font-size: 18px;
+			margin-top: 0;
+		}
+	}
+
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			img {
+				max-width: 160px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
+		}
+		.main-bottom {
+			box-sizing: border-box;
+			justify-content: center;
+			&__rights {
+				margin-bottom: 0em;
+				font-size: 10px;
+			}
+		}
+	}
+	@media (max-width: 480px) {
+		.main-bottom {
+			box-sizing: border-box;
+			justify-content: center;
+			height: auto;
+			&__rights {
+				margin-bottom: 0em;
+				font-size: 8px;
+			}
+		}
+		.info {
+			max-width: 400px;
+		}
+	}
+	@media (max-width: 3000px) {
+		.main-bottom {
+			box-sizing: border-box;
+			justify-content: center;
+			&__rights {
+				margin-bottom: 0em;
+				font-size: 20px;
+			}
+		}
+		.info {
+			max-width: 1500px;
+		}
+		.card {
+			width: 350px;
+			height: 350px;
+		}
 	}
 }
