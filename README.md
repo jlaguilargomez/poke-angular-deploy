@@ -1,3 +1,5 @@
+### POKEAPI v.1.0.0
+
 ### GIT FLOW
 
 El presente repo del proyecto **_poke-angular-api_** se compone de una rama principal `develop`, sobre la que sale nuestra rama **master** `feature\develop-group-3` (así como las del resto de grupos). De esta se ha creado la rama `develop-3`, que es sobre la que haremos las `pull request` de nuestros desarrollos en base a la siguiente sintaxis:
