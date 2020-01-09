@@ -2,16 +2,20 @@
 
 .container {
 	padding: 2rem;
+	display: flex;
+	justify-content: center;
 
 	&--selected {
 		height: 100%;
 		background-color: #db4545;
 		border-radius: 20px;
 		padding: 2rem;
+		width: 100%;
 	}
 
 	&--no-selected {
-		width: 55%;
+		width: 30vw;
+		min-width: 250px;
 	}
 }
 
@@ -31,6 +35,7 @@
 @media (max-width: 768px) {
 	.container {
 		width: 90vw;
+		padding-left: 2rem;
 	}
 	.panel {
 		min-width: 0;
@@ -39,5 +44,11 @@
 		&__info {
 			width: 100%;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0.5rem;
 	}
 }

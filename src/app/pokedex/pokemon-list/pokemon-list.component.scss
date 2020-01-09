@@ -153,3 +153,15 @@
 		}
 	}
 }
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0.5rem;
+	}
+
+	.elem {
+		&__name {
+			padding-left: 10px;
+		}
+	}
+}
