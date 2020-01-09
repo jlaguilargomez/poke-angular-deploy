@@ -1,11 +1,18 @@
-<div class="component-box" *ngIf="pokemonLoaded; else loading">
-	<app-pokemon-list class="pokemon-list"></app-pokemon-list>
-	<div class="pokemon-detail">
-		<router-outlet></router-outlet>
+<div class="component-box">
+	<div class="pokedex" *ngIf="pokemonLoaded; else loading">
+		<app-pokemon-list class="pokedex__pokemon-list"></app-pokemon-list>
+		<div class="pokedex__pokemon-detail">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+	<div>
+		<ng-template #loading>
+			<div class="loading-pokeball">
+				<img
+					class="loading-pokeball__gif"
+					src="assets/img/loading-pokeball.gif"
+				/>
+			</div>
+		</ng-template>
 	</div>
 </div>
-<ng-template #loading>
-	<div class="loading-pokeball">
-		<img class="loading-pokeball__gif" src="assets/img/loading-pokeball.gif" />
-	</div>
-</ng-template>

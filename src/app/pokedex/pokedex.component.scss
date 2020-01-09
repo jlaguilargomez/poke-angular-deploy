@@ -3,22 +3,28 @@
 .component-box {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	height: 100%;
 }
 
-.pokemon-list {
-	flex-grow: 1;
-	// min-width: 350px;
-}
+.pokedex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 
-.pokemon-detail {
-	flex-grow: 2;
+	&__pokemon-list {
+		flex-grow: 1;
+	}
+
+	&__pokemon-detail {
+		flex-grow: 2;
+	}
 }
 
 .loading-pokeball {
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	&__gif {
