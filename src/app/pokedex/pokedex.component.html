@@ -1,8 +1,5 @@
 <div class="component-box" *ngIf="pokemonLoaded; else loading">
-	<app-pokemon-list
-		class="pokemon-list"
-		[pokemonList]="pokemons"
-	></app-pokemon-list>
+	<app-pokemon-list class="pokemon-list"></app-pokemon-list>
 	<div class="pokemon-detail">
 		<router-outlet></router-outlet>
 	</div>

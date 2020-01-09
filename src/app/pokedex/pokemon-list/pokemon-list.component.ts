@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PokedexService } from 'src/app/pokedex.service';
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -7,11 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 	styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
-	@Input() pokemonList: object[];
-
 	public searchPokemonName: string;
 
-	constructor(private router: Router) {}
+	constructor(private router: Router, private pokedexService: PokedexService) {}
+
+	private pokemonList: object[] = this.pokedexService.getPokemonList();
 
 	renderPokemon(index) {
 		this.router.navigate(['pokedex', index + 1]);
