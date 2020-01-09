@@ -9,9 +9,10 @@
 		</svg>
 	</div>
 
-	<div class="oak-professor">
-		<img class="oak-professor__image" src="../../assets/img/pokemon-prof.png" />
-		<img class="oak-professor__pokemon" [src]="imgSource" alt="" />
+	<div class="titles">
+		<h1 class="titles__title--black">Discover</h1>
+		<h1 class="titles__title--gray">Learn</h1>
+		<h1 class="titles__title--red">Explore</h1>
 	</div>
 
 	<div class="btn-landing">
@@ -19,10 +20,10 @@
 			><span class="quote"></span>Find your Pokemon</a
 		>
 	</div>
-	<div class="titles">
-		<h1 class="titles__title--black">Discover</h1>
-		<h1 class="titles__title--gray">Learn</h1>
-		<h1 class="titles__title--red">Explore</h1>
+
+	<div class="oak-professor">
+		<img class="oak-professor__image" src="../../assets/img/pokemon-prof.png" />
+		<img class="oak-professor__pokemon" [src]="imgSource" alt="" />
 	</div>
 </section>
 
@@ -60,11 +61,19 @@
 				<div class="pokedex-title__num"><span>2</span></div>
 				<p class="pokedex-title__text">Analyse your selected Pokemon...</p>
 			</div>
-			<img
-				class="explanation-card__img"
-				src="assets/img/functionality-2.jpg"
-				alt=""
-			/>
+
+			<div class="explanation-card__img-group">
+				<img
+					class="explanation-card__img"
+					src="assets/img/functionality-2_1.jpg"
+					alt=""
+				/>
+				<img
+					class="explanation-card__img"
+					src="assets/img/functionality-2_2.jpg"
+					alt=""
+				/>
+			</div>
 			<div class="bubble-text">
 				Just point the cursor on the card and you will see all the data
 				available: Name, ability, height, weight, types and stats!
@@ -73,7 +82,7 @@
 		<div class="explanation-card">
 			<div class="pokedex-title">
 				<div class="pokedex-title__num"><span>3</span></div>
-				<p class="pokedex-title__text">And search for them!</p>
+				<p class="pokedex-title__text">And catch 'em all!</p>
 			</div>
 			<img
 				class="explanation-card__img"
@@ -87,96 +96,34 @@
 	</div>
 </section>
 
-<section id="main-down" class="main-down">
-	<div class="main-down-title">
-		<p class="title">our team</p>
-	</div>
-	<div class="main-down-info">
-		<div class="main-down-info-first">
-			<div class="card-container">
-				<div class="card">
-					<div class="card-inner">
-						<div class="card-front">
-							<img class="card-image" src="../../assets/img/person-icon.png" />
-							<h1>Jose Angel Cívico Martín</h1>
-						</div>
-						<div class="card-back">
-							<br /><br />
-							<br /><br />
-							<p>Jose Angel Cívico Martín</p>
-							<p>Software Developer</p>
-						</div>
-					</div>
+<section class="main-bottom">
+	<svg
+		class="main-bottom__wave"
+		viewBox="0 0 1599 126"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M0 100.937V0H1599V75.5C1151.5 134.5 736.806 144.614 312.5 86C149.091 63.4266 25.7633 73.8967 0 100.937Z"
+			fill="#273036"
+		/>
+	</svg>
+	<h2 class="title">our team</h2>
+	<div class="info">
+		<div class="card" *ngFor="let person of team">
+			<div class="card__container">
+				<div class="card__front">
+					<img class="card__image" [src]="person.img" />
+					<h3 class="card__front--text">{{ person.name }}</h3>
 				</div>
-			</div>
-			<div class="card-container">
-				<div class="card">
-					<div class="card-inner">
-						<div class="card-front">
-							<img class="card-image" src="../../assets/img/person-icon.png" />
-							<h1>Gabriel García Garrido</h1>
-						</div>
-						<div class="card-back">
-							<br /><br />
-							<br /><br />
-							<p>Gabriel García Garrido</p>
-							<p>Software Developer</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card-container">
-				<div class="card">
-					<div class="card-inner">
-						<div class="card-front">
-							<img class="card-image" src="../../assets/img/person-icon.png" />
-							<h1>Guadalupe García Plaza</h1>
-						</div>
-						<div class="card-back">
-							<br /><br />
-							<br /><br />
-							<p>Guadalupe García Plaza</p>
-							<p>Software Developer</p>
-						</div>
-					</div>
+				<div class="card__back">
+					<p class="card__back--text">{{ person.name }}</p>
+					<p class="card__back--text">{{ person.position }}</p>
 				</div>
 			</div>
 		</div>
-		<div class="main-down-info-second">
-			<div class="card-container"></div>
-			<div class="card-container">
-				<div class="card">
-					<div class="card-inner">
-						<div class="card-front">
-							<img class="card-image" src="../../assets/img/person-icon.png" />
-							<h1>Jose Luis Aguilar Gómez</h1>
-						</div>
-						<div class="card-back">
-							<br /><br />
-							<br /><br />
-							<p>Jose Luis Aguilar Gómez</p>
-							<p>Software Developer</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card-container">
-				<div class="card">
-					<div class="card-inner">
-						<div class="card-front">
-							<img class="card-image" src="../../assets/img/person-icon.png" />
-							<h1>Juan Pablo Amador Díaz</h1>
-						</div>
-						<div class="card-back">
-							<br /><br />
-							<br /><br />
-							<p>Juan Pablo Amador Díaz</p>
-							<p>Software Developer</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card-container"></div>
-		</div>
 	</div>
+	<p class="main-bottom__rights">
+		This is a not-for-profit project. None of the images used in this projects
+		below us. All rights are reserved to The Pokemon Company
+	</p>
 </section>

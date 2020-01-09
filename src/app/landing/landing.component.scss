@@ -3,7 +3,7 @@
 .intro-section {
 	position: relative;
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	height: calc(100vh - 70px);
 	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
@@ -72,17 +72,27 @@
 	width: 100%;
 	.functionalities {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
+		justify-content: center;
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
+			align-items: center;
 			flex: 3;
 			padding: 50px;
 			&--double {
 				padding: 50px;
 				flex: 4;
 			}
+			&__img-group {
+				display: flex;
+				flex-flow: row nowrap;
+				img {
+					max-height: 240px;
+				}
+			}
 			&__img {
+				max-height: 240px;
 				border-radius: 15px;
 				display: block;
 				margin: 15px auto;
@@ -96,6 +106,10 @@
 			text-align: justify;
 		}
 	}
+	.svg-wrapper {
+		position: absolute;
+		bottom: 0;
+	}
 	&__wave {
 		position: absolute;
 		top: 0;
@@ -106,6 +120,7 @@
 		top: 0;
 		margin-top: 3vh;
 		font-weight: bold;
+		transition: 0.7s;
 	}
 
 	.pokedex-title {
@@ -113,11 +128,11 @@
 		border-radius: 15px;
 		display: flex;
 		text-transform: uppercase;
+		height: 50px;
 		&__num {
 			background-color: $secondary-color;
 			width: 80px;
 			height: 100%;
-			padding: 12px 0px;
 			border-radius: 15px 0px 0px 15px;
 			display: flex;
 			align-items: center;
@@ -291,110 +306,26 @@
 		transform: rotate(360deg);
 	}
 }
-.main-down {
+.main-bottom {
+	position: relative;
 	display: flex;
+	height: 100vh;
 	flex-direction: column;
-	width: 100%;
-	min-height: calc(100vh - 70px);
 	background-color: $primary-color;
 	overflow: hidden;
-}
-
-.main-down-title {
-	width: auto;
-	height: 12%;
-	text-align: center;
-	background-color: $primary-color;
-}
-.main-down-info {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	width: 100%;
-	height: auto;
-	background-color: $primary-color;
-}
-.card-container {
-	display: flex;
-	justify-content: center;
-	flex-grow: 1;
-}
-
-.main-down-info-first {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	margin: 2em 0em;
-}
-
-.main-down-info-second {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	height: auto;
-	margin: 2em 0em;
-	background-color: $primary-color;
-}
-
-.card {
-	background-color: transparent;
-	width: 350px;
-	height: 250px;
-}
-
-.card-inner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-}
-.card:hover .card-inner {
-	transform: rotateY(180deg);
-}
-.card-front,
-.card-back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-}
-.card-front {
-	background-color: none;
-	h1 {
+	&__wave {
+		position: absolute;
+		top: 0;
+	}
+	&__rights {
 		width: 100%;
-		height: 23%;
-		font-size: 24px;
+		height: 3%;
+		font-size: 12px;
 		text-align: center;
 		color: white;
+		margin-bottom: 15px;
 	}
 }
-.card-back {
-	background-color: rgba(85, 85, 85, 0.5);
-	background-image: url(../../assets/img/pokeball-bg.svg);
-	background-repeat: no-repeat;
-	background-size: 60%;
-	background-position: 0 100%;
-	color: white;
-	width: 300px;
-	height: 300px;
-	border-radius: 50%;
-	transform: rotateY(180deg);
-	p {
-		width: 100%;
-		height: 23%;
-		font-size: 22px;
-		text-align: center;
-		color: white;
-	}
-}
-.card-image {
-	width: 70%;
-	height: auto;
-	border-radius: 50%;
-}
-
 .title {
 	width: 100%;
 	height: 23%;
@@ -403,6 +334,85 @@
 	text-transform: uppercase;
 	color: white;
 	margin-top: 1em;
+	z-index: 1;
+}
+
+.info {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto;
+	margin-top: 50px;
+	max-width: 1000px;
+	height: auto;
+	background-color: $primary-color;
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 260px;
+	height: 260px;
+	margin: 0 15px;
+
+	&__container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+		&:hover {
+			transform: rotateY(180deg);
+		}
+	}
+	&__front {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		background-color: none;
+		&--text {
+			width: 100%;
+			height: 23%;
+			font-size: 24px;
+			text-align: center;
+			color: white;
+			margin-top: 10px;
+		}
+	}
+	&__back {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		backface-visibility: hidden;
+		color: white;
+		margin: 0 15%;
+		height: 70%;
+		border-radius: 50%;
+		transform: rotateY(180deg);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+		background-color: rgba(85, 85, 85, 0.5);
+		background-image: url(../../assets/img/pokeball-card.png);
+		opacity: 0.5;
+		background-repeat: no-repeat;
+		background-size: 35%;
+		background-position: 0 100%;
+		&--text {
+			display: inline-block;
+			font-size: 22px;
+			padding: 0.3em;
+		}
+	}
+	&__image {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+		width: 70%;
+		height: auto;
+		border-radius: 50%;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -424,5 +434,201 @@
 		&__link {
 			font-size: 14px;
 		}
+	}
+	.title {
+		font-size: 25px;
+	}
+	.functionalities {
+		flex-flow: row wrap !important;
+	}
+	.explanation-card {
+		&--double {
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			max-height: 240px !important;
+			img {
+				max-width: 160px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
+		}
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		height: auto;
+	}
+	.info {
+		margin: 100px auto;
+	}
+	.card {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media (max-width: 768px) {
+	.btn-landing {
+		position: absolute;
+		bottom: 50%;
+	}
+	.intro-section {
+		.titles {
+			padding: 0px;
+			padding-top: 20px;
+			margin: 0 auto;
+			width: 60vw;
+			line-height: 45px;
+			h1 {
+				font-size: 43px;
+			}
+			&__title {
+				&--black {
+					text-align: left;
+				}
+				&--gray {
+					text-align: left;
+				}
+				&--red {
+					text-align: left;
+				}
+			}
+		}
+	}
+	.title {
+		font-size: 23px;
+		margin-top: 1vh;
+	}
+
+	.pokedex-title {
+		&__num {
+			font-size: 18px !important;
+		}
+		&__text {
+			font-size: 13px !important;
+		}
+	}
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+	}
+	.bubble-text {
+		font-size: 12px !important;
+		padding: 15px !important;
+	}
+	.info {
+		margin: 50px auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.oak-professor {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		&__image {
+			max-width: 99px;
+			height: auto;
+			position: static;
+			display: block;
+			margin: 0 auto;
+		}
+		&__pokemon {
+			max-width: 100px;
+			height: auto;
+			position: absolute;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.btn-landing {
+		position: static;
+		width: 210px;
+		display: block;
+		margin: 20px auto;
+		&__link {
+			font-size: 14px;
+			padding: 10px 20px;
+		}
+		.quote {
+			&:before {
+				left: -30px;
+			}
+			&:after {
+				left: 10px;
+			}
+		}
+		&:hover {
+			.quote:before {
+				left: 10px;
+			}
+			.quote:after {
+				left: 35px;
+			}
+		}
+	}
+
+	.title {
+		font-size: 18px !important;
+		margin-top: 1vh !important;
+	}
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			img {
+				max-width: 140px !important;
+				max-height: 180px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
+		}
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		height: auto;
+		&__rights {
+			font-size: 8px;
+		}
+	}
+	.card {
+		width: 220px !important;
+		height: 220px !important;
+		&--text {
+			font-size: 15px;
+		}
+	}
+	.info {
+		max-width: 400px;
+	}
+}
+
+@media (min-width: 1300px) {
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		&__rights {
+			margin-bottom: 0em;
+			font-size: 20px;
+		}
+		.card {
+			width: 300px !important;
+			height: 300px !important;
+		}
+	}
+	.info {
+		max-width: 1500px;
 	}
 }
