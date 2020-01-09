@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokedexService } from 'src/app/pokedex.service';
 import { Pokemon } from 'src/app/interface/pokemon.interface';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
 	selector: 'app-pokemon-card',
@@ -8,11 +9,18 @@ import { Pokemon } from 'src/app/interface/pokemon.interface';
 	styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
-	@Input() pokemonSelected: Pokemon;
+	private pokemonSelected: Pokemon;
 
-	constructor(private pokedexService: PokedexService) {}
+	constructor(
+		private pokedexService: PokedexService,
+		private routerData: ActivatedRoute
+	) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.routerData.params.subscribe((params: Params) => {
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+		});
+	}
 
 	colorBackground(pokemonType) {
 		switch (true) {

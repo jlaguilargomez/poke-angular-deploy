@@ -1,32 +1,60 @@
 @import '../../../commonStyles.scss';
 
-.component-box {
+.container {
+	padding: 2rem;
 	display: flex;
-	flex-direction: row;
-	height: 100%;
-	//width: 100%;
-	background-color: #db4545;
-	border-radius: 20px;
-	padding: 2rem;
-}
-.container-box {
-	padding: 2rem;
+	justify-content: center;
+
+	&--selected {
+		height: 100%;
+		background-color: #db4545;
+		border-radius: 20px;
+		padding: 2rem;
+		width: 100%;
+	}
+
+	&--no-selected {
+		width: 30vw;
+		min-width: 250px;
+	}
 }
 
-//Shadow
-.shadow {
+.panel {
 	display: flex;
-	width: 100%;
 	padding: 0.5em;
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
+	min-width: 500px;
+	min-height: 380px;
+
+	&__info {
+		width: 49%;
+	}
 }
 
-.container {
-	width: 49%;
+@media (max-width: 768px) {
+	.container {
+		width: 90vw;
+		padding-left: 2rem;
+	}
+	.panel {
+		min-width: 0;
+		flex-flow: column wrap;
+
+		&__info {
+			width: 100%;
+		}
+	}
 }
 
-.unSelectedPokemon {
-	width: 60%;
+@media (max-width: 480px) {
+	.container {
+		padding: 0.5rem;
+	}
+
+	// @media (max-height: 375px) {
+	// 	.container {
+
+	// 	}
 }

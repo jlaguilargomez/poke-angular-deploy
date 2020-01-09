@@ -10,11 +10,10 @@ import { PokedexService } from 'src/app/pokedex.service';
 	styleUrls: ['./pokemon-map.component.scss'],
 })
 export class PokemonMapComponent implements OnInit {
-	map: any;
-	pokemons: Pokemon[];
-	initializedSelection = false;
-
-	pokemonSelected: Pokemon;
+	private map;
+	private pokemons: Pokemon[] = this.pokedexService.getPokemonList();
+	private initializedSelection = false;
+	private pokemonSelected: Pokemon;
 
 	constructor(
 		private routerData: ActivatedRoute,
@@ -33,12 +32,12 @@ export class PokemonMapComponent implements OnInit {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
-			this.pokemons = this.pokedexService.getPokemonList();
 			if (this.initializedSelection) {
 				this.changePokemon();
 			}
 			this.initializedSelection = true;
 		});
+
 		// Leaflet setting
 		const options = { attributionControl: false };
 		const map = L.map('map', options).setView(
@@ -56,6 +55,7 @@ export class PokemonMapComponent implements OnInit {
 		);
 		tileLayer.addTo(map);
 
+		// Map icons settings incluiding pop-up funcionalities
 		this.pokemons.forEach(pokemon => {
 			const pokemonIcon = L.icon({
 				iconUrl: pokemon.imagePath,
