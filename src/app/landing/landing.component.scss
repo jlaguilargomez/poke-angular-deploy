@@ -73,16 +73,26 @@
 	.functionalities {
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
-			flex: 3;
+			align-items: center;
+			//flex: 3;
 			padding: 50px;
 			&--double {
 				padding: 50px;
 				flex: 4;
 			}
+			&__img-group {
+				display: flex;
+				flex-flow: row wrap;
+				img {
+					max-height: 280px;
+				}
+			}
 			&__img {
+				max-height: 280px;
 				border-radius: 15px;
 				display: block;
 				margin: 15px auto;
@@ -431,6 +441,20 @@
 			font-size: 25px;
 		}
 	}
+	.explanation-card {
+		&--double {
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			img {
+				max-width: 160px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -520,6 +544,23 @@
 		.title {
 			font-size: 18px;
 			margin-top: 0;
+		}
+	}
+
+	.explanation-card {
+		padding: 20px !important;
+		&--double {
+			padding: 20px !important;
+			flex: 2;
+		}
+		&__img-group {
+			flex-flow: row nowrap;
+			img {
+				max-width: 160px !important;
+			}
+		}
+		&__img {
+			max-width: 160px !important;
 		}
 	}
 }
