@@ -26,6 +26,7 @@
 	border-radius: 2em;
 	justify-content: space-between;
 	min-width: 500px;
+	min-height: 380px;
 
 	&__info {
 		width: 49%;
@@ -51,4 +52,9 @@
 	.container {
 		padding: 0.5rem;
 	}
+
+	// @media (max-height: 375px) {
+	// 	.container {
+
+	// 	}
 }
