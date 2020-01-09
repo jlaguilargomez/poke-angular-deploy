@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pokemon } from './interface/pokemon.interface';
 import { Observable, Subject } from 'rxjs';
-import { resolve } from 'url';
-import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail.component';
 
 @Injectable({
 	providedIn: 'root',
