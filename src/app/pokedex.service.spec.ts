@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
 
 import { PokedexService } from './pokedex.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,4 +22,8 @@ describe('Service: PokedexService', () => {
 	it('the service works correctly', () => {
 		expect(pokedexService).toBeTruthy();
 	});
+
+	// it('the service works correctly', () => {
+	//   expect(pokedexService.getPokemons(151)).toBeTruthy();
+	// });
 });
