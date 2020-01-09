@@ -319,7 +319,8 @@
 		font-size: 15px;
 		text-align: center;
 		color: white;
-		margin: 10em 0em 1em 0em;
+		position: absolute;
+		bottom: 0;
 	}
 }
 .title {
@@ -389,6 +390,7 @@
 		height: 70%;
 		border-radius: 50%;
 		transform: rotateY(180deg);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 		background-color: rgba(85, 85, 85, 0.5);
 		background-image: url(../../assets/img/pokeball-card.png);
 		opacity: 0.5;
@@ -402,6 +404,7 @@
 		}
 	}
 	&__image {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 		width: 70%;
 		height: auto;
 		border-radius: 50%;
@@ -445,6 +448,15 @@
 		}
 		&__img {
 			max-width: 160px !important;
+		}
+	}
+	.main-bottom {
+		box-sizing: border-box;
+		justify-content: center;
+		height: auto;
+		&__rights {
+			margin-bottom: 0em;
+			font-size: 15px;
 		}
 	}
 }
@@ -557,19 +569,9 @@
 		.main-bottom {
 			box-sizing: border-box;
 			justify-content: center;
-			&__rights {
-				margin-bottom: 0em;
-				font-size: 10px;
-			}
-		}
-	}
-	@media (max-width: 480px) {
-		.main-bottom {
-			box-sizing: border-box;
-			justify-content: center;
 			height: auto;
 			&__rights {
-				margin-bottom: 0em;
+				bottom: 1em;
 				font-size: 8px;
 			}
 		}
@@ -577,7 +579,8 @@
 			max-width: 400px;
 		}
 	}
-	@media (max-width: 3000px) {
+
+	@media (min-width: 1024px) {
 		.main-bottom {
 			box-sizing: border-box;
 			justify-content: center;
