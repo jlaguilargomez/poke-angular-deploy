@@ -5,7 +5,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	height: calc(100vh - 100px);
 }
 
 .pokedex {
