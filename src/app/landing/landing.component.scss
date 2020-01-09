@@ -106,6 +106,10 @@
 			text-align: justify;
 		}
 	}
+	.svg-wrapper {
+		position: absolute;
+		bottom: 0;
+	}
 	&__wave {
 		position: absolute;
 		top: 0;
@@ -316,11 +320,10 @@
 	&__rights {
 		width: 100%;
 		height: 3%;
-		font-size: 15px;
+		font-size: 12px;
 		text-align: center;
 		color: white;
-		position: absolute;
-		bottom: 0;
+		margin-bottom: 15px;
 	}
 }
 .title {
@@ -431,10 +434,8 @@
 			font-size: 14px;
 		}
 	}
-	.functionality-section {
-		.title {
-			font-size: 25px;
-		}
+	.title {
+		font-size: 25px;
 	}
 	.functionalities {
 		flex-flow: row wrap !important;
@@ -458,10 +459,13 @@
 		box-sizing: border-box;
 		justify-content: center;
 		height: auto;
-		&__rights {
-			margin-bottom: 0em;
-			font-size: 15px;
-		}
+	}
+	.info {
+		margin: 100px auto;
+	}
+	.card {
+		width: 250px;
+		height: 250px;
 	}
 }
 
@@ -493,11 +497,9 @@
 			}
 		}
 	}
-	.functionality-section {
-		.title {
-			font-size: 23px;
-			margin-top: 1vh;
-		}
+	.title {
+		font-size: 23px;
+		margin-top: 1vh;
 	}
 
 	.pokedex-title {
@@ -518,6 +520,9 @@
 	.bubble-text {
 		font-size: 12px !important;
 		padding: 15px !important;
+	}
+	.info {
+		margin: 50px auto;
 	}
 }
 
@@ -568,13 +573,10 @@
 		}
 	}
 
-	.functionality-section {
-		.title {
-			font-size: 18px;
-			margin-top: 0;
-		}
+	.title {
+		font-size: 18px !important;
+		margin-top: 1vh !important;
 	}
-
 	.explanation-card {
 		padding: 20px !important;
 		&--double {
@@ -596,8 +598,11 @@
 			justify-content: center;
 			height: auto;
 			&__rights {
-				bottom: 1em;
 				font-size: 8px;
+			}
+			.card {
+				width: 220px !important;
+				height: 220px !important;
 			}
 		}
 		.info {
@@ -616,10 +621,6 @@
 		}
 		.info {
 			max-width: 1500px;
-		}
-		.card {
-			width: 350px;
-			height: 350px;
 		}
 	}
 }
