@@ -1,71 +1,83 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pokemon } from './interface/pokemon.interface';
+import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class PokedexService {
-	promises: Promise<object>[] = [];
 	pokemonsLoaded = new Subject<object[]>();
-	pokemonList: Pokemon[] = [];
+	public pokemonList: Pokemon[] = [];
 
 	constructor(private http: HttpClient) {}
 
-	loadPokemons(limit: number) {
-		for (let i = 1; i < limit + 1; i++) {
-			const promise: any = new Promise(res => {
+	private requestPokemons(limit: number) {
+		const pokeObservable = Observable.create(observer => {
+			for (let i = 1; i < limit + 1; i++) {
 				this.http
-					.get(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-					.subscribe((item: any) => {
-						const newPokemon: Pokemon = {
-							id: item.id,
-							name:
-								item.forms[0].name.charAt(0).toUpperCase() +
-								item.forms[0].name.slice(1),
-							type: item.types.map(type => type.type.name),
-							height: item.height,
-							weight: item.weight,
-							stats: item.stats.map(stat => {
-								return {
-									name: stat['stat']['name'],
-									base: stat['base_stat'],
-								};
-							}),
-							moves: [
-								item.moves[Math.floor(Math.random() * item.moves.length)].move
-									.name,
-								item.moves[Math.floor(Math.random() * item.moves.length)].move
-									.name,
-								item.moves[Math.floor(Math.random() * item.moves.length)].move
-									.name,
-								item.moves[Math.floor(Math.random() * item.moves.length)].move
-									.name,
-							],
-							ability: item.abilities.map(ability => ability.ability.name),
-							imagePath: item.sprites.front_default,
-							coord: {
-								lat: Math.random() * 0.3 + 40.261781,
-								long: Math.random() * 0.4 + -3.93223,
-							},
-						};
-						res(newPokemon);
+					// Pendiente el tipado
+					.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+					.pipe(
+						map(responseData => {
+							const newPokemon: Pokemon = {
+								id: responseData.id,
+								name:
+									responseData.forms[0].name.charAt(0).toUpperCase() +
+									responseData.forms[0].name.slice(1),
+								type: responseData.types.map(type => type.type.name),
+								height: responseData.height,
+								weight: responseData.weight,
+								stats: responseData.stats.map(stat => {
+									return {
+										name: stat['stat']['name'],
+										base: stat['base_stat'],
+									};
+								}),
+								moves: [
+									responseData.moves[
+										Math.floor(Math.random() * responseData.moves.length)
+									].move.name,
+									responseData.moves[
+										Math.floor(Math.random() * responseData.moves.length)
+									].move.name,
+									responseData.moves[
+										Math.floor(Math.random() * responseData.moves.length)
+									].move.name,
+									responseData.moves[
+										Math.floor(Math.random() * responseData.moves.length)
+									].move.name,
+								],
+								ability: responseData.abilities.map(
+									ability => ability.ability.name
+								),
+								imagePath: responseData.sprites.front_default,
+								coord: {
+									lat: Math.random() * 0.3 + 40.261781,
+									long: Math.random() * 0.4 + -3.93223,
+								},
+							};
+							return newPokemon;
+						})
+					)
+					.subscribe(newPokemon => {
+						this.pokemonList.push(newPokemon);
+						if (this.pokemonList.length === limit) {
+							observer.next(
+								this.pokemonList.sort((pokemonA, pokemonB) =>
+									pokemonA.id > pokemonB.id ? 1 : -1
+								)
+							);
+						}
 					});
-			});
-			this.promises.push(promise);
-		}
-	}
-	getPokemons(limit: number) {
-		this.loadPokemons(limit);
-		Promise.all(this.promises).then((newPokemon: Pokemon[]) => {
-			this.pokemonsLoaded.next(newPokemon);
-			this.pokemonList = newPokemon;
+			}
 		});
+		return pokeObservable;
 	}
 
-	getPokemonList() {
-		return this.pokemonList;
+	public getPokemonList(id: number) {
+		return this.requestPokemons(id);
 	}
 
 	getPokemon(index) {
