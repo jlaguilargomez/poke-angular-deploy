@@ -8,8 +8,7 @@ import { Observable, Subject } from 'rxjs';
 	providedIn: 'root',
 })
 export class PokedexService {
-	pokemonsLoaded = new Subject<object[]>();
-	public pokemonList: Pokemon[] = [];
+	private pokemonList: Pokemon[] = [];
 
 	constructor(private http: HttpClient) {}
 
@@ -80,7 +79,7 @@ export class PokedexService {
 		return this.requestPokemons(id);
 	}
 
-	getPokemon(index) {
+	public getPokemon(index) {
 		return this.pokemonList[index];
 	}
 
