@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon } from './interface/pokemon.interface';
+import { Pokemon } from '../interface/pokemon.interface';
 import { map } from 'rxjs/operators';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, forkJoin } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -13,12 +13,11 @@ export class PokedexService {
 	constructor(private http: HttpClient) {}
 
 	private requestPokemons(limit: number) {
-		const pokeObservable = Observable.create(observer => {
+		const response = Observable.create(observer => {
+			const observables = [];
 			for (let i = 1; i < limit + 1; i++) {
-				this.http
-					// Pendiente el tipado
-					.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-					.pipe(
+				observables.push(
+					this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`).pipe(
 						map(responseData => {
 							const newPokemon: Pokemon = {
 								id: responseData.id,
@@ -60,19 +59,14 @@ export class PokedexService {
 							return newPokemon;
 						})
 					)
-					.subscribe(newPokemon => {
-						this.pokemonList.push(newPokemon);
-						if (this.pokemonList.length === limit) {
-							observer.next(
-								this.pokemonList.sort((pokemonA, pokemonB) =>
-									pokemonA.id > pokemonB.id ? 1 : -1
-								)
-							);
-						}
-					});
+				);
 			}
+			forkJoin(observables).subscribe(dataSet => {
+				this.pokemonList = dataSet;
+				observer.next();
+			});
 		});
-		return pokeObservable;
+		return response;
 	}
 
 	public loadPokemonList(id: number) {
