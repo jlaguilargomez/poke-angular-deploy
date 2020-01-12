@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Pokemon } from '../interface/pokemon.interface';
-import { map } from 'rxjs/operators';
-import { Observable, Subject, forkJoin } from 'rxjs';
+import { map, catchError, retry } from 'rxjs/operators';
+import { Observable, forkJoin, throwError } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,12 +12,18 @@ export class PokedexService {
 
 	constructor(private http: HttpClient) {}
 
-	private requestPokemons(limit: number) {
+	private requestPokemons(first: number, last: number) {
 		const response = Observable.create(observer => {
 			const observables = [];
-			for (let i = 1; i < limit + 1; i++) {
+			const handleError = (error: HttpErrorResponse) => {
+				observer.error(error);
+				return throwError(error);
+			};
+			for (let i = first; i < last + 1; i++) {
 				observables.push(
 					this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`).pipe(
+						retry(3),
+						catchError(handleError),
 						map(responseData => {
 							const newPokemon: Pokemon = {
 								id: responseData.id,
@@ -69,8 +75,8 @@ export class PokedexService {
 		return response;
 	}
 
-	public loadPokemonList(id: number) {
-		return this.requestPokemons(id);
+	public loadPokemonList(first: number, last: number) {
+		return this.requestPokemons(first, last);
 	}
 
 	public getPokemonList() {

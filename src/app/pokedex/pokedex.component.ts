@@ -8,19 +8,22 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit, OnDestroy {
-	private pokemonLoaded = false;
+	private status: string = 'requesting';
 	private subscription: Subscription;
 
 	constructor(private pokedexService: PokedexService) {}
 
 	ngOnInit() {
-		this.subscription = this.pokedexService
-			.loadPokemonList(151)
-			.subscribe(() => {
+		this.subscription = this.pokedexService.loadPokemonList(1, 151).subscribe(
+			() => {
 				setTimeout(() => {
-					this.pokemonLoaded = true;
+					this.status = 'loaded';
 				}, 200);
-			});
+			},
+			error => {
+				this.status = 'error';
+			}
+		);
 	}
 
 	ngOnDestroy() {
