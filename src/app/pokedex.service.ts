@@ -75,8 +75,12 @@ export class PokedexService {
 		return pokeObservable;
 	}
 
-	public getPokemonList(id: number) {
+	public loadPokemonList(id: number) {
 		return this.requestPokemons(id);
+	}
+
+	public getPokemonList() {
+		return this.pokemonList;
 	}
 
 	public getPokemon(index) {

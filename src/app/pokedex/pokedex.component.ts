@@ -16,7 +16,7 @@ export class PokedexComponent implements OnInit {
 	constructor(private pokedexService: PokedexService) {}
 
 	ngOnInit() {
-		this.pokedexService.getPokemonList(151).subscribe(dataSet => {
+		this.pokedexService.loadPokemonList(151).subscribe(dataSet => {
 			this.pokemons = dataSet;
 			setTimeout(() => {
 				this.pokemonLoaded = true;

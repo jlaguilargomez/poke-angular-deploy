@@ -9,7 +9,8 @@ import { Pokemon } from 'src/app/interface/pokemon.interface';
 	styleUrls: ['./pokemon-detail.component.scss'],
 })
 export class PokemonDetailComponent implements OnInit {
-	public pokemonSelected: Pokemon;
+	private pokemonSelected: Pokemon;
+	@Input() pokemons: Pokemon[];
 
 	constructor(
 		private route: ActivatedRoute,
