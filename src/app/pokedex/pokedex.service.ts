@@ -12,9 +12,9 @@ export class PokedexService {
 
 	constructor(private http: HttpClient) {}
 
-	private requestPokemons(first: number, last: number) {
-		const response = Observable.create(observer => {
-			const observables = [];
+	private requestPokemons(first: number, last: number): Observable<Pokemon[]> {
+		const response: Observable<Pokemon[]> = Observable.create(observer => {
+			const observables: Observable<Pokemon>[] = [];
 			const handleError = (error: HttpErrorResponse) => {
 				observer.error(error);
 				return throwError(error);
@@ -75,15 +75,15 @@ export class PokedexService {
 		return response;
 	}
 
-	public loadPokemonList(first: number, last: number) {
+	public loadPokemonList(first: number, last: number): Observable<Pokemon[]> {
 		return this.requestPokemons(first, last);
 	}
 
-	public getPokemonList() {
+	public getPokemonList(): Pokemon[] {
 		return this.pokemonList;
 	}
 
-	public getPokemon(index) {
+	public getPokemon(index): Pokemon {
 		return this.pokemonList[index];
 	}
 
