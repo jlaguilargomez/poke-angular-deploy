@@ -10,6 +10,26 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class PokemonCardComponent implements OnInit {
 	private pokemonSelected: Pokemon;
+	private pokemonColors: {} = {
+		grass: '#76C535',
+		bug: '#A1B01E',
+		fire: '#EB3D0D',
+		fighting: '#84331C',
+		rock: '#BAA45B',
+		normal: '#C3BCB2',
+		ground: '#EEAF9D',
+		water: '#2580C9',
+		ice: '#97E3F9',
+		flying: '#90A2ED',
+		dragon: '#7962E6',
+		ghost: '#5D5FB0',
+		dark: '#4C392C',
+		steel: '#BAB9C6',
+		psychic: '#EF4983',
+		fairy: '#F1AEF2',
+		poison: '#934392',
+		electric: '#FAB819',
+	};
 
 	constructor(
 		private pokedexService: PokedexService,
@@ -23,32 +43,7 @@ export class PokemonCardComponent implements OnInit {
 	}
 
 	colorBackground(pokemonType) {
-		switch (true) {
-			case pokemonType === 'grass' || pokemonType === 'bug':
-				return '#74c646';
-			case pokemonType === 'fire' || pokemonType === 'fighting':
-				return '#c67946';
-			case pokemonType === 'rock' ||
-				pokemonType === 'normal' ||
-				pokemonType === 'ground':
-				return '#c9c090';
-			case pokemonType === 'water' ||
-				pokemonType === 'ice' ||
-				pokemonType === 'flying':
-				return '#62b8c7';
-			case pokemonType === 'dragon' || pokemonType === 'ghost':
-				return '#b8bcd9';
-			case pokemonType === 'dark' || pokemonType === 'steel':
-				return '#8d8a90';
-			case pokemonType === 'psychic' ||
-				pokemonType === 'fairy' ||
-				pokemonType === 'poison':
-				return '#f264c4';
-			case pokemonType === 'electric':
-				return '#e3d528';
-			default:
-				return 'grey';
-		}
+		return this.pokemonColors[pokemonType];
 	}
 
 	colorBar(num) {
