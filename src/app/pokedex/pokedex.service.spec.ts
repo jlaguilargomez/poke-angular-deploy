@@ -34,7 +34,7 @@ describe('Service: PokedexService', () => {
 		});
 
 		it('should get the pokemonList', () => {
-			let response: Pokemon[] = pokedexService.getPokemonList();
+			const response: Pokemon[] = pokedexService.getPokemonList();
 			expect(response.length).toBe(151);
 		});
 
