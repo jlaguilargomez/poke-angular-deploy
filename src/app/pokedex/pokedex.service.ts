@@ -13,7 +13,7 @@ export class PokedexService {
 	constructor(private http: HttpClient) {}
 
 	private requestPokemons(first: number, last: number): Observable<Pokemon[]> {
-		const response: Observable<Pokemon[]> = Observable.create(observer => {
+		const response: Observable<Pokemon[]> = new Observable(observer => {
 			const observables: Observable<Pokemon>[] = [];
 			const handleError = (error: HttpErrorResponse) => {
 				observer.error(error);

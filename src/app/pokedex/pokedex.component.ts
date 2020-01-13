@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit, OnDestroy {
-	private status: string = 'requesting';
+	private status = 'requesting';
 	private subscription: Subscription;
 
 	constructor(private pokedexService: PokedexService) {}
