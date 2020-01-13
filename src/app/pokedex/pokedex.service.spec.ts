@@ -3,6 +3,7 @@ import { of, Observable } from 'rxjs';
 import { Pokemon, PokemonTest } from '../interface/pokemon.interface';
 import { PokedexService } from './pokedex.service';
 import { HttpClientModule } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 describe('Service: PokedexService', () => {
 	let pokedexService: PokedexService;
@@ -25,7 +26,7 @@ describe('Service: PokedexService', () => {
 	});
 
 	// Add test for loadPokemonList() method
-	describe('loadPokemonList correctly', () => {
+	describe('loadPokemonList works correctly', () => {
 		beforeEach(done => {
 			pokedexService.loadPokemonList(1, 151).subscribe(() => {
 				done();
@@ -74,15 +75,39 @@ describe('Service: PokedexService', () => {
 				imagePath:
 					'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
 			};
-			let response: any = pokedexService.getPokemon(0);
-			let err: any = pokedexService.getPokemon(-1);
+			const response: any = pokedexService.getPokemon(0);
 
 			// Remove the parameters created with Math.random variable
 			delete response.moves;
 			delete response.coord;
 
 			expect(response).toEqual(getPokemonResponse);
-			expect(err).toBeUndefined();
+		});
+		it('an invalid index for getPokemon method should return undefined', () => {
+			const response = pokedexService.getPokemon(-1);
+			expect(response).toBeUndefined();
+		});
+	});
+
+	describe('loadPokemonList handle error', () => {
+		beforeEach(done => {
+			pokedexService.loadPokemonList(-3, 151).subscribe(
+				() => console.log('This shouldn´t be shown'),
+				error => {
+					catchError(error);
+					done();
+				}
+			);
+		});
+
+		it('should get an empty pokemonList', () => {
+			const response: Pokemon[] = pokedexService.getPokemonList();
+			expect(response).toEqual([]);
+		});
+
+		it('A getPokemon from an empty pokemonList should be undefined', () => {
+			const response = pokedexService.getPokemon(0);
+			expect(response).toBeUndefined();
 		});
 	});
 });
