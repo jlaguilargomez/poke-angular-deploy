@@ -19,7 +19,7 @@ export class PokedexService {
 				observer.error(error);
 				return throwError(error);
 			};
-			for (let i = first; i < last + 1; i++) {
+			for (let i = first, len = last; i < len + 1; i++) {
 				observables.push(
 					this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`).pipe(
 						retry(3),
