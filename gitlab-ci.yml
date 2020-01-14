@@ -1,0 +1,12 @@
+linting:
+    script:
+        - npm install
+        - npm run lint
+testing:
+    script:
+        - npm install
+        - npm run test
+build:
+    script:
+        - npm install
+        - npm run build:prod
