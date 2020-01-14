@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 	styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
-	private pokemonSelected: Pokemon;
+	public pokemonSelected: Pokemon;
 	private pokemonColors: {} = {
 		grass: '#76C535',
 		bug: '#A1B01E',
