@@ -1,0 +1,40 @@
+@keyframes scaleY-animation {
+	from {
+		transform: scaleY(0);
+	}
+
+	to {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes opacity-animation {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes pokemon-animation {
+	from {
+		left: -200px;
+	}
+
+	to {
+		left: 100px;
+		opacity: 1;
+	}
+}
+
+@keyframes drift {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}

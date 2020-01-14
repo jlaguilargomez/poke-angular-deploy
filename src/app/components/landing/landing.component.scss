@@ -5,10 +5,14 @@
 .intro-section {
 	position: relative;
 	box-sizing: border-box;
-	width: 100vw;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 7rem);
 	background: url('/assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
+
+	&__headings {
+		width: 60rem;
+	}
+
 	&__wave {
 		position: absolute;
 		bottom: -3px;
@@ -16,628 +20,615 @@
 		height: auto;
 		animation: scaleY-animation 1s;
 	}
-	.titles {
-		letter-spacing: 0.055em;
-		width: 30vw;
-		padding: 25px 40px;
-		margin-left: 100px;
-		h1 {
-			display: inline-block;
-			width: 100%;
-			font-size: 55px;
-			font-weight: bold;
-		}
-		&__title {
-			&--black {
-				color: $secondary-color;
-				text-align: left;
-				opacity: 0;
-				animation: opacity-animation 1s 2s forwards;
-			}
-			&--gray {
-				color: #868686;
-				text-align: center;
-				opacity: 0;
-				animation: opacity-animation 1s 2.5s forwards;
-			}
-			&--red {
-				color: $primary-color;
-				text-align: right;
-				opacity: 0;
-				animation: opacity-animation 1s 3s forwards;
-			}
-		}
-	}
-}
 
-@keyframes scaleY-animation {
-	from {
-		transform: scaleY(0);
-	}
-	to {
-		transform: scaleY(1);
-	}
-}
+	.functionality-section {
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
 
-@keyframes opacity-animation {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.functionality-section {
-	position: relative;
-	box-sizing: border-box;
-	width: 100%;
-	.functionalities {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		.explanation-card {
+		.functionalities {
 			display: flex;
-			flex-flow: column nowrap;
-			align-items: center;
-			flex: 3;
-			padding: 50px;
-			&--double {
-				padding: 50px;
-				flex: 4;
-			}
-			&__img-group {
+			flex-flow: row nowrap;
+			justify-content: center;
+
+			.explanation-card {
 				display: flex;
-				flex-flow: row nowrap;
-				img {
+				flex-flow: column nowrap;
+				align-items: center;
+				flex: 3;
+				padding: 50px;
+
+				&--double {
+					padding: 50px;
+					flex: 4;
+				}
+
+				&__img-group {
+					display: flex;
+					flex-flow: row nowrap;
+
+					img {
+						max-height: 240px;
+					}
+				}
+
+				&__img {
 					max-height: 240px;
+					border-radius: 15px;
+					display: block;
+					margin: 15px auto;
 				}
 			}
-			&__img {
-				max-height: 240px;
+
+			.bubble-text {
+				background-color: #c4c4c4;
 				border-radius: 15px;
-				display: block;
-				margin: 15px auto;
+				padding: 25px;
+				color: #202020;
+				text-align: justify;
 			}
 		}
-		.bubble-text {
-			background-color: #c4c4c4;
-			border-radius: 15px;
-			padding: 25px;
-			color: #202020;
-			text-align: justify;
-		}
-	}
-	.svg-wrapper {
-		position: absolute;
-		bottom: 0;
-	}
-	&__wave {
-		position: absolute;
-		top: 0;
-	}
-	.title {
-		color: white;
-		position: absolute;
-		top: 0;
-		margin-top: 3vh;
-		font-weight: bold;
-		transition: 0.7s;
-	}
 
-	.pokedex-title {
-		background-color: $primary-color;
-		border-radius: 15px;
-		display: flex;
-		text-transform: uppercase;
-		height: 50px;
-		&__num {
-			background-color: $secondary-color;
-			width: 80px;
-			height: 100%;
-			border-radius: 15px 0px 0px 15px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 23px;
-			span {
-				color: white;
-				display: inline;
-			}
+		.svg-wrapper {
+			position: absolute;
+			bottom: 0;
 		}
-		&__text {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+
+		&__wave {
+			position: absolute;
+			top: 0;
+		}
+
+		.title {
 			color: white;
-			font-size: 16px;
-			padding: 0px 25px;
-		}
-	}
-}
-
-.oak-professor {
-	position: absolute;
-	width: 100%;
-	left: 30px;
-	bottom: 0;
-	&__image {
-		display: inline-block;
-		width: 100%;
-		position: absolute;
-		bottom: 70px;
-		max-width: 170px;
-		height: auto;
-		transition: 0.7s;
-		opacity: 0;
-		animation: opacity-animation 1s 1s forwards;
-	}
-	&__pokemon {
-		display: inline-block;
-		position: absolute;
-		bottom: 20px;
-		left: 100px;
-		max-width: 160px;
-		transition: 0.7s;
-		width: 280px;
-		opacity: 0;
-		animation: pokemon-animation 1s forwards;
-	}
-	@keyframes pokemon-animation {
-		from {
-			left: -200px;
-		}
-		to {
-			left: 100px;
-			opacity: 1;
-		}
-	}
-
-	&__bubble {
-		display: inline-block;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		max-width: 300px;
-		height: auto;
-		transition: 0.7s;
-	}
-}
-
-.main-image2 {
-	margin: 1em 1em;
-	width: 60%;
-	height: 40%;
-}
-
-.btn-landing {
-	position: absolute;
-	bottom: 80px;
-	right: 55px;
-	transition: 0.7s;
-	opacity: 0;
-	animation: btn-animation 1s forwards;
-	@keyframes btn-animation {
-		from {
-			right: 0;
-		}
-		to {
-			right: 55px;
-			opacity: 1;
-		}
-	}
-	&__link {
-		cursor: pointer;
-		display: inline-block;
-		padding: 1rem 2.25rem;
-		border-radius: 10px;
-		color: #fff;
-		font-weight: bold;
-		text-transform: uppercase;
-		font-size: 20px;
-		letter-spacing: 0.15rem;
-		transition: all 0.3s;
-		position: relative;
-		overflow: hidden;
-		z-index: 1;
-		.quote {
-			&:before {
-				content: '»';
-				position: absolute;
-				left: -30px;
-				opacity: 0;
-				transition: all 0.4s;
-			}
-			&:after {
-				content: '»';
-				position: absolute;
-				left: 20px;
-				opacity: 1;
-				transition: all 0.4s;
-			}
-		}
-		&:after {
-			content: '';
 			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+			top: 0;
+			margin-top: 3vh;
+			font-weight: bold;
+			transition: 0.7s;
+		}
+
+		.pokedex-title {
 			background-color: $primary-color;
-			border-radius: 10px;
-			z-index: -2;
-		}
-		&:before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 0%;
-			height: 100%;
-			background-color: $terciary-color;
-			transition: all 0.3s;
-			border-radius: 10px;
-			z-index: -1;
-		}
-		&:hover {
-			color: $secondary-color;
-			&:before {
-				width: 100%;
+			border-radius: 15px;
+			display: flex;
+			text-transform: uppercase;
+			height: 50px;
+
+			&__num {
+				background-color: $secondary-color;
+				width: 80px;
+				height: 100%;
+				border-radius: 15px 0px 0px 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 23px;
+
+				span {
+					color: white;
+					display: inline;
+				}
 			}
-			.quote:before {
-				content: '»';
-				position: absolute;
-				left: 20px;
+
+			&__text {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				font-size: 16px;
+				padding: 0px 25px;
+			}
+		}
+	}
+
+	.oak-professor {
+		position: absolute;
+		width: 100%;
+		left: 30px;
+		bottom: 0;
+
+		&__image {
+			display: inline-block;
+			width: 100%;
+			position: absolute;
+			bottom: 70px;
+			max-width: 170px;
+			height: auto;
+			transition: 0.7s;
+			opacity: 0;
+			animation: opacity-animation 1s 1s forwards;
+		}
+
+		&__pokemon {
+			display: inline-block;
+			position: absolute;
+			bottom: 20px;
+			left: 100px;
+			max-width: 160px;
+			transition: 0.7s;
+			width: 280px;
+			opacity: 0;
+			animation: pokemon-animation 1s forwards;
+		}
+
+		&__bubble {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			transition: 0.7s;
+		}
+	}
+
+	.main-image2 {
+		margin: 1em 1em;
+		width: 60%;
+		height: 40%;
+	}
+
+	.btn-landing {
+		position: absolute;
+		bottom: 80px;
+		right: 55px;
+		transition: 0.7s;
+		opacity: 0;
+		animation: btn-animation 1s forwards;
+
+		@keyframes btn-animation {
+			from {
+				right: 0;
+			}
+
+			to {
+				right: 55px;
 				opacity: 1;
 			}
-			.quote:after {
-				content: '»';
+		}
+
+		&__link {
+			cursor: pointer;
+			display: inline-block;
+			padding: 1rem 2.25rem;
+			border-radius: 10px;
+			color: #fff;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 20px;
+			letter-spacing: 0.15rem;
+			transition: all 0.3s;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+
+			.quote {
+				&:before {
+					content: '»';
+					position: absolute;
+					left: -30px;
+					opacity: 0;
+					transition: all 0.4s;
+				}
+
+				&:after {
+					content: '»';
+					position: absolute;
+					left: 20px;
+					opacity: 1;
+					transition: all 0.4s;
+				}
+			}
+
+			&:after {
+				content: '';
 				position: absolute;
-				left: 35px;
-				opacity: 0;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $primary-color;
+				border-radius: 10px;
+				z-index: -2;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				height: 100%;
+				background-color: $terciary-color;
+				transition: all 0.3s;
+				border-radius: 10px;
+				z-index: -1;
+			}
+
+			&:hover {
+				color: $secondary-color;
+
+				&:before {
+					width: 100%;
+				}
+
+				.quote:before {
+					content: '»';
+					position: absolute;
+					left: 20px;
+					opacity: 1;
+				}
+
+				.quote:after {
+					content: '»';
+					position: absolute;
+					left: 35px;
+					opacity: 0;
+				}
 			}
 		}
 	}
-}
 
-@keyframes drift {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-.main-bottom {
-	position: relative;
-	display: flex;
-	height: calc(100vh - 50px);
-	flex-direction: column;
-	background-color: $primary-color;
-	overflow: hidden;
-	&__wave {
-		position: absolute;
-		top: 0;
-	}
-	&__rights {
-		width: 100%;
-		height: 3%;
-		font-size: 12px;
-		text-align: center;
-		color: white;
-		margin-bottom: 15px;
-	}
-}
-.title {
-	width: 100%;
-	height: 23%;
-	font-weight: bold;
-	font-size: 40px;
-	text-align: center;
-	text-transform: uppercase;
-	color: white;
-	margin-top: 1em;
-	z-index: 1;
-}
-
-.info {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	margin: 20px auto;
-	margin-top: 50px;
-	max-width: 1500px;
-	background-color: $primary-color;
-}
-
-.card {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 260px;
-	height: 260px;
-	margin: 0 15px;
-
-	&__container {
+	.main-bottom {
 		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		transition: transform 0.8s;
-		transform-style: preserve-3d;
-		&:hover {
-			transform: rotateY(180deg);
+		display: flex;
+		height: calc(100vh - 50px);
+		flex-direction: column;
+		background-color: $primary-color;
+		overflow: hidden;
+
+		&__wave {
+			position: absolute;
+			top: 0;
 		}
-	}
-	&__front {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		backface-visibility: hidden;
-		background-color: none;
-		&--text {
+
+		&__rights {
 			width: 100%;
-			height: 23%;
-			font-size: 24px;
+			height: 3%;
+			font-size: 12px;
 			text-align: center;
 			color: white;
-			margin-top: 10px;
+			margin-bottom: 15px;
 		}
 	}
-	&__back {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		backface-visibility: hidden;
+
+	.title {
+		width: 100%;
+		height: 23%;
+		font-weight: bold;
+		font-size: 40px;
+		text-align: center;
+		text-transform: uppercase;
 		color: white;
-		margin: 0 15%;
-		height: 70%;
-		border-radius: 50%;
-		transform: rotateY(180deg);
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-		background-color: rgba(85, 85, 85, 0.5);
-		background-image: url('/assets/img/pokeball-card.png');
-		opacity: 0.5;
-		background-repeat: no-repeat;
-		background-size: 35%;
-		background-position: 0 100%;
-		&--text {
-			display: inline-block;
-			font-size: 22px;
-			padding: 0.3em;
-		}
-	}
-	&__image {
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-		width: 70%;
-		height: auto;
-		border-radius: 50%;
-	}
-}
-
-@media (max-width: 1024px) {
-	.oak-professor {
-		&__image {
-			width: 100%;
-			bottom: 50px;
-			max-width: 150px;
-			height: auto;
-		}
-		&__pokemon {
-			max-width: 140px;
-		}
-	}
-	.btn-landing {
-		position: absolute;
-		bottom: 50px;
-		right: 60px;
-		&__link {
-			font-size: 14px;
-		}
-	}
-	.title {
-		font-size: 25px;
-	}
-	.functionalities {
-		flex-flow: row wrap !important;
-	}
-	.explanation-card {
-		&--double {
-			flex: 2;
-		}
-		&__img-group {
-			flex-flow: row nowrap;
-			max-height: 240px !important;
-			img {
-				max-width: 160px !important;
-			}
-		}
-		&__img {
-			max-width: 160px !important;
-		}
-	}
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		height: auto;
-	}
-	.card {
-		width: 250px;
-		height: 250px;
-		&__front {
-			&--text {
-				font-size: 18px;
-			}
-		}
-		&__back {
-			&--text {
-				font-size: 17px;
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	.btn-landing {
-		position: absolute;
-		bottom: 50%;
-	}
-	.intro-section {
-		.titles {
-			padding: 0px;
-			padding-top: 20px;
-			margin: 0 auto;
-			width: 60vw;
-			line-height: 45px;
-			h1 {
-				font-size: 43px;
-			}
-			&__title {
-				&--black {
-					text-align: left;
-				}
-				&--gray {
-					text-align: left;
-				}
-				&--red {
-					text-align: left;
-				}
-			}
-		}
-	}
-	.title {
-		font-size: 23px;
-		margin-top: 1vh;
+		margin-top: 1em;
+		z-index: 1;
 	}
 
-	.pokedex-title {
-		&__num {
-			font-size: 18px !important;
-		}
-		&__text {
-			font-size: 13px !important;
-		}
-	}
-	.explanation-card {
-		padding: 20px !important;
-		&--double {
-			padding: 20px !important;
-			flex: 2;
-		}
-	}
-	.bubble-text {
-		font-size: 12px !important;
-		padding: 15px !important;
-	}
 	.info {
-		margin: 50px auto;
-	}
-	.card {
-		&__front {
-			&--text {
-				font-size: 18px;
-			}
-		}
-		&__back {
-			&--text {
-				font-size: 18px;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.oak-professor {
-		position: absolute;
-		left: 0;
-		top: 50%;
-		&__image {
-			max-width: 99px;
-			height: auto;
-			position: static;
-			display: block;
-			margin: 0 auto;
-		}
-		&__pokemon {
-			max-width: 100px;
-			height: auto;
-			position: absolute;
-			display: block;
-			margin: 0 auto;
-		}
-	}
-	.btn-landing {
-		position: static;
-		width: 210px;
-		display: block;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
 		margin: 20px auto;
-		&__link {
-			font-size: 14px;
-			padding: 10px 20px;
-		}
-		.quote {
-			&:before {
-				left: -30px;
-			}
-			&:after {
-				left: 10px;
-			}
-		}
-		&:hover {
-			.quote:before {
-				left: 10px;
-			}
-			.quote:after {
-				left: 35px;
-			}
-		}
+		margin-top: 50px;
+		max-width: 1500px;
+		background-color: $primary-color;
 	}
-	.title {
-		font-size: 18px !important;
-		margin-top: 1vh !important;
-	}
-	.explanation-card {
-		padding: 20px !important;
-		&--double {
-			padding: 20px !important;
-			flex: 2;
-		}
-		&__img-group {
-			flex-flow: row nowrap;
-			img {
-				max-width: 140px !important;
-				max-height: 180px !important;
-			}
-		}
-		&__img {
-			max-width: 160px !important;
-		}
-	}
-	.main-bottom {
-		box-sizing: border-box;
-		justify-content: center;
-		height: auto;
-		&__rights {
-			font-size: 8px;
-		}
-	}
+
 	.card {
-		width: 220px !important;
-		height: 220px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 260px;
+		height: 260px;
+		margin: 0 15px;
+
+		&__container {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			transition: transform 0.8s;
+			transform-style: preserve-3d;
+
+			&:hover {
+				transform: rotateY(180deg);
+			}
+		}
+
 		&__front {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			backface-visibility: hidden;
+			background-color: none;
+
 			&--text {
-				font-size: 15px;
+				width: 100%;
+				height: 23%;
+				font-size: 24px;
+				text-align: center;
+				color: white;
+				margin-top: 10px;
 			}
 		}
+
 		&__back {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			backface-visibility: hidden;
+			color: white;
+			margin: 0 15%;
+			height: 70%;
+			border-radius: 50%;
+			transform: rotateY(180deg);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+			background-color: rgba(85, 85, 85, 0.5);
+			background-image: url('/assets/img/pokeball-card.png');
+			opacity: 0.5;
+			background-repeat: no-repeat;
+			background-size: 35%;
+			background-position: 0 100%;
+
 			&--text {
-				font-size: 14px;
+				display: inline-block;
+				font-size: 22px;
+				padding: 0.3em;
 			}
 		}
+
+		&__image {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+			width: 70%;
+			height: auto;
+			border-radius: 50%;
+		}
 	}
-	.info {
-		max-width: 400px;
-	}
+
+	//   @media (max-width: 1024px) {
+	//     .oak-professor {
+	//       &__image {
+	//         width: 100%;
+	//         bottom: 50px;
+	//         max-width: 150px;
+	//         height: auto;
+	//       }
+
+	//       &__pokemon {
+	//         max-width: 140px;
+	//       }
+	//     }
+
+	//     .btn-landing {
+	//       position: absolute;
+	//       bottom: 50px;
+	//       right: 60px;
+
+	//       &__link {
+	//         font-size: 14px;
+	//       }
+	//     }
+
+	//     .title {
+	//       font-size: 25px;
+	//     }
+
+	//     .functionalities {
+	//       flex-flow: row wrap !important;
+	//     }
+
+	//     .explanation-card {
+	//       &--double {
+	//         flex: 2;
+	//       }
+
+	//       &__img-group {
+	//         flex-flow: row nowrap;
+	//         max-height: 240px !important;
+
+	//         img {
+	//           max-width: 160px !important;
+	//         }
+	//       }
+
+	//       &__img {
+	//         max-width: 160px !important;
+	//       }
+	//     }
+
+	//     .main-bottom {
+	//       box-sizing: border-box;
+	//       justify-content: center;
+	//       height: auto;
+	//     }
+
+	//     .card {
+	//       width: 250px;
+	//       height: 250px;
+
+	//       &__front {
+	//         &--text {
+	//           font-size: 18px;
+	//         }
+	//       }
+
+	//       &__back {
+	//         &--text {
+	//           font-size: 17px;
+	//         }
+	//       }
+	//     }
+	//   }
+
+	//   @media (max-width: 768px) {
+	//     .btn-landing {
+	//       position: absolute;
+	//       bottom: 50%;
+	//     }
+
+	//     .intro-section {}
+
+	//     .title {
+	//       font-size: 23px;
+	//       margin-top: 1vh;
+	//     }
+
+	//     .pokedex-title {
+	//       &__num {
+	//         font-size: 18px !important;
+	//       }
+
+	//       &__text {
+	//         font-size: 13px !important;
+	//       }
+	//     }
+
+	//     .explanation-card {
+	//       padding: 20px !important;
+
+	//       &--double {
+	//         padding: 20px !important;
+	//         flex: 2;
+	//       }
+	//     }
+
+	//     .bubble-text {
+	//       font-size: 12px !important;
+	//       padding: 15px !important;
+	//     }
+
+	//     .info {
+	//       margin: 50px auto;
+	//     }
+
+	//     .card {
+	//       &__front {
+	//         &--text {
+	//           font-size: 18px;
+	//         }
+	//       }
+
+	//       &__back {
+	//         &--text {
+	//           font-size: 18px;
+	//         }
+	//       }
+	//     }
+	//   }
 }
+//   @media screen and (max-width: 480px) {
+//     .oak-professor {
+//       position: absolute;
+//       left: 0;
+//       top: 50%;
+
+//       &__image {
+//         max-width: 99px;
+//         height: auto;
+//         position: static;
+//         display: block;
+//         margin: 0 auto;
+//       }
+
+//       &__pokemon {
+//         max-width: 100px;
+//         height: auto;
+//         position: absolute;
+//         display: block;
+//         margin: 0 auto;
+//       }
+//     }
+
+//     .btn-landing {
+//       position: static;
+//       width: 210px;
+//       display: block;
+//       margin: 20px auto;
+
+//       &__link {
+//         font-size: 14px;
+//         padding: 10px 20px;
+//       }
+
+//       .quote {
+//         &:before {
+//           left: -30px;
+//         }
+
+//         &:after {
+//           left: 10px;
+//         }
+//       }
+
+//       &:hover {
+//         .quote:before {
+//           left: 10px;
+//         }
+
+//         .quote:after {
+//           left: 35px;
+//         }
+//       }
+//     }
+
+//     .title {
+//       font-size: 18px !important;
+//       margin-top: 1vh !important;
+//     }
+
+//     .explanation-card {
+//       padding: 20px !important;
+
+//       &--double {
+//         padding: 20px !important;
+//         flex: 2;
+//       }
+
+//       &__img-group {
+//         flex-flow: row nowrap;
+
+//         img {
+//           max-width: 140px !important;
+//           max-height: 180px !important;
+//         }
+//       }
+
+//       &__img {
+//         max-width: 160px !important;
+//       }
+//     }
+
+//     .main-bottom {
+//       box-sizing: border-box;
+//       justify-content: center;
+//       height: auto;
+
+//       &__rights {
+//         font-size: 8px;
+//       }
+//     }
+
+//     .card {
+//       width: 220px !important;
+//       height: 220px !important;
+
+//       &__front {
+//         &--text {
+//           font-size: 15px;
+//         }
+//       }
+
+//       &__back {
+//         &--text {
+//           font-size: 14px;
+//         }
+//       }
+//     }
+
+//     .info {
+//       max-width: 400px;
+//     }
+//   }

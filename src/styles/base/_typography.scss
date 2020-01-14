@@ -1,3 +1,30 @@
+@import 'abstracts/variables';
+
 body {
-	font-family: 'Roboto Condensed', sans-serif; //Changed from Roboto to Roboto Condensed
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.heading-primary {
+	letter-spacing: 0.055em;
+	padding: 2.5rem 4rem;
+	font-weight: bold;
+	font-size: 7rem;
+
+	&--black {
+		color: $secondary-color;
+		opacity: 0;
+		animation: opacity-animation 1s 2s forwards;
+	}
+
+	&--gray {
+		color: #868686;
+		opacity: 0;
+		animation: opacity-animation 1s 2.5s forwards;
+	}
+
+	&--red {
+		color: $primary-color;
+		opacity: 0;
+		animation: opacity-animation 1s 3s forwards;
+	}
 }
