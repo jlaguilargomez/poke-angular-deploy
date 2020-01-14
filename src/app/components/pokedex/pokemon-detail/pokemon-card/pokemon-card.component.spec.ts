@@ -31,11 +31,11 @@ describe('PokemonCardComponent', () => {
 	});
 
 	it('colorBar // it must return the correct HSL colour depends on the number passed as argument', (): void => {
-		//setup
-		const expectedResult: string = 'hsl(120, 100%, 50%)';
-		//exercise
+		// setup
+		const expectedResult = 'hsl(120, 100%, 50%)';
+		// exercise
 		const result: string = component.colorBar(120);
-		//verify
+		// verify
 		expect(result).toEqual(expectedResult);
 	});
 });

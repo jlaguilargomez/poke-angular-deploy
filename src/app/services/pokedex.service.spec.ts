@@ -86,11 +86,11 @@ describe('Service: PokedexService', () => {
 		});
 
 		it('checks if the pokemon contains the correct colour depends on the type', (): void => {
-			//setup
-			const colorSelected: string = '#EEAF9D';
-			//exercise
+			// setup
+			const colorSelected = '#EEAF9D';
+			// exercise
 			const pokemonSelected: any = pokedexService.getPokemon('Geodude');
-			//verify
+			// verify
 			expect(pokemonSelected.colorType).toEqual(colorSelected);
 		});
 	});
