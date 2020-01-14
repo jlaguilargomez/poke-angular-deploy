@@ -10,7 +10,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class PokemonCardComponent implements OnInit {
 	private pokemonSelected: Pokemon;
-	private pokemonColors: {} = {
+	private pokemonColors: { [key: string]: string } = {
 		grass: '#76C535',
 		bug: '#A1B01E',
 		fire: '#EB3D0D',
@@ -36,9 +36,12 @@ export class PokemonCardComponent implements OnInit {
 		private routerData: ActivatedRoute
 	) {}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemonSelected = this.pokedexService.getPokemon(
+				params['id'] - 1
+			);
+			console.log(this.pokemonSelected);
 		});
 	}
 

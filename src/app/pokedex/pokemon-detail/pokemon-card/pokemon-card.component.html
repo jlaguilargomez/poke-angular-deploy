@@ -15,7 +15,9 @@
 					<!-- Background Color -->
 					<div
 						class="card__front--bg"
-						[style.background-color]="colorBackground(pokemonSelected.type[0])"
+						[style.backgroundColor]="
+							colorBackground(pokemonSelected.type[0])
+						"
 					>
 						<!-- Image -->
 						<img
@@ -49,7 +51,9 @@
 					<!-- Background Color -->
 					<div
 						class="card__front--bg"
-						[style.background-color]="colorBackground(pokemonSelected.type[0])"
+						[style.background-color]="
+							colorBackground(pokemonSelected.type[0])
+						"
 					>
 						<!-- Stats bars Div -->
 						<div class="card__stats">
@@ -61,7 +65,9 @@
 									Ability:
 									<span
 										class="cap"
-										*ngFor="let ability of pokemonSelected.ability"
+										*ngFor="
+											let ability of pokemonSelected.ability
+										"
 										>{{ ability }}
 									</span>
 								</li>
@@ -75,12 +81,22 @@
 							<!-- CARD BARS Stats -->
 							<table class="card__table">
 								<tr *ngFor="let stat of pokemonSelected.stats">
-									<td class="cap text-color-primary">{{ stat.name }}</td>
-									<td class="text-color-primary">{{ stat.base }}</td>
+									<td class="cap text-color-primary">
+										{{ stat.name }}
+									</td>
+									<td class="text-color-primary">
+										{{ stat.base }}
+									</td>
 									<div class="progress-bar">
 										<div
-											[style.width.%]="stat.base > 100 ? 100 : stat.base"
-											[style.background-color]="colorBar(stat.base)"
+											[style.width.%]="
+												stat.base > 100
+													? 100
+													: stat.base
+											"
+											[style.background-color]="
+												colorBar(stat.base)
+											"
 											class="progress-bar__skill"
 										>
 											<div class="d-hidden">Skill</div>
