@@ -1,0 +1,12 @@
+before_script:
+    - npm install
+
+linting:
+    script:
+        - npm run lint
+testing:
+    script:
+        - npm run test-headless
+build:
+    script:
+        - npm run build:prod

@@ -10,7 +10,7 @@ export class LandingComponent implements OnInit {
 	currentPokemon: string;
 	oldPokemon: string;
 	imgSource: string;
-	private team: object[] = [
+	team: object[] = [
 		{
 			name: 'Jose Angel Cívico Martos',
 			img: '../../assets/img/icon-profile1.png',
