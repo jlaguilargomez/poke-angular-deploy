@@ -42,15 +42,19 @@
 			fill="#273036"
 		/>
 	</svg>
-	<h2 class="heading-secondary u-text-center u-margin-bottom-big">
-		The Pokedex
-	</h2>
+
+	<div class="u-text-center u-margin-bottom-big">
+		<h2 class="heading-secondary">
+			The Pokedex
+		</h2>
+	</div>
+
 	<div class="functionalities">
 		<div class="explanation-card">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>1</span></div>
-				<p class="pokedex-title__text">Search your Pokemon...</p>
-			</div>
+			<app-background-dex-style
+				[num]="1"
+				[text]="'Search your Pokemon'"
+			></app-background-dex-style>
 			<img
 				class="explanation-card__img"
 				src="assets/img/functionality-1.jpg"
@@ -61,12 +65,10 @@
 			</div>
 		</div>
 		<div class="explanation-card--double">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>2</span></div>
-				<p class="pokedex-title__text">
-					Analyse your selected Pokemon...
-				</p>
-			</div>
+			<app-background-dex-style
+				[num]="2"
+				[text]="'Analyze your selected Pokemon'"
+			></app-background-dex-style>
 
 			<div class="explanation-card__img-group">
 				<img
@@ -86,10 +88,10 @@
 			</div>
 		</div>
 		<div class="explanation-card">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>3</span></div>
-				<p class="pokedex-title__text">And catch 'em all!</p>
-			</div>
+			<app-background-dex-style
+				[num]="3"
+				[text]="'And catch&#8217;em all!'"
+			></app-background-dex-style>
 			<img
 				class="explanation-card__img"
 				src="assets/img/functionality-3.jpg"

@@ -16,7 +16,6 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { HamburguerIconComponent } from './shared/components/header/hamburguer-icon/hamburguer-icon.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PokedexService } from './services/pokedex.service';
-import { ButtonArrowComponent } from './shared/components/button-arrow/button-arrow.component';
 import { ComponentsModule } from './shared/components/components.module';
 
 @NgModule({
