@@ -1,4 +1,5 @@
-@import '../../commonStyles.scss';
+@import 'base/base';
+@import 'abstracts/variables';
 
 .component-box {
 	display: flex;
