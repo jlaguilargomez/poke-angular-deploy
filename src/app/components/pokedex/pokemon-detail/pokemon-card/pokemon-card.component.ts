@@ -75,4 +75,8 @@ export class PokemonCardComponent implements OnInit {
 				return 'grey';
 		}
 	}
+
+	renderSomething() {
+		return 'Something';
+	}
 }

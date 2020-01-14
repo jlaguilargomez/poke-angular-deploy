@@ -9,30 +9,26 @@ describe('PokemonCardComponent', () => {
 		snapshot: { data: {} },
 	} as ActivatedRoute;
 
+	let component: PokemonCardComponent;
+	let fixture: ComponentFixture<PokemonCardComponent>;
+
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [PokemonCardComponent],
 			providers: [
+				PokemonCardComponent,
 				{ provide: ActivatedRoute, useValue: fakeActivatedRoute },
 			],
 			imports: [HttpClientModule],
-		}).compileComponents();
+		});
+
+		fixture = TestBed.createComponent(PokemonCardComponent);
+		component = fixture.componentInstance;
 	});
 
 	it('Component PokemonCardComponent works!', () => {
-		const fixture = TestBed.createComponent(PokemonCardComponent);
-		const component = fixture.debugElement.componentInstance;
-		expect(component).toBeTruthy();
+		expect(component).toBeDefined();
 	});
 
-	it('colorBackground method should return a color', () => {
-		//setup
-		const fixture = TestBed.createComponent(PokemonCardComponent);
-		const component = fixture.debugElement.componentInstance;
-		const expectedResult = '';
-		//exercise
-
-		//verify
-		expect();
-	});
+	it('must check if the method works', () => {});
 });
