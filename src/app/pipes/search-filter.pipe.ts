@@ -11,7 +11,9 @@ export class SearchFilterPipe implements PipeTransform {
 		} else {
 			return pokemonsArray.filter(
 				pokemon =>
-					pokemon.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+					pokemon.name
+						.toLowerCase()
+						.indexOf(searchTerm.toLowerCase()) !== -1
 			);
 		}
 	}

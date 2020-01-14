@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
-import { Pokemon } from '../../../interface/pokemon.interface';
-import { PokedexService } from '../../pokedex.service';
+import { Pokemon } from '../../../../models/pokemon.interface';
+import { PokedexService } from '../../../../services/pokedex.service';
 
 @Component({
 	selector: 'app-pokemon-map',
@@ -31,7 +31,9 @@ export class PokemonMapComponent implements OnInit {
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemonSelected = this.pokedexService.getPokemon(
+				params['id'] - 1
+			);
 			if (this.initializedSelection) {
 				this.changePokemon();
 			}

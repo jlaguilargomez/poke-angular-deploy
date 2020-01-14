@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 	width: 100vw;
 	height: calc(100vh - 70px);
-	background: url('../../assets/img/pokemon-header.jpg') no-repeat center;
+	background: url('/assets/img/pokemon-header.jpg') no-repeat center;
 	background-size: cover;
 	&__wave {
 		position: absolute;
@@ -398,7 +398,7 @@
 		transform: rotateY(180deg);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 		background-color: rgba(85, 85, 85, 0.5);
-		background-image: url(../../assets/img/pokeball-card.png);
+		background-image: url('/assets/img/pokeball-card.png');
 		opacity: 0.5;
 		background-repeat: no-repeat;
 		background-size: 35%;

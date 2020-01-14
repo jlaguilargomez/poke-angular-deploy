@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokedexService } from '../../pokedex.service';
-import { Pokemon } from 'src/app/interface/pokemon.interface';
+import { PokedexService } from '../../../../services/pokedex.service';
+import { Pokemon } from 'src/app/models/pokemon.interface';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -38,7 +38,9 @@ export class PokemonCardComponent implements OnInit {
 
 	ngOnInit() {
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemonSelected = this.pokedexService.getPokemon(
+				params['id'] - 1
+			);
 		});
 	}
 

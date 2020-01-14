@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { of, Observable } from 'rxjs';
-import { Pokemon, PokemonTest } from '../interface/pokemon.interface';
-import { PokedexService } from './pokedex.service';
+import { Pokemon, PokemonTest } from '../../models/pokemon.interface';
+import { PokedexService } from '../../services/pokedex.service';
 import { HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
