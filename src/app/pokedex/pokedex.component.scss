@@ -24,15 +24,16 @@
 	}
 }
 
-.loading-pokeball {
+.loading-picture {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	&__gif {
-		display: block;
-		margin: 0 auto;
+	&__request {
 		border-radius: 100px;
 		height: 60px;
+	}
+	&__error {
+		height: 50vh;
 	}
 }
 
