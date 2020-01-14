@@ -76,10 +76,7 @@ export class PokemonMapComponent implements OnInit {
 			});
 			// Change selected Pokemon
 			marker.on('click', event => {
-				this.router.navigate([
-					'pokedex',
-					event.target._icon.src.match(/\d+/)[0],
-				]);
+				this.router.navigate(['pokedex', event.target._popup._content]);
 			});
 			marker.addTo(map);
 		});
