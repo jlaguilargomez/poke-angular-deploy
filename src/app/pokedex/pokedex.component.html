@@ -1,18 +1,21 @@
 <div class="component-box">
-	<div class="pokedex" *ngIf="pokemonLoaded; else loading">
+	<div class="pokedex" *ngIf="status === 'loaded'">
 		<app-pokemon-list class="pokedex__pokemon-list"></app-pokemon-list>
 		<div class="pokedex__pokemon-detail">
 			<router-outlet></router-outlet>
 		</div>
 	</div>
-	<div>
-		<ng-template #loading>
-			<div class="loading-pokeball">
-				<img
-					class="loading-pokeball__gif"
-					src="assets/img/loading-pokeball.gif"
-				/>
-			</div>
-		</ng-template>
+	<div class="loading-picture" *ngIf="status === 'requesting'">
+		<img
+			class="loading-picture__request"
+			src="assets/img/loading-pokeball.gif"
+		/>
+	</div>
+	<div class="loading-picture" *ngIf="status === 'error'">
+		<img
+			class="loading-picture__error"
+			src="assets/img/psyduck404.png"
+			alt="Some problem with the API"
+		/>
 	</div>
 </div>
