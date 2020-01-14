@@ -10,26 +10,6 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class PokemonCardComponent implements OnInit {
 	private pokemonSelected: Pokemon;
-	private pokemonColors: { [key: string]: string } = {
-		grass: '#76C535',
-		bug: '#A1B01E',
-		fire: '#EB3D0D',
-		fighting: '#84331C',
-		rock: '#BAA45B',
-		normal: '#C3BCB2',
-		ground: '#EEAF9D',
-		water: '#2580C9',
-		ice: '#97E3F9',
-		flying: '#90A2ED',
-		dragon: '#7962E6',
-		ghost: '#5D5FB0',
-		dark: '#4C392C',
-		steel: '#BAB9C6',
-		psychic: '#EF4983',
-		fairy: '#F1AEF2',
-		poison: '#934392',
-		electric: '#FAB819',
-	};
 
 	constructor(
 		private pokedexService: PokedexService,
@@ -41,10 +21,6 @@ export class PokemonCardComponent implements OnInit {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 			console.log(this.pokemonSelected);
 		});
-	}
-
-	colorBackground(pokemonType: string): string {
-		return this.pokemonColors[pokemonType];
 	}
 
 	colorBar(num: number) {
