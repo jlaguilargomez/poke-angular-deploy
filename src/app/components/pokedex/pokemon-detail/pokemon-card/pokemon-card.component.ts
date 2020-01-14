@@ -16,19 +16,19 @@ export class PokemonCardComponent implements OnInit {
 		private routerData: ActivatedRoute
 	) {}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 			console.log(this.pokemonSelected);
 		});
 	}
 
-	colorBar(num: number): string {
+	public colorBar(num: number): string {
 		const statusValue: number = num;
 		return `hsl(${statusValue}, 100%, 50%)`;
 	}
 
-	get colorType() {
+	public get pokemonColorType(): string {
 		return this.pokemonSelected.colorType;
 	}
 }
