@@ -61,20 +61,14 @@
 
 	.functionalities {
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: row wrap;
 		justify-content: center;
 
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
-			flex: 3;
-			padding: 50px;
-
-			&--double {
-				padding: 50px;
-				flex: 4;
-			}
+			margin: 5rem;
 
 			&__img-group {
 				display: flex;
@@ -91,14 +85,10 @@
 				display: block;
 				margin: 15px auto;
 			}
-		}
 
-		.bubble-text {
-			background-color: #c4c4c4;
-			border-radius: 15px;
-			padding: 25px;
-			color: #202020;
-			text-align: justify;
+			&__info {
+				max-width: 30rem;
+			}
 		}
 	}
 
@@ -277,12 +267,15 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
 	.intro-section {
 		&__wave {
 			transform-origin: bottom;
-			transform: scaleY(1.7);
+			transform: scaleY(1.4);
 		}
+	}
+	.section-functionality {
+		height: auto;
 	}
 }
 

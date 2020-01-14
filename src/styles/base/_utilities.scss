@@ -13,3 +13,9 @@
 .u-margin-bottom-big {
 	margin-bottom: 8rem;
 }
+
+@media (max-width: 1366px) {
+	.u-margin-bottom-big {
+		margin-bottom: 4rem;
+	}
+}
