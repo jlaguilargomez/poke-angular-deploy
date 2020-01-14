@@ -7,13 +7,14 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pretty-quick": "pretty-quick"
   },
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "ng lint"
+      "pre-commit": "pretty-quick --staged && ng test --watch=false",
+      "pre-push": "ng lint && ng build"
     }
   },
   "dependencies": {
@@ -35,7 +36,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.22",
-    "@angular/cli": "^8.3.22",
+    "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
