@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { PokedexService } from 'src/app/pokedex.service';
+import { PokedexService } from 'src/app/pokedex/pokedex.service';
 import { Pokemon } from 'src/app/interface/pokemon.interface';
 
 @Component({
@@ -9,7 +9,7 @@ import { Pokemon } from 'src/app/interface/pokemon.interface';
 	styleUrls: ['./pokemon-detail.component.scss'],
 })
 export class PokemonDetailComponent implements OnInit {
-	public pokemonSelected: Pokemon;
+	private pokemonSelected: Pokemon;
 
 	constructor(
 		private route: ActivatedRoute,

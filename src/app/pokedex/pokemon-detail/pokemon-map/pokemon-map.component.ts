@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
 import { Pokemon } from '../../../interface/pokemon.interface';
-import { PokedexService } from 'src/app/pokedex.service';
+import { PokedexService } from '../../pokedex.service';
 
 @Component({
 	selector: 'app-pokemon-map',
