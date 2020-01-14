@@ -10,13 +10,12 @@ import { Pokemon } from '../../../models/pokemon.interface';
 })
 export class PokemonListComponent implements OnInit {
 	public searchPokemonName: string;
+	public pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
 	constructor(
 		private router: Router,
 		private pokedexService: PokedexService
 	) {}
-
-	private pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
 	renderPokemon(name) {
 		this.router.navigate(['pokedex', name]);
