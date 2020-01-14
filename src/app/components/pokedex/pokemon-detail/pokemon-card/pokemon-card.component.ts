@@ -42,7 +42,7 @@ export class PokemonCardComponent implements OnInit {
 		});
 	}
 
-	colorBackground(pokemonType) {
+	colorBackground(pokemonType): string {
 		return this.pokemonColors[pokemonType];
 	}
 
@@ -74,9 +74,5 @@ export class PokemonCardComponent implements OnInit {
 			default:
 				return 'grey';
 		}
-	}
-
-	renderSomething() {
-		return 'Something';
 	}
 }

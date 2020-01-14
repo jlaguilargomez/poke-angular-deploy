@@ -30,5 +30,21 @@ describe('PokemonCardComponent', () => {
 		expect(component).toBeDefined();
 	});
 
-	it('must check if the method works', () => {});
+	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (dragon = #7962E6)', () => {
+		//setup
+		const selectedColor = '#7962E6'; //color type dragon
+		//exercise
+		const result = component.colorBackground('dragon');
+		//verify
+		expect(result).toBe(selectedColor);
+	});
+
+	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (psychic = #EF4983)', () => {
+		//setup
+		const selectedColor = '#EF4983'; //color type dragon
+		//exercise
+		const result = component.colorBackground('psychic');
+		//verify
+		expect(result).toBe(selectedColor);
+	});
 });
