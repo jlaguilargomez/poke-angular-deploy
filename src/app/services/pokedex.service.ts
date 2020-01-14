@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Pokemon } from '../models/pokemon.interface';
 import { map, catchError, retry } from 'rxjs/operators';
 import { Observable, forkJoin, throwError } from 'rxjs';
+import { Pokemon } from '../models/pokemon.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -105,8 +105,8 @@ export class PokedexService {
 		return this.pokemonList;
 	}
 
-	public getPokemon(index): Pokemon {
-		return this.pokemonList[index];
+	public getPokemon(name): Pokemon {
+		return this.pokemonList.find(pokemon => pokemon.name === name);
 	}
 
 	testConection() {

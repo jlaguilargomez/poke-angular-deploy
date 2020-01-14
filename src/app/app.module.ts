@@ -15,6 +15,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { HamburguerIconComponent } from './shared/components/header/hamburguer-icon/hamburguer-icon.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PokedexService } from './services/pokedex.service';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
 		HamburguerIconComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
-	providers: [],
+	providers: [PokedexService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

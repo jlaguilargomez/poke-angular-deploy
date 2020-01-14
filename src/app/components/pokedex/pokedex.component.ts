@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PokedexService } from '../../services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 import { Subscription } from 'rxjs';
 
 @Component({

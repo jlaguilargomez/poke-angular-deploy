@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokedexService } from '../../../services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 import { Pokemon } from '../../../models/pokemon.interface';
 
 @Component({
@@ -18,8 +18,8 @@ export class PokemonListComponent implements OnInit {
 
 	private pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
-	renderPokemon(index) {
-		this.router.navigate(['pokedex', index + 1]);
+	renderPokemon(name) {
+		this.router.navigate(['pokedex', name]);
 	}
 
 	ngOnInit() {}

@@ -7,7 +7,7 @@ import {
 
 import { PokedexComponent } from './pokedex.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { PokedexService } from '../../services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 import { Router, ROUTER_INITIALIZER } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
