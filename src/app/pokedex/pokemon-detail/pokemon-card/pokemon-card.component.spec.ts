@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 describe('PokemonCardComponent', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			declarations: [PokemonCardComponent],
+			providers: [PokemonCardComponent],
 			imports: [HttpClientModule],
 		}).compileComponents();
 	});

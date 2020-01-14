@@ -86,8 +86,4 @@ export class PokedexService {
 	public getPokemon(index): Pokemon {
 		return this.pokemonList[index];
 	}
-
-	testConection() {
-		return 'it works!';
-	}
 }
