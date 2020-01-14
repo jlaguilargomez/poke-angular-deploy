@@ -14,7 +14,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && ng test --watch=false",
-      "pre-push": "ng lint"
+      "pre-push": "ng lint && ng build"
     }
   },
   "dependencies": {
