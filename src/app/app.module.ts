@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
-import { PokedexComponent } from './pokedex/pokedex.component';
-import { PokemonListComponent } from './pokedex/pokemon-list/pokemon-list.component';
-import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail.component';
-import { PokemonCardComponent } from './pokedex/pokemon-detail/pokemon-card/pokemon-card.component';
-import { PokemonMapComponent } from './pokedex/pokemon-detail/pokemon-map/pokemon-map.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { PokemonListComponent } from './components/pokedex/pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './components/pokedex/pokemon-detail/pokemon-detail.component';
+import { PokemonCardComponent } from './components/pokedex/pokemon-detail/pokemon-card/pokemon-card.component';
+import { PokemonMapComponent } from './components/pokedex/pokemon-detail/pokemon-map/pokemon-map.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { HamburguerIconComponent } from './shared/components/header/hamburguer-icon/hamburguer-icon.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { SearchFilterPipe } from './pokedex/pipes/search-filter.pipe';
-import { HamburguerIconComponent } from './header/hamburguer-icon/hamburguer-icon.component';
+import { PokedexService } from './services/pokedex.service';
 
 @NgModule({
 	declarations: [
@@ -32,7 +32,7 @@ import { HamburguerIconComponent } from './header/hamburguer-icon/hamburguer-ico
 		HamburguerIconComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
-	providers: [],
+	providers: [PokedexService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

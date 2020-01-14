@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokedexService } from '../pokedex.service';
-import { Pokemon } from '../../interface/pokemon.interface';
+import { PokedexService } from 'src/app/services/pokedex.service';
+import { Pokemon } from '../../../models/pokemon.interface';
 
 @Component({
 	selector: 'app-pokemon-list',
