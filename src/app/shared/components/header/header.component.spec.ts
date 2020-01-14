@@ -1,11 +1,11 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { HeaderComponent } from './header.component';
-// import { HamburguerIconComponent } from './hamburguer-icon/hamburguer-icon.component';
-// import { RouterLink, Router } from '@angular/router';
-// import { RouterTestingModule } from '@angular/router/testing';
-// import { PokedexComponent } from '../pokedex/pokedex.component';
-// import { LandingComponent } from '../components/landing/landing.component';
+import { HeaderComponent } from './header.component';
+import { HamburguerIconComponent } from './hamburguer-icon/hamburguer-icon.component';
+import { RouterLink, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PokedexComponent } from '../../../components/pokedex/pokedex.component';
+import { LandingComponent } from '../../../components/landing/landing.component';
 
 // describe('HeaderComponent', () => {
 // 	// beforeEach(() => {

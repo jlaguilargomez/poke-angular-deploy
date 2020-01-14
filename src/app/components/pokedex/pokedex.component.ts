@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PokedexService } from './pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -14,16 +14,18 @@ export class PokedexComponent implements OnInit, OnDestroy {
 	constructor(private pokedexService: PokedexService) {}
 
 	ngOnInit() {
-		this.subscription = this.pokedexService.loadPokemonList(1, 151).subscribe(
-			() => {
-				setTimeout(() => {
-					this.status = 'loaded';
-				}, 200);
-			},
-			error => {
-				this.status = 'error';
-			}
-		);
+		this.subscription = this.pokedexService
+			.loadPokemonList(1, 151)
+			.subscribe(
+				() => {
+					setTimeout(() => {
+						this.status = 'loaded';
+					}, 200);
+				},
+				error => {
+					this.status = 'error';
+				}
+			);
 	}
 
 	ngOnDestroy() {

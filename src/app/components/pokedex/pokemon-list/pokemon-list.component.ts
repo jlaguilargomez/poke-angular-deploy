@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokedexService } from '../pokedex.service';
-import { Pokemon } from '../../interface/pokemon.interface';
+import { PokedexService } from 'src/app/services/pokedex.service';
+import { Pokemon } from '../../../models/pokemon.interface';
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -11,12 +11,15 @@ import { Pokemon } from '../../interface/pokemon.interface';
 export class PokemonListComponent implements OnInit {
 	public searchPokemonName: string;
 
-	constructor(private router: Router, private pokedexService: PokedexService) {}
+	constructor(
+		private router: Router,
+		private pokedexService: PokedexService
+	) {}
 
 	private pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
-	renderPokemon(index) {
-		this.router.navigate(['pokedex', index + 1]);
+	renderPokemon(name) {
+		this.router.navigate(['pokedex', name]);
 	}
 
 	ngOnInit() {}
