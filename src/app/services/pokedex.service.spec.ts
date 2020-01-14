@@ -76,12 +76,22 @@ describe('Service: PokedexService', () => {
 			// Remove the parameters created with Math.random variable
 			delete response.moves;
 			delete response.coord;
+			delete response.colorType;
 
 			expect(response).toEqual(getPokemonResponse);
 		});
 		it('an invalid index for getPokemon method should return undefined', () => {
 			const response = pokedexService.getPokemon('imaginaryPokemon');
 			expect(response).toBeUndefined();
+		});
+
+		it('checks if the pokemon contains the correct colour depends on the type', (): void => {
+			//setup
+			const colorSelected: string = '#EEAF9D';
+			//exercise
+			const pokemonSelected: any = pokedexService.getPokemon('Geodude');
+			//verify
+			expect(pokemonSelected.colorType).toEqual(colorSelected);
 		});
 	});
 

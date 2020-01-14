@@ -2,6 +2,7 @@ export interface Pokemon {
 	id: number;
 	name: string;
 	type: string[];
+	colorType: string;
 	height: number;
 	weight: number;
 	stats: { name: string; base: number }[];
