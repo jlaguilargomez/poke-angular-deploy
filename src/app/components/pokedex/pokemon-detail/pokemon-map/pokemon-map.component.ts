@@ -91,8 +91,10 @@ export class PokemonMapComponent implements OnInit {
 			position: 'topright',
 			layer: markersLayer,
 			initial: false,
-			// zoom: 12,
-			// marker: false
+		});
+
+		searchControl.on('search:locationfound', event => {
+			this.router.navigate(['pokedex', event.text]);
 		});
 
 		map.addControl(searchControl);
