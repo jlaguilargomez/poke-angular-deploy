@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as L from 'leaflet';
+import 'leaflet-search';
 import { Pokemon } from '../../../../models/pokemon.interface';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
@@ -56,6 +57,7 @@ export class PokemonMapComponent implements OnInit {
 		tileLayer.addTo(map);
 
 		// Map icons settings incluiding pop-up funcionalities
+		const markersLayer = new L.LayerGroup();
 		this.pokemons.forEach(pokemon => {
 			const pokemonIcon = L.icon({
 				iconUrl: pokemon.imagePath,
@@ -78,8 +80,22 @@ export class PokemonMapComponent implements OnInit {
 			marker.on('click', event => {
 				this.router.navigate(['pokedex', event.target._popup._content]);
 			});
-			marker.addTo(map);
+
+			markersLayer.addLayer(marker);
+			// marker.addTo(map);
 		});
+
+		map.addLayer(markersLayer);
+
+		const searchControl = new L.Control.Search({
+			// position:'topright',
+			layer: markersLayer,
+			initial: false,
+			// zoom: 12,
+			// marker: false
+		});
+
+		map.addControl(searchControl);
 
 		this.map = map;
 	}
