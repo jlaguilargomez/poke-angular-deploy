@@ -19,7 +19,6 @@ export class PokemonCardComponent implements OnInit {
 	public ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
-			console.log(this.pokemonSelected);
 		});
 	}
 
@@ -30,5 +29,11 @@ export class PokemonCardComponent implements OnInit {
 
 	public get pokemonColorType(): string {
 		return this.pokemonSelected.colorType;
+	}
+
+	public getTypeColor(type: string): string {
+		const pokemonColors: { [key: string]: string } = this.pokedexService
+			.pokemonColorTypes;
+		return pokemonColors[type];
 	}
 }

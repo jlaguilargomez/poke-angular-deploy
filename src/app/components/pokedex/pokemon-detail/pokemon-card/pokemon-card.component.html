@@ -27,7 +27,8 @@
 						<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
 						<div
 							*ngFor="let type of pokemonSelected.type"
-							class="type type--{{ type }} cap"
+							class="type"
+							[style.background-color]="getTypeColor(type)"
 						>
 							{{ type }}
 						</div>

@@ -132,7 +132,7 @@ export class PokedexService {
 		return this.pokemonList.find(pokemon => pokemon.name === name);
 	}
 
-	testConection() {
-		return 'it works!';
+	public get pokemonColorTypes(): { [key: string]: string } {
+		return this.pokemonColors;
 	}
 }
