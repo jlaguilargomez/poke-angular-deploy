@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,6 +16,8 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { HamburguerIconComponent } from './shared/components/header/hamburguer-icon/hamburguer-icon.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PokedexService } from './services/pokedex.service';
+import { ButtonArrowComponent } from './shared/components/button-arrow/button-arrow.component';
+import { ComponentsModule } from './shared/components/components.module';
 
 @NgModule({
 	declarations: [
@@ -31,8 +33,15 @@ import { PokedexService } from './services/pokedex.service';
 		SearchFilterPipe,
 		HamburguerIconComponent,
 	],
-	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		AppRoutingModule,
+		FormsModule,
+		ComponentsModule,
+	],
 	providers: [PokedexService],
 	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

@@ -1,0 +1,88 @@
+@import 'abstracts/variables';
+
+.button {
+	transition: 0.7s;
+	opacity: 0;
+	animation: btn-animation 1s forwards;
+
+	&__link {
+		cursor: pointer;
+		display: inline-block;
+		padding: 3rem 7.25rem;
+		border-radius: 10px;
+		color: #fff;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 4rem;
+		letter-spacing: 0.15rem;
+		transition: all 0.3s;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+
+		.quote {
+			&:before {
+				content: '»';
+				position: absolute;
+				left: -30px;
+				opacity: 0;
+				transition: all 0.4s;
+			}
+
+			&:after {
+				content: '»';
+				position: absolute;
+				left: 20px;
+				opacity: 1;
+				transition: all 0.4s;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $primary-color;
+			border-radius: 10px;
+			z-index: -2;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0%;
+			height: 100%;
+			background-color: $terciary-color;
+			transition: all 0.3s;
+			border-radius: 10px;
+			z-index: -1;
+		}
+
+		&:hover {
+			color: $secondary-color;
+
+			&:before {
+				width: 100%;
+			}
+
+			.quote:before {
+				content: '»';
+				position: absolute;
+				left: 20px;
+				opacity: 1;
+			}
+
+			.quote:after {
+				content: '»';
+				position: absolute;
+				left: 35px;
+				opacity: 0;
+			}
+		}
+	}
+}

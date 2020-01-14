@@ -1,10 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ButtonArrowComponent } from './shared/components/button-arrow/button-arrow.component';
 
 describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [AppComponent],
+			declarations: [AppComponent, ButtonArrowComponent],
 		}).compileComponents();
 	}));
 
