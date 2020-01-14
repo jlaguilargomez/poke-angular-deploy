@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PokedexService } from 'src/app/services/pokedex.service';
 import { Pokemon } from 'src/app/models/pokemon.interface';
 import { ActivatedRoute, Params } from '@angular/router';
+import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
 	selector: 'app-pokemon-card',
@@ -38,10 +38,7 @@ export class PokemonCardComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(
-				params['id'] - 1
-			);
-			console.log(this.pokemonSelected);
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 		});
 	}
 
