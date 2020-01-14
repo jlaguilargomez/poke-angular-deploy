@@ -39,14 +39,15 @@ export class PokemonCardComponent implements OnInit {
 	ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
+			console.log(this.pokemonSelected);
 		});
 	}
 
-	colorBackground(pokemonType): string {
+	colorBackground(pokemonType: string): string {
 		return this.pokemonColors[pokemonType];
 	}
 
-	colorBar(num) {
+	colorBar(num: number) {
 		switch (true) {
 			case num < 16:
 				return '#d6522a';

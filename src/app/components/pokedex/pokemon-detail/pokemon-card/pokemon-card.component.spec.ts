@@ -47,4 +47,10 @@ describe('PokemonCardComponent', () => {
 		//verify
 		expect(result).toBe(selectedColor);
 	});
+
+	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (psychic = #EF4983)', () => {
+		//setup
+		//exercise
+		//verify
+	});
 });
