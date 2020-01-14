@@ -11,12 +11,16 @@ import { Pokemon } from '../../interface/pokemon.interface';
 export class PokemonListComponent implements OnInit {
 	public searchPokemonName: string;
 
-	constructor(private router: Router, private pokedexService: PokedexService) {}
+	constructor(
+		private router: Router,
+		private pokedexService: PokedexService
+	) {}
 
 	private pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
-	renderPokemon(index) {
-		this.router.navigate(['pokedex', index + 1]);
+	renderPokemon(name) {
+		name = name.toLowerCase();
+		this.router.navigate(['pokedex', name]);
 	}
 
 	ngOnInit() {}
