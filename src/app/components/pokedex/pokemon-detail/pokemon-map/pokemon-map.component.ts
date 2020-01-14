@@ -67,6 +67,7 @@ export class PokemonMapComponent implements OnInit {
 				popupAnchor: [0, -35],
 			});
 			const marker = L.marker([pokemon.coord.lat, pokemon.coord.long], {
+				title: pokemon.name,
 				icon: pokemonIcon,
 			}).bindPopup(pokemon.name, { closeButton: false });
 			// Pop-up with the pokemon name
@@ -82,13 +83,12 @@ export class PokemonMapComponent implements OnInit {
 			});
 
 			markersLayer.addLayer(marker);
-			// marker.addTo(map);
 		});
 
 		map.addLayer(markersLayer);
 
 		const searchControl = new L.Control.Search({
-			// position:'topright',
+			position: 'topright',
 			layer: markersLayer,
 			initial: false,
 			// zoom: 12,
