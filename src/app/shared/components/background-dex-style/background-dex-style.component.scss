@@ -2,16 +2,16 @@
 
 .pokedex-title {
 	background-color: $primary-color;
-	border-radius: 15px;
+	border-radius: 1rem;
 	display: flex;
 	text-transform: uppercase;
-	height: 50px;
+	height: 5rem;
 
 	&__num {
 		background-color: $secondary-color;
-		width: 80px;
+		width: 8rem;
 		height: 100%;
-		border-radius: 15px 0px 0px 15px;
+		border-radius: 1rem 0px 0px 1rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;

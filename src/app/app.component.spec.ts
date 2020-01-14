@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { ButtonArrowComponent } from './shared/components/button-arrow/button-arrow.component';
-import { BackgroundDexStyleComponent } from './shared/background-dex-style/background-dex-style.component';
+import { BackgroundDexStyleComponent } from './shared/components/background-dex-style/background-dex-style.component';
 
 describe('AppComponent', () => {
 	beforeEach(async(() => {

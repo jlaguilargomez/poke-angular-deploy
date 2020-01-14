@@ -62,28 +62,27 @@
 	.functionalities {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: center;
+		justify-content: space-evenly;
 
 		.explanation-card {
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
-			margin: 5rem;
+			justify-content: space-between;
+			height: 60rem;
 
 			&__img-group {
 				display: flex;
 				flex-flow: row nowrap;
 
 				img {
-					max-height: 240px;
+					max-height: 30rem;
 				}
 			}
 
 			&__img {
-				max-height: 240px;
+				max-height: 30rem;
 				border-radius: 15px;
-				display: block;
-				margin: 15px auto;
 			}
 
 			&__info {
@@ -110,47 +109,6 @@
 		top: 0;
 		margin-top: 3vh;
 		font-weight: bold;
-		transition: 0.7s;
-	}
-}
-
-.oak-professor {
-	position: absolute;
-	width: 100%;
-	left: 30px;
-	bottom: 0;
-
-	&__image {
-		display: inline-block;
-		width: 100%;
-		position: absolute;
-		bottom: 70px;
-		max-width: 170px;
-		height: auto;
-		transition: 0.7s;
-		opacity: 0;
-		animation: opacity-animation 1s 1s forwards;
-	}
-
-	&__pokemon {
-		display: inline-block;
-		position: absolute;
-		bottom: 20px;
-		left: 100px;
-		max-width: 160px;
-		transition: 0.7s;
-		width: 280px;
-		opacity: 0;
-		animation: pokemon-animation 1s forwards;
-	}
-
-	&__bubble {
-		display: inline-block;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		max-width: 300px;
-		height: auto;
 		transition: 0.7s;
 	}
 }

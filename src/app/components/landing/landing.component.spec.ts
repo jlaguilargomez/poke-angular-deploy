@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
 import { ButtonArrowComponent } from 'src/app/shared/components/button-arrow/button-arrow.component';
-import { BackgroundDexStyleComponent } from 'src/app/shared/background-dex-style/background-dex-style.component';
+import { BackgroundDexStyleComponent } from 'src/app/shared/components/background-dex-style/background-dex-style.component';
 
 describe('LandingComponent', () => {
 	beforeEach(() => {
