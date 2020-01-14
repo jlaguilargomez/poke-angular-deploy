@@ -23,33 +23,8 @@ export class PokemonCardComponent implements OnInit {
 		});
 	}
 
-	colorBar(num: number) {
-		switch (true) {
-			case num < 16:
-				return '#d6522a';
-			case num >= 16 && num < 32:
-				return '#d6822a';
-			case num >= 32 && num < 48:
-				return '#d6b12a';
-			case num >= 48 && num < 64:
-				return '#c0c42a';
-			case num >= 64 && num <= 80:
-				return '#aad62a';
-			case num >= 80 && num <= 96:
-				return '#99d62b';
-			case num >= 96 && num <= 112:
-				return '#87d52c';
-			case num >= 112 && num <= 128:
-				return '#62d52d';
-			case num >= 128 && num <= 144:
-				return '#34d52e';
-			case num >= 144 && num <= 160:
-				return '#30d55d';
-			// Extra Case
-			case num > 160:
-				return '#00ff84';
-			default:
-				return 'grey';
-		}
+	colorBar(num: number): string {
+		const statusValue: number = num;
+		return `hsl(${statusValue}, 100%, 50%)`;
 	}
 }

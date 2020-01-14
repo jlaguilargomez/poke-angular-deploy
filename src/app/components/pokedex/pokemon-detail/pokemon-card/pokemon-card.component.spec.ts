@@ -26,31 +26,16 @@ describe('PokemonCardComponent', () => {
 		component = fixture.componentInstance;
 	});
 
-	it('Component PokemonCardComponent works!', () => {
+	it('Component PokemonCardComponent works!', (): void => {
 		expect(component).toBeDefined();
 	});
 
-	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (dragon = #7962E6)', () => {
+	it('colorBar // it must return the correct HSL colour depends on the number passed as argument', (): void => {
 		//setup
-		const selectedColor = '#7962E6'; //color type dragon
+		const expectedResult: string = 'hsl(120, 100%, 50%)';
 		//exercise
-		const result = component.colorBackground('dragon');
+		const result: string = component.colorBar(120);
 		//verify
-		expect(result).toBe(selectedColor);
-	});
-
-	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (psychic = #EF4983)', () => {
-		//setup
-		const selectedColor = '#EF4983'; //color type dragon
-		//exercise
-		const result = component.colorBackground('psychic');
-		//verify
-		expect(result).toBe(selectedColor);
-	});
-
-	it('.colorBackground // must check if the selected color corresponds to the pokemon type selected (psychic = #EF4983)', () => {
-		//setup
-		//exercise
-		//verify
+		expect(result).toEqual(expectedResult);
 	});
 });
