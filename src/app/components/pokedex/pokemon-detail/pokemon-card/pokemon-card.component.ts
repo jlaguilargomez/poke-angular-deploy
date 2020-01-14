@@ -27,4 +27,8 @@ export class PokemonCardComponent implements OnInit {
 		const statusValue: number = num;
 		return `hsl(${statusValue}, 100%, 50%)`;
 	}
+
+	get colorType() {
+		return this.pokemonSelected.colorType;
+	}
 }
