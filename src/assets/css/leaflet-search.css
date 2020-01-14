@@ -30,8 +30,8 @@
 	margin: 4px 0 4px 4px;
 }
 .leaflet-control-search.search-load .search-input {
-	background: url('/src/assets/img/leaflet-search/loader.gif') no-repeat
-		center right #fff;
+	background: url('src/assets/img/leaflet-search/loader.gif') no-repeat center
+		right #fff;
 }
 .leaflet-control-search.search-load .search-cancel {
 	visibility: hidden;
