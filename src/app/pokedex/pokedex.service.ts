@@ -12,7 +12,10 @@ export class PokedexService {
 
 	constructor(private http: HttpClient) {}
 
-	private requestPokemons(first: number, last: number): Observable<Pokemon[]> {
+	private requestPokemons(
+		first: number,
+		last: number
+	): Observable<Pokemon[]> {
 		const response: Observable<Pokemon[]> = new Observable(observer => {
 			const observables: Observable<Pokemon>[] = [];
 			const handleError = (error: HttpErrorResponse) => {
@@ -21,50 +24,69 @@ export class PokedexService {
 			};
 			for (let i = first, len = last; i < len + 1; i++) {
 				observables.push(
-					this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`).pipe(
-						retry(3),
-						catchError(handleError),
-						map(responseData => {
-							const newPokemon: Pokemon = {
-								id: responseData.id,
-								name:
-									responseData.forms[0].name.charAt(0).toUpperCase() +
-									responseData.forms[0].name.slice(1),
-								type: responseData.types.map(type => type.type.name),
-								height: responseData.height,
-								weight: responseData.weight,
-								stats: responseData.stats.map(stat => {
-									return {
-										name: stat['stat']['name'],
-										base: stat['base_stat'],
-									};
-								}),
-								moves: [
-									responseData.moves[
-										Math.floor(Math.random() * responseData.moves.length)
-									].move.name,
-									responseData.moves[
-										Math.floor(Math.random() * responseData.moves.length)
-									].move.name,
-									responseData.moves[
-										Math.floor(Math.random() * responseData.moves.length)
-									].move.name,
-									responseData.moves[
-										Math.floor(Math.random() * responseData.moves.length)
-									].move.name,
-								],
-								ability: responseData.abilities.map(
-									ability => ability.ability.name
-								),
-								imagePath: responseData.sprites.front_default,
-								coord: {
-									lat: Math.random() * 0.3 + 40.261781,
-									long: Math.random() * 0.4 + -3.93223,
-								},
-							};
-							return newPokemon;
-						})
-					)
+					this.http
+						.get<any>(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+						.pipe(
+							retry(3),
+							catchError(handleError),
+							map(responseData => {
+								const newPokemon: Pokemon = {
+									id: responseData.id,
+									name:
+										responseData.forms[0].name
+											.charAt(0)
+											.toUpperCase() +
+										responseData.forms[0].name.slice(1),
+									type: responseData.types.map(
+										type => type.type.name
+									),
+									height: responseData.height,
+									weight: responseData.weight,
+									stats: responseData.stats.map(stat => {
+										return {
+											name: stat['stat']['name'],
+											base: stat['base_stat'],
+										};
+									}),
+									moves: [
+										responseData.moves[
+											Math.floor(
+												Math.random() *
+													responseData.moves.length
+											)
+										].move.name,
+										responseData.moves[
+											Math.floor(
+												Math.random() *
+													responseData.moves.length
+											)
+										].move.name,
+										responseData.moves[
+											Math.floor(
+												Math.random() *
+													responseData.moves.length
+											)
+										].move.name,
+										responseData.moves[
+											Math.floor(
+												Math.random() *
+													responseData.moves.length
+											)
+										].move.name,
+									],
+									ability: responseData.abilities.map(
+										ability => ability.ability.name
+									),
+									imagePath:
+										responseData.sprites.front_default,
+									coord: {
+										lat: Math.random() * 0.3 + 40.261781,
+										long: Math.random() * 0.4 + -3.93223,
+									},
+								};
+								return newPokemon;
+							})
+						)
 				);
 			}
 			forkJoin(observables).subscribe(dataSet => {
@@ -83,8 +105,8 @@ export class PokedexService {
 		return this.pokemonList;
 	}
 
-	public getPokemon(index): Pokemon {
-		return this.pokemonList[index];
+	public getPokemon(name): Pokemon {
+		return this.pokemonList.find(pokemon => pokemon.name === name);
 	}
 
 	testConection() {

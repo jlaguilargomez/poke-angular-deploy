@@ -19,7 +19,6 @@ export class PokemonListComponent implements OnInit {
 	private pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
 	renderPokemon(name) {
-		name = name.toLowerCase();
 		this.router.navigate(['pokedex', name]);
 	}
 
