@@ -38,7 +38,7 @@ export class PokemonCardComponent implements OnInit {
 
 	ngOnInit() {
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 		});
 	}
 

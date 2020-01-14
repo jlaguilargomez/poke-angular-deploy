@@ -31,7 +31,7 @@ export class PokemonMapComponent implements OnInit {
 	ngOnInit() {
 		// this works equal to pokemon-cards component, it takes the id from the url and checks for the pokemon with this "id"
 		this.routerData.params.subscribe((params: Params) => {
-			this.pokemonSelected = this.pokedexService.getPokemon(params['id'] - 1);
+			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 			if (this.initializedSelection) {
 				this.changePokemon();
 			}
