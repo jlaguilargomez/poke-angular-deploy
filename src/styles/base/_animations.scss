@@ -38,3 +38,14 @@
 		transform: rotate(360deg);
 	}
 }
+
+@keyframes btn-animation {
+	from {
+		right: 0;
+	}
+
+	to {
+		right: 55px;
+		opacity: 1;
+	}
+}
