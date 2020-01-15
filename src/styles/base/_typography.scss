@@ -36,10 +36,10 @@ body {
 }
 
 .bubble-text {
-	background-color: #c4c4c4;
+	background-color: $secondary-color;
 	border-radius: 10px;
 	padding: 25px;
-	font-size: 2rem;
-	color: #202020;
+	font-size: 1.6rem;
+	color: $color-white;
 	text-align: justify;
 }
