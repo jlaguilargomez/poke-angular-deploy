@@ -24,11 +24,14 @@
 						"tsConfig": "tsconfig.app.json",
 						"aot": false,
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/styles/main.scss"],
+						"styles": [
+							"src/styles/main.scss",
+							"src/assets/css/leaflet-search.css"
+						],
 						"stylePreprocessorOptions": {
 							"includePaths": ["src/styles"]
 						},
-						"scripts": []
+						"scripts": ["src/assets/js/leaflet-search.js"]
 					},
 					"configurations": {
 						"production": {

@@ -9,7 +9,7 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 	styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
-	private pokemonSelected: Pokemon;
+	public pokemonSelected: Pokemon;
 
 	constructor(
 		private pokedexService: PokedexService,
