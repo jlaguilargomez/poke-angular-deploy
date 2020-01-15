@@ -1,12 +1,12 @@
 @import 'base/base';
 @import 'abstracts/variables';
 
-.container {
+.detail-container {
 	padding: 2rem;
 	display: flex;
 	justify-content: center;
 
-	&--selected {
+	&__selected {
 		height: 100%;
 		background-color: #db4545;
 		border-radius: 20px;
@@ -14,7 +14,7 @@
 		width: 100%;
 	}
 
-	&--no-selected {
+	&__no-selected {
 		width: 30vw;
 		min-width: 250px;
 	}
@@ -22,39 +22,40 @@
 
 .panel {
 	display: flex;
-	padding: 0.5em;
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
 
-	&__info {
-		width: 49%;
+	&__card {
+		padding: 0.5rem;
+		box-sizing: border-box;
+		flex-grow: 2;
+	}
+	&__map {
+		padding: 0.5rem;
+		box-sizing: border-box;
+		flex-grow: 1;
 	}
 }
 
 @media (max-width: 768px) {
-	.container {
+	.detail-container {
 		padding-left: 2rem;
 	}
 	.panel {
-		min-width: 0;
 		flex-flow: column wrap;
-
-		&__info {
-			width: 100%;
-		}
 	}
 }
 
 @media (max-width: 480px) {
-	.container {
+	.detail-container {
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 	}
 }
 
 @media (min-width: 1280px) {
-	.container {
+	.detail-container {
 		padding: 6rem;
 	}
 }
