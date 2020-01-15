@@ -42,7 +42,8 @@
 	.pokedex {
 		flex-direction: column;
 
-		&__pokemon-list {
+		&__pokemon-list,
+		&__pokemon-detail {
 			width: 100%;
 		}
 	}

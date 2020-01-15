@@ -26,8 +26,6 @@
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
-	min-width: 500px;
-	min-height: 380px;
 
 	&__info {
 		width: 49%;
@@ -36,7 +34,6 @@
 
 @media (max-width: 768px) {
 	.container {
-		width: 90vw;
 		padding-left: 2rem;
 	}
 	.panel {
@@ -51,11 +48,7 @@
 
 @media (max-width: 480px) {
 	.container {
-		padding: 0.5rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
-
-	// @media (max-height: 375px) {
-	// 	.container {
-
-	// 	}
 }

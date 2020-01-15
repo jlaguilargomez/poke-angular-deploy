@@ -12,7 +12,6 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 100%;
 	background-color: $secondary-color;
 	border-radius: 20px;
 	padding: 5px 0 5px 5px;
@@ -157,9 +156,9 @@
 
 @media (max-width: 480px) {
 	.container {
-		padding: 0.5rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
-
 	.elem {
 		&__name {
 			padding-left: 10px;
