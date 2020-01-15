@@ -10,7 +10,7 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class PokemonCardComponent implements OnInit {
 	public pokemonSelected: Pokemon;
-	public detail: boolean = false;
+	public detail = false;
 
 	constructor(
 		private pokedexService: PokedexService,
