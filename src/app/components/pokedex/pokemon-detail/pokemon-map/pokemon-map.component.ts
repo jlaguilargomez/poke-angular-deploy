@@ -91,6 +91,7 @@ export class PokemonMapComponent implements OnInit {
 			position: 'topright',
 			layer: markersLayer,
 			initial: false,
+			marker: false,
 		});
 
 		searchControl.on('search:locationfound', event => {
