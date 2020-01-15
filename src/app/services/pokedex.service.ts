@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError, retry } from 'rxjs/operators';
 import { Observable, forkJoin, throwError } from 'rxjs';
-import { Pokemon } from '../models/pokemon.interface';
+import { Pokemon, PokemonAPIData } from '../models/pokemon.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -49,7 +49,7 @@ export class PokedexService {
 						.pipe(
 							retry(3),
 							catchError(handleError),
-							map(responseData => {
+							map((responseData: PokemonAPIData) => {
 								const newPokemon: Pokemon = {
 									id: responseData.id,
 									name:
