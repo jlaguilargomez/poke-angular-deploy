@@ -1,0 +1,10 @@
+@mixin background-parallax($img, $color, $opacity) {
+	background: linear-gradient(
+			to left,
+			rgba($color, $opacity),
+			rgba($color, $opacity)
+		),
+		url($img) no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+}

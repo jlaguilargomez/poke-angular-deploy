@@ -1,18 +1,17 @@
 @import 'base/base';
 @import 'base/typography';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .intro-section {
 	position: relative;
 	box-sizing: border-box;
 	height: calc(100vh - 7rem);
-	background: linear-gradient(
-			to left bottom,
-			rgba($color-white, 0.7),
-			rgba($color-white, 1)
-		),
-		url('/assets/img/pokemon-header.jpg') no-repeat center;
-	background-size: cover;
+	@include background-parallax(
+		'/assets/img/pokemon-header.jpg',
+		$color-white,
+		0.8
+	);
 
 	&__headings {
 		width: 60rem;
@@ -58,6 +57,11 @@
 	box-sizing: border-box;
 	padding: 5rem 0rem;
 	height: 100vh;
+	@include background-parallax(
+		'https://playagaingames.files.wordpress.com/2019/01/pokemon-lets-go-3.jpg',
+		$color-white,
+		0.85
+	);
 
 	.functionalities {
 		display: flex;
@@ -98,7 +102,7 @@
 
 	&__wave {
 		position: absolute;
-		z-index: -1;
+		z-index: 0;
 		top: 0;
 		left: 0;
 	}
