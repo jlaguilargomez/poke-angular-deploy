@@ -15,9 +15,7 @@
 					<!-- Background Color -->
 					<div
 						class="card__front--bg"
-						[style.background-color]="
-							colorBackground(pokemonSelected.type[0])
-						"
+						[style.background-color]="pokemonColorType"
 					>
 						<!-- Image -->
 						<img
@@ -29,7 +27,8 @@
 						<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
 						<div
 							*ngFor="let type of pokemonSelected.type"
-							class="type type--{{ type }} cap"
+							class="type"
+							[style.background-color]="getTypeColor(type)"
 						>
 							{{ type }}
 						</div>
@@ -51,9 +50,7 @@
 					<!-- Background Color -->
 					<div
 						class="card__front--bg"
-						[style.background-color]="
-							colorBackground(pokemonSelected.type[0])
-						"
+						[style.background-color]="pokemonColorType"
 					>
 						<!-- Stats bars Div -->
 						<div class="card__stats">

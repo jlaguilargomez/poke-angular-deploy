@@ -1,24 +1,20 @@
 import { TestBed } from '@angular/core/testing';
-import { of, Observable } from 'rxjs';
-import { Pokemon, PokemonTest } from '../../models/pokemon.interface';
-import { PokedexService } from 'src/app/services/pokedex.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { PokedexService } from 'src/app/services/pokedex.service';
+import { Pokemon, PokemonTest } from 'src/app/models/pokemon.interface';
 
 describe('Service: PokedexService', () => {
 	let pokedexService: PokedexService;
 
-	beforeEach(() => {
+	beforeEach((): void => {
 		TestBed.configureTestingModule({
 			providers: [PokedexService],
 			imports: [HttpClientModule],
 		});
 
 		pokedexService = TestBed.get(PokedexService);
-	});
-
-	it('the test is correctly config', () => {
-		expect(pokedexService.testConection()).toBe('it works!');
 	});
 
 	it('the service works correctly', () => {
@@ -80,12 +76,22 @@ describe('Service: PokedexService', () => {
 			// Remove the parameters created with Math.random variable
 			delete response.moves;
 			delete response.coord;
+			delete response.colorType;
 
 			expect(response).toEqual(getPokemonResponse);
 		});
 		it('an invalid index for getPokemon method should return undefined', () => {
 			const response = pokedexService.getPokemon('imaginaryPokemon');
 			expect(response).toBeUndefined();
+		});
+
+		it('checks if the pokemon contains the correct colour depends on the type', (): void => {
+			// setup
+			const colorSelected = '#EEAF9D';
+			// exercise
+			const pokemonSelected: any = pokedexService.getPokemon('Geodude');
+			// verify
+			expect(pokemonSelected.colorType).toEqual(colorSelected);
 		});
 	});
 

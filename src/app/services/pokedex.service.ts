@@ -2,13 +2,33 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError, retry } from 'rxjs/operators';
 import { Observable, forkJoin, throwError } from 'rxjs';
-import { Pokemon } from '../models/pokemon.interface';
+import { Pokemon, PokemonAPIData } from '../models/pokemon.interface';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class PokedexService {
 	private pokemonList: Pokemon[] = [];
+	private pokemonColors: { [key: string]: string } = {
+		grass: '#76C535',
+		bug: '#A1B01E',
+		fire: '#EB3D0D',
+		fighting: '#84331C',
+		rock: '#BAA45B',
+		normal: '#C3BCB2',
+		ground: '#EEAF9D',
+		water: '#2580C9',
+		ice: '#97E3F9',
+		flying: '#90A2ED',
+		dragon: '#7962E6',
+		ghost: '#5D5FB0',
+		dark: '#4C392C',
+		steel: '#BAB9C6',
+		psychic: '#EF4983',
+		fairy: '#F1AEF2',
+		poison: '#934392',
+		electric: '#FAB819',
+	};
 
 	constructor(private http: HttpClient) {}
 
@@ -29,7 +49,7 @@ export class PokedexService {
 						.pipe(
 							retry(3),
 							catchError(handleError),
-							map(responseData => {
+							map((responseData: PokemonAPIData) => {
 								const newPokemon: Pokemon = {
 									id: responseData.id,
 									name:
@@ -40,6 +60,9 @@ export class PokedexService {
 									type: responseData.types.map(
 										type => type.type.name
 									),
+									colorType: this.pokemonColors[
+										responseData.types[0].type.name
+									],
 									height: responseData.height,
 									weight: responseData.weight,
 									stats: responseData.stats.map(stat => {
@@ -109,7 +132,7 @@ export class PokedexService {
 		return this.pokemonList.find(pokemon => pokemon.name === name);
 	}
 
-	testConection() {
-		return 'it works!';
+	public get pokemonColorTypes(): { [key: string]: string } {
+		return this.pokemonColors;
 	}
 }
