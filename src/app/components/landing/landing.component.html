@@ -1,4 +1,27 @@
-<section class="intro-section">
+<main class="intro-section">
+	<div class="intro-section__headings">
+		<h1 class="heading-primary heading-primary--black u-text-left">
+			Discover
+		</h1>
+		<h1 class="heading-primary heading-primary--gray u-text-center">
+			Learn
+		</h1>
+		<h1 class="heading-primary heading-primary--red u-text-right">
+			Explore
+		</h1>
+	</div>
+
+	<app-button-arrow
+		class="intro-section__btn-landing"
+		[text]="'Find your Pokemon'"
+	></app-button-arrow>
+
+	<img class="intro-section__pokemon" [src]="imgSource" alt="" />
+	<img
+		class="intro-section__professor-oak"
+		src="../../assets/img/pokemon-prof.png"
+	/>
+
 	<div class="intro-section__wave">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 			<path
@@ -8,126 +31,83 @@
 			></path>
 		</svg>
 	</div>
+</main>
 
-	<div class="titles">
-		<h1 class="titles__title--black">Discover</h1>
-		<h1 class="titles__title--gray">Learn</h1>
-		<h1 class="titles__title--red">Explore</h1>
+<!-- SECOND SECTION -->
+
+<section class="section-functionality" id="section-2">
+	<div class="section-functionality__heading">
+		<app-header-curve [text]="'How it works?'"></app-header-curve>
 	</div>
-
-	<div class="btn-landing">
-		<a class="btn-landing__link"
-			><span class="quote"></span>Find your Pokemon</a
-		>
-	</div>
-
-	<div class="oak-professor">
-		<img
-			class="oak-professor__image"
-			src="../../assets/img/pokemon-prof.png"
-		/>
-		<img class="oak-professor__pokemon" [src]="imgSource" alt="" />
-	</div>
-</section>
-
-<section class="functionality-section" id="section-2">
-	<svg
-		class="functionality-section__wave"
-		class=""
-		viewBox="0 0 1599 126"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<path
-			d="M0 100.937V0H1599V75.5C1151.5 134.5 736.806 144.614 312.5 86C149.091 63.4266 25.7633 73.8967 0 100.937Z"
-			fill="#273036"
-		/>
-	</svg>
-	<h2 class="title">The Pokedex</h2>
-	<div class="functionalities">
-		<div class="explanation-card">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>1</span></div>
-				<p class="pokedex-title__text">Search your Pokemon...</p>
+	<div class="functionalities u-margin-top-regular">
+		<div class="explanation-card u-margin-bottom-big">
+			<app-background-dex-style
+				[num]="1"
+				[text]="'Search your Pokemon'"
+			></app-background-dex-style>
+			<div class="explanation-card__img">
+				<img src="assets/img/functionality-1.jpg" alt="" />
 			</div>
-			<img
-				class="explanation-card__img"
-				src="assets/img/functionality-1.jpg"
-				alt=""
-			/>
-			<div class="bubble-text">
-				You can select the first 151 Pokemons and search them by name
+			<div class="explanation-card__info ">
+				<div class="bubble-text">
+					You can select the first 151 Pokemons and search them by
+					name
+				</div>
 			</div>
 		</div>
-		<div class="explanation-card--double">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>2</span></div>
-				<p class="pokedex-title__text">
-					Analyse your selected Pokemon...
-				</p>
-			</div>
+		<div class="explanation-card u-margin-bottom-big">
+			<app-background-dex-style
+				[num]="2"
+				[text]="'Analyze your selected Pokemon'"
+			></app-background-dex-style>
 
-			<div class="explanation-card__img-group">
-				<img
-					class="explanation-card__img"
-					src="assets/img/functionality-2_1.jpg"
-					alt=""
-				/>
-				<img
-					class="explanation-card__img"
-					src="assets/img/functionality-2_2.jpg"
-					alt=""
-				/>
+			<div class="explanation-card__img">
+				<img src="assets/img/functionality-2_1.jpg" alt="" />
+				<img src="assets/img/functionality-2_2.jpg" alt="" />
 			</div>
-			<div class="bubble-text">
-				Just point the cursor on the card and you will see all the data
-				available: Name, ability, height, weight, types and stats!
+			<div class="explanation-card__info ">
+				<div class="bubble-text">
+					Just point the cursor on the card and you will see all the
+					data available: Name, ability, height, weight, types and
+					stats!
+				</div>
 			</div>
 		</div>
-		<div class="explanation-card">
-			<div class="pokedex-title">
-				<div class="pokedex-title__num"><span>3</span></div>
-				<p class="pokedex-title__text">And catch 'em all!</p>
+		<div class="explanation-card u-margin-bottom-big">
+			<app-background-dex-style
+				[num]="3"
+				[text]="'And catch&#8217;em all!'"
+			></app-background-dex-style>
+			<div class="explanation-card__img">
+				<img src="assets/img/functionality-3.jpg" alt="" />
 			</div>
-			<img
-				class="explanation-card__img"
-				src="assets/img/functionality-3.jpg"
-				alt=""
-			/>
-			<div class="bubble-text">
-				And of course, you can see where to catch all your Pokemons!
+			<div class="explanation-card__info">
+				<div class="bubble-text">
+					Explore the world around you and catch all the Pokemon
+					availables!
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="main-bottom" id="section-3">
-	<svg
-		class="main-bottom__wave"
-		viewBox="0 0 1599 126"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<path
-			d="M0 100.937V0H1599V75.5C1151.5 134.5 736.806 144.614 312.5 86C149.091 63.4266 25.7633 73.8967 0 100.937Z"
-			fill="#273036"
-		/>
-	</svg>
-	<h2 class="title">our team</h2>
-	<div class="info">
-		<div class="card" *ngFor="let person of team">
-			<div class="card__container">
-				<div class="card__front">
-					<img class="card__image" [src]="person.img" />
-					<h3 class="card__front--text">{{ person.name }}</h3>
-				</div>
-				<div class="card__back">
-					<p class="card__back--text">{{ person.name }}</p>
-					<p class="card__back--text">{{ person.position }}</p>
-				</div>
-			</div>
+<!-- THIRD SECTION -->
+
+<section class="section-team" id="section-3">
+	<div class="section-team__heading">
+		<app-header-curve [text]="'Our Team'"></app-header-curve>
+	</div>
+
+	<div class="section-team__members">
+		<div *ngFor="let person of team">
+			<app-card-member
+				[name]="person.name"
+				[job]="person.job"
+				[img]="person.img"
+			></app-card-member>
 		</div>
 	</div>
-	<p class="main-bottom__rights">
+	<p class="section-team__rights">
 		This is a not-for-profit project. None of the images used in this
 		projects below us. All rights are reserved to The Pokemon Company
 	</p>

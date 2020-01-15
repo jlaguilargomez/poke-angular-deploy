@@ -14,27 +14,27 @@ export class LandingComponent implements OnInit {
 		{
 			name: 'Jose Angel Cívico Martos',
 			img: '../../assets/img/icon-profile1.png',
-			position: 'Software Developer',
+			job: 'Software Developer',
 		},
 		{
 			name: 'Gabriel García Rodríguez',
 			img: '../../assets/img/icon-profile2.png',
-			position: 'Software Developer',
+			job: 'Software Developer',
 		},
 		{
 			name: 'Guadalupe García Plaza',
 			img: '../../assets/img/icon-profile3.png',
-			position: 'Software Developer',
+			job: 'Software Developer',
 		},
 		{
 			name: 'Jose Luis Aguilar Gómez',
 			img: '../../assets/img/icon-profile4.png',
-			position: 'Software Developer',
+			job: 'Software Developer',
 		},
 		{
 			name: 'Juan Pablo Amador Díaz',
 			img: '../../assets/img/icon-profile5.png',
-			position: 'Software Developer',
+			job: 'Software Developer',
 		},
 	];
 

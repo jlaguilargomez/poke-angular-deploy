@@ -1,0 +1,17 @@
+@mixin background-parallax($img, $color, $opacity) {
+	background: linear-gradient(
+			to left,
+			rgba($color, $opacity),
+			rgba($color, $opacity)
+		),
+		url($img) no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+@mixin circle-mask {
+	-webkit-shape-outside: circle(50% at 50% 50%);
+	shape-outside: circle(50% at 50% 50%);
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%);
+}
