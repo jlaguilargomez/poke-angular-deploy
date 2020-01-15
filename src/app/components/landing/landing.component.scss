@@ -140,8 +140,13 @@
 	height: calc(100vh - 5rem);
 	flex-flow: column nowrap;
 	justify-content: space-between;
-	background-color: $primary-color;
+	//background-color: $primary-color;
 	overflow: hidden;
+	@include background-parallax(
+		'https://d3isma7snj3lcx.cloudfront.net/optim/images/gallery/33/337641/pokemon-let-s-go-evoli-switch-c635bf22.jpg',
+		$primary-color,
+		0.95
+	);
 
 	&__heading {
 		position: relative;
@@ -173,15 +178,5 @@
 	}
 	.section-functionality {
 		height: auto;
-		&__wave {
-			&--top {
-				transform-origin: top;
-			}
-			&--bottom {
-				transform-origin: bottom;
-			}
-
-			transform: scaleY(2);
-		}
 	}
 }
