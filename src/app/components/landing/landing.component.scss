@@ -55,9 +55,14 @@
 	position: relative;
 	overflow: hidden;
 	box-sizing: border-box;
-	padding: 5rem 0rem;
 	height: 100vh;
 	z-index: -2;
+
+	&__heading {
+		position: relative;
+		top: 0;
+		width: 100%;
+	}
 
 	@include background-parallax(
 		'https://playagaingames.files.wordpress.com/2019/01/pokemon-lets-go-3.jpg',
