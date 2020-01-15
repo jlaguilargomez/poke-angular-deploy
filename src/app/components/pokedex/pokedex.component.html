@@ -1,4 +1,7 @@
-<div class="component-box">
+<div
+	[ngStyle]="{ backgroundColor: getBackgroundColor() }"
+	class="component-box"
+>
 	<div class="pokedex" *ngIf="status === 'loaded'">
 		<app-pokemon-list class="pokedex__pokemon-list"></app-pokemon-list>
 		<div class="pokedex__pokemon-detail">
