@@ -97,15 +97,11 @@
 
 	<div class="section-team__members">
 		<div *ngFor="let person of team">
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img class="card__image" [src]="person.img" />
-				</div>
-				<div class="card__side card__side--back">
-					<p class="card__job">{{ person.position }}</p>
-				</div>
-			</div>
-			<h3 class="card__name u-margin-regular">{{ person.name }}</h3>
+			<app-card-member
+				[name]="person.name"
+				[job]="person.job"
+				[img]="person.img"
+			></app-card-member>
 		</div>
 	</div>
 	<p class="section-team__rights">

@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { ButtonArrowComponent } from './shared/components/button-arrow/button-arrow.component';
 import { BackgroundDexStyleComponent } from './shared/components/background-dex-style/background-dex-style.component';
 import { HeaderCurveComponent } from './shared/components/header-curve/header-curve.component';
+import { CardMemberComponent } from './shared/components/card-member/card-member.component';
 
 describe('AppComponent', () => {
 	beforeEach(async(() => {
@@ -12,6 +13,7 @@ describe('AppComponent', () => {
 				ButtonArrowComponent,
 				BackgroundDexStyleComponent,
 				HeaderCurveComponent,
+				CardMemberComponent,
 			],
 		}).compileComponents();
 	}));

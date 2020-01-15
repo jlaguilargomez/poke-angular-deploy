@@ -1,0 +1,56 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+.card {
+	height: 26rem;
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+
+	&__side {
+		height: 26rem;
+		backface-visibility: visible;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $secondary-color;
+		transition: all 0.7s;
+
+		@include circle-mask;
+		&--front {
+			opacity: 1;
+		}
+		&--back {
+			transform: rotateY(180deg);
+			opacity: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 26rem;
+		}
+	}
+
+	&__image {
+		height: 26rem;
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+		opacity: 0;
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0);
+		opacity: 1;
+	}
+
+	&__name {
+		font-size: 2.4rem;
+		text-align: center;
+		color: $color-white;
+	}
+
+	&__job {
+		font-size: 2.4rem;
+		color: $color-white;
+	}
+}
