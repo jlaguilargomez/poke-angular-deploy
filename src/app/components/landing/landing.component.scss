@@ -57,6 +57,7 @@
 	box-sizing: border-box;
 	padding: 5rem 0rem;
 	height: 100vh;
+	z-index: -2;
 
 	@include background-parallax(
 		'https://playagaingames.files.wordpress.com/2019/01/pokemon-lets-go-3.jpg',
@@ -70,6 +71,7 @@
 		justify-content: space-evenly;
 
 		.explanation-card {
+			//Esto debería ser un componente
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: stretch;
@@ -91,25 +93,24 @@
 					max-height: 30rem;
 				}
 			}
-
-			// &__img {
-			// 	max-height: 30rem;
-			//     border-radius: 15px;
-			//     align-self: center;
-			// }
 		}
-	}
-
-	.svg-wrapper {
-		position: absolute;
-		bottom: 0;
 	}
 
 	&__wave {
 		position: absolute;
-		z-index: 0;
-		top: 0;
-		left: 0;
+		z-index: -1;
+		transition: all 0.5s;
+		width: 100%;
+		height: auto;
+
+		&--top {
+			top: 0;
+			left: 0;
+		}
+		&--bottom {
+			bottom: 0;
+			left: 0;
+		}
 	}
 
 	.title {
@@ -128,26 +129,26 @@
 	height: 40%;
 }
 
-.main-bottom {
+.section-team {
 	position: relative;
 	display: flex;
-	height: calc(100vh - 50px);
+	height: calc(100vh - 5rem);
 	flex-direction: column;
 	background-color: $primary-color;
 	overflow: hidden;
 
-	&__wave {
-		position: absolute;
+	&__heading {
+		position: relative;
 		top: 0;
+		width: 100%;
 	}
 
 	&__rights {
 		width: 100%;
 		height: 3%;
-		font-size: 12px;
+		font-size: 1.2rem;
 		text-align: center;
 		color: white;
-		margin-bottom: 15px;
 	}
 }
 
@@ -156,9 +157,8 @@
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	margin: 20px auto;
-	margin-top: 50px;
-	max-width: 1500px;
+	margin: 2rem auto;
+	max-width: 100rem;
 	background-color: $primary-color;
 }
 
@@ -243,6 +243,16 @@
 	}
 	.section-functionality {
 		height: auto;
+		&__wave {
+			&--top {
+				transform-origin: top;
+			}
+			&--bottom {
+				transform-origin: bottom;
+			}
+
+			transform: scaleY(2);
+		}
 	}
 }
 
