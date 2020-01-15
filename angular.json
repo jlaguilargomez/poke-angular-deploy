@@ -24,9 +24,14 @@
 						"tsConfig": "tsconfig.app.json",
 						"aot": false,
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/styles/main.scss"],
-						"stylePreprocessorOptions": { "includePaths": ["src/styles"] },
-						"scripts": []
+						"styles": [
+							"src/styles/main.scss",
+							"src/assets/css/leaflet-search.css"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"scripts": ["src/assets/js/leaflet-search.js"]
 					},
 					"configurations": {
 						"production": {
@@ -86,7 +91,9 @@
 						"karmaConfig": "karma.conf.js",
 						"assets": ["src/favicon.ico", "src/assets"],
 						"styles": ["src/styles/main.scss"],
-						"stylePreprocessorOptions": { "includePaths": ["src/styles"] },
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
 						"scripts": []
 					}
 				},
