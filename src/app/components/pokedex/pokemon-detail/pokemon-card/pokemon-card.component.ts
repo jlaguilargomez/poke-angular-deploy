@@ -10,6 +10,7 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class PokemonCardComponent implements OnInit {
 	public pokemonSelected: Pokemon;
+	public detail: boolean = false;
 
 	constructor(
 		private pokedexService: PokedexService,
@@ -35,5 +36,9 @@ export class PokemonCardComponent implements OnInit {
 		const pokemonColors: { [key: string]: string } = this.pokedexService
 			.pokemonColorTypes;
 		return pokemonColors[type];
+	}
+
+	public changeData() {
+		this.detail = this.detail ? false : true;
 	}
 }
