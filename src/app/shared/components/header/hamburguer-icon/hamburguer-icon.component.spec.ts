@@ -3,15 +3,18 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HamburguerIconComponent } from './hamburguer-icon.component';
 
 describe('HamburguerIconComponent', () => {
-	beforeEach(() => {
+	let component: HamburguerIconComponent;
+	let fixture: ComponentFixture<HamburguerIconComponent>;
+
+	beforeEach((): void => {
 		TestBed.configureTestingModule({
 			declarations: [HamburguerIconComponent],
-		}).compileComponents();
+		});
+		fixture = TestBed.createComponent(HamburguerIconComponent);
+		component = fixture.componentInstance;
 	});
 
-	it('Component HamburguerIcon works!', () => {
-		const fixture = TestBed.createComponent(HamburguerIconComponent);
-		const component = fixture.debugElement.componentInstance;
-		expect(component).toBeTruthy();
+	it('Component HamburguerIcon works!', (): void => {
+		expect(component).toBeDefined();
 	});
 });
