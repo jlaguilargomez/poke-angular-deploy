@@ -34,7 +34,7 @@
 
 <section class="section-functionality" id="section-2">
 	<div class="section-functionality__heading">
-		<app-header-curve [text]="'Our Team'"></app-header-curve>
+		<app-header-curve [text]="'How it works?'"></app-header-curve>
 	</div>
 	<div class="functionalities u-margin-top-regular">
 		<div class="explanation-card u-margin-bottom-big">
@@ -95,18 +95,17 @@
 		<app-header-curve [text]="'Our Team'"></app-header-curve>
 	</div>
 
-	<div class="info">
-		<div class="card" *ngFor="let person of team">
-			<div class="card__container">
-				<div class="card__front">
+	<div class="section-team__members">
+		<div *ngFor="let person of team">
+			<div class="card">
+				<div class="card__side card__side--front">
 					<img class="card__image" [src]="person.img" />
-					<h3 class="card__front--text">{{ person.name }}</h3>
 				</div>
-				<div class="card__back">
-					<p class="card__back--text">{{ person.name }}</p>
-					<p class="card__back--text">{{ person.position }}</p>
+				<div class="card__side card__side--back">
+					<p class="card__job">{{ person.position }}</p>
 				</div>
 			</div>
+			<h3 class="card__name u-margin-regular">{{ person.name }}</h3>
 		</div>
 	</div>
 	<p class="section-team__rights">
