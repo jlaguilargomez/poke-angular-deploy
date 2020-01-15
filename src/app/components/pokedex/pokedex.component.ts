@@ -28,10 +28,6 @@ export class PokedexComponent implements OnInit, OnDestroy {
 			);
 	}
 
-	getBackgroundColor() {
-		return 'orange';
-	}
-
 	ngOnDestroy() {
 		this.subscription.unsubscribe();
 	}
