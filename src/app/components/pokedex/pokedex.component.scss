@@ -14,7 +14,6 @@
 	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
-	max-width: 1280px;
 
 	&__pokemon-list {
 		flex-grow: 1;
@@ -29,10 +28,12 @@
 	height: 100%;
 	display: flex;
 	align-items: center;
+
 	&__request {
 		border-radius: 100px;
 		height: 60px;
 	}
+
 	&__error {
 		height: 50vh;
 	}
