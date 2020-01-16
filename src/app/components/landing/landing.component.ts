@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from 'src/app/models/member.interface';
 
 @Component({
 	selector: 'app-landing',
@@ -10,7 +11,7 @@ export class LandingComponent implements OnInit {
 	currentPokemon: string;
 	oldPokemon: string;
 	imgSource: string;
-	team: object[] = [
+	team: Member[] = [
 		{
 			name: 'Jose Angel Cívico Martos',
 			img: '../../assets/img/icon-profile1.png',
