@@ -9,25 +9,36 @@
 		(click)="render()"
 		#hamburguerIcon
 		class="hamburguer-icon"
+		[displayMenu]="displayMenu"
 	></app-hamburguer-icon>
 
 	<nav [ngClass]="{ open: displayMenu === true }" class="menu">
 		<a
 			class="menu__item"
+			(click)="render()"
 			routerLink="/pokedex"
 			routerLinkActive="menu__item--active"
 			>Pokedex</a
 		>
 		<a
 			class="menu__item"
+			(click)="render()"
 			routerLink="/landing"
 			routerLinkActive="menu__item--active"
 			>Home</a
 		>
-		<a class="menu__item" [routerLink]="'landing'" [fragment]="'section-2'"
+		<a
+			class="menu__item"
+			[routerLink]="'landing'"
+			[fragment]="'section-2'"
+			(click)="render()"
 			>Info</a
 		>
-		<a class="menu__item" routerLink="/landing" [fragment]="'section-3'"
+		<a
+			class="menu__item"
+			routerLink="/landing"
+			[fragment]="'section-3'"
+			(click)="render()"
 			>About us</a
 		>
 	</nav>

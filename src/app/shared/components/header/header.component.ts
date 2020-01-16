@@ -6,8 +6,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-	@ViewChild('hamburguerIcon', { static: true }) hamburguerIcon: ElementRef;
-
 	displayMenu = false;
 
 	constructor() {}
