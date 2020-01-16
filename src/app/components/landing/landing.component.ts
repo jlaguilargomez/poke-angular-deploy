@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/models/member.interface';
+import { Functionality } from 'src/app/models/functionality.interface';
 
 @Component({
 	selector: 'app-landing',
@@ -36,6 +37,29 @@ export class LandingComponent implements OnInit {
 			name: 'Juan Pablo Amador Díaz',
 			img: '../../assets/img/icon-profile5.png',
 			job: 'Software Developer',
+		},
+	];
+	functionalities: Functionality[] = [
+		{
+			num: '1',
+			title: 'Search your Pokemon',
+			img: 'assets/img/functionality-1.jpg',
+			info:
+				'You can select the first 151 Pokemons and search them by name',
+		},
+		{
+			num: '2',
+			title: 'Analyze your selected Pokemon',
+			img: 'assets/img/functionality-2_1.jpg',
+			info:
+				'Just point the cursor on the card and you will see all the data available: Name, ability, height, weight, types and stats!',
+		},
+		{
+			num: '3',
+			title: 'And catch&#8217;em all!',
+			img: 'assets/img/functionality-3.jpg',
+			info:
+				'Explore the world around you and catch all the Pokemon availables!',
 		},
 	];
 
