@@ -34,6 +34,7 @@
 	border-radius: 2rem;
 	padding: 2rem;
 	color: white;
+	min-height: 240px;
 
 	background-image: url('/assets/img/pokeball-bg.svg');
 	background-repeat: no-repeat;
@@ -60,6 +61,7 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+	min-width: 205px;
 
 	&__image {
 		background-color: white;

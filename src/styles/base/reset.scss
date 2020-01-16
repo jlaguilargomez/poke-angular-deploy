@@ -90,6 +90,14 @@ video {
 	vertical-align: baseline;
 }
 
+body {
+	overflow-x: hidden;
+}
+
+// *{
+//     outline: 1px solid red;
+//    }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

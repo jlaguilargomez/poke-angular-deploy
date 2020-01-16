@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from 'src/app/models/member.interface';
+import { Functionality } from 'src/app/models/functionality.interface';
+import { LandingService } from 'src/app/services/landing.service';
 
 @Component({
 	selector: 'app-landing',
@@ -7,38 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 	pokemons: string[] = [];
+	team: Member[] = [];
+	functionalities: Functionality[] = [];
 	currentPokemon: string;
 	oldPokemon: string;
 	imgSource: string;
-	team: object[] = [
-		{
-			name: 'Jose Angel Cívico Martos',
-			img: '../../assets/img/icon-profile1.png',
-			job: 'Software Developer',
-		},
-		{
-			name: 'Gabriel García Rodríguez',
-			img: '../../assets/img/icon-profile2.png',
-			job: 'Software Developer',
-		},
-		{
-			name: 'Guadalupe García Plaza',
-			img: '../../assets/img/icon-profile3.png',
-			job: 'Software Developer',
-		},
-		{
-			name: 'Jose Luis Aguilar Gómez',
-			img: '../../assets/img/icon-profile4.png',
-			job: 'Software Developer',
-		},
-		{
-			name: 'Juan Pablo Amador Díaz',
-			img: '../../assets/img/icon-profile5.png',
-			job: 'Software Developer',
-		},
-	];
 
-	constructor() {
+	constructor(private landingService: LandingService) {
+		this.team = this.landingService.getMembers();
+		this.functionalities = this.landingService.getFunctionalities();
 		this.pokemons = [
 			'bulbasaur',
 			'charmander',
