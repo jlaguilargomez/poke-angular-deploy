@@ -10,24 +10,16 @@ body {
 	box-sizing: border-box;
 }
 
+// svg{
+//     display: block;
+// }
+
 .main-page {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
 	width: 100%;
-}
-
-@media (max-width: 1366px) {
-	html {
-		font-size: 44.5%;
-	}
-}
-
-@media (max-width: 1024px) {
-	html {
-		font-size: 62.5%;
-	}
 }
 
 @media (max-width: 480px) {
