@@ -39,8 +39,8 @@ describe('Service: PokedexService', () => {
 				id: 1,
 				name: 'Bulbasaur',
 				type: ['poison', 'grass'],
-				height: 7,
-				weight: 69,
+				height: 0.7,
+				weight: 6.9,
 				stats: [
 					{
 						name: 'speed',

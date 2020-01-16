@@ -1,11 +1,11 @@
-<div class="container">
-	<div class="container--selected" *ngIf="pokemonSelected">
+<div class="detail-container">
+	<div class="detail-container__selected" *ngIf="pokemonSelected">
 		<div class="panel">
-			<div class="panel__info">
-				<app-pokemon-card></app-pokemon-card>
+			<div class="panel__card">
+				<app-pokemon-card class="panel__info__card"></app-pokemon-card>
 			</div>
-			<div class="panel__info">
-				<app-pokemon-map></app-pokemon-map>
+			<div class="panel__map">
+				<app-pokemon-map class="panel__info__map"></app-pokemon-map>
 			</div>
 		</div>
 	</div>
@@ -13,6 +13,6 @@
 		src="../../../assets/img/pikachu-search.png"
 		alt="Unselected picture"
 		*ngIf="pokemonSelected === undefined"
-		class="container--no-selected"
+		class="detail-container__no-selected"
 	/>
 </div>
