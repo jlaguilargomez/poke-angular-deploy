@@ -27,19 +27,15 @@
 		animation: scaleY-animation 1s;
 	}
 
-	&__professor-oak {
+	&__characters {
 		position: absolute;
 		z-index: 1;
 		bottom: 2.5rem;
 		left: 4rem;
-		width: 22rem;
+		text-align: center;
 	}
 
 	&__pokemon {
-		position: absolute;
-		z-index: 2;
-		bottom: 0;
-		left: 15rem;
 		width: 21rem;
 	}
 
@@ -167,6 +163,9 @@
 
 @media (max-width: 780px) {
 	.intro-section {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-evenly;
 		&__wave {
 			transform-origin: bottom;
 			transform: scaleY(1.8);
@@ -177,11 +176,30 @@
 			align-items: center;
 			width: auto;
 		}
+		&__characters {
+			position: static;
+			display: block;
+			margin: 0 auto;
+		}
+		&__btn-landing {
+			position: static;
+			display: block;
+			margin: 0 auto;
+			margin-top: 4rem;
+		}
 	}
 	.section-functionality {
 		height: auto;
 	}
 	.section-team {
 		height: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.intro-section {
+		&__btn-landing {
+			margin-top: 4rem;
+		}
 	}
 }

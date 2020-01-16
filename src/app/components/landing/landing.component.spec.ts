@@ -6,6 +6,7 @@ import { BackgroundDexStyleComponent } from 'src/app/shared/components/card-func
 import { HeaderCurveComponent } from 'src/app/shared/components/header-curve/header-curve.component';
 import { CardMemberComponent } from 'src/app/shared/components/card-member/card-member.component';
 import { CardFunctionalityComponent } from 'src/app/shared/components/card-functionality/card-functionality.component';
+import { CharactersAnimationComponent } from 'src/app/shared/components/characters-animation/characters-animation.component';
 
 describe('LandingComponent', () => {
 	beforeEach(() => {
@@ -17,6 +18,7 @@ describe('LandingComponent', () => {
 				HeaderCurveComponent,
 				CardMemberComponent,
 				CardFunctionalityComponent,
+				CharactersAnimationComponent,
 			],
 		}).compileComponents();
 	});

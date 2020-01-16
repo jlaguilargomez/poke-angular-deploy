@@ -4,6 +4,7 @@ import { BackgroundDexStyleComponent } from './card-functionality/background-dex
 import { HeaderCurveComponent } from './header-curve/header-curve.component';
 import { CardMemberComponent } from './card-member/card-member.component';
 import { CardFunctionalityComponent } from './card-functionality/card-functionality.component';
+import { CharactersAnimationComponent } from './characters-animation/characters-animation.component';
 
 @NgModule({
 	imports: [],
@@ -13,6 +14,7 @@ import { CardFunctionalityComponent } from './card-functionality/card-functional
 		HeaderCurveComponent,
 		CardMemberComponent,
 		CardFunctionalityComponent,
+		CharactersAnimationComponent,
 	],
 	declarations: [
 		ButtonArrowComponent,
@@ -20,6 +22,7 @@ import { CardFunctionalityComponent } from './card-functionality/card-functional
 		HeaderCurveComponent,
 		CardMemberComponent,
 		CardFunctionalityComponent,
+		CharactersAnimationComponent,
 	],
 	providers: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

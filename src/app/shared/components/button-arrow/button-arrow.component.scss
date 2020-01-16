@@ -4,7 +4,7 @@
 	transition: 0.7s;
 	opacity: 0;
 	animation: btn-animation 1s forwards;
-
+	text-align: center;
 	&__link {
 		cursor: pointer;
 		display: inline-block;
@@ -83,6 +83,24 @@
 				left: 35px;
 				opacity: 0;
 			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.button {
+		&__link {
+			font-size: 2rem;
+			padding: 2rem 5.25rem;
+		}
+	}
+}
+
+@media (max-width: 780px) {
+	.button {
+		&__link {
+			font-size: 2rem;
+			padding: 2rem 5.25rem;
 		}
 	}
 }

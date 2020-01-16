@@ -43,3 +43,10 @@ body {
 	color: $color-white;
 	text-align: justify;
 }
+
+@media (max-width: 480px) {
+	.heading-primary {
+		font-size: 6rem;
+		padding: 0.3rem 4rem;
+	}
+}
