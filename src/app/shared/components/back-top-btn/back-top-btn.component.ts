@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
 	selector: 'app-back-top-btn',
@@ -8,24 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class BackTopBtnComponent implements OnInit {
 	scrollPosition: number;
 
-	constructor() {
-		this.scrollPosition = document.body.scrollTop;
-	}
-
-	ngOnInit() {
-		console.log(this.scrollPosition);
-	}
-
-	renderScrollPosition() {
-		this.scrollPosition = document.body.scrollTop;
-		return this.scrollPosition;
-	}
+	constructor() {}
 
 	public backToTop(): void {
 		document.body.scrollTop = 0;
 	}
 
-	ngOnChanges() {
-		console.log(this.scrollPosition);
-	}
+	ngOnInit() {}
 }
