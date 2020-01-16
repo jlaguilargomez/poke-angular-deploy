@@ -12,6 +12,29 @@ En esta versión se han corregido errores detectados de la versión anterior y a
 
 -   Se ha modificado el routing para que funcione mediante el nombre del pokemon en lugar del id.
 
+**Mejora de la arquitectura del proyecto**
+
+-   Carpeta de la app organizada en las siguientes carpetas:
+
+    -   components
+    -   models
+    -   pipes
+    -   shared
+
+-   Creación de carpeta 'styles' basada en la arquitectura 7-1 con los siguientes directorios:
+    -   abstracts
+    -   base
+    -   layout
+    -   themes
+
+**Landing**
+
+-   Refatorización del código del componente de Landing. Se ha reducido la cantidad de líneas de HTML un 85% con respecto a la versión anterior.
+
+**Componentes**
+
+-   Se ha optimizado la maquetación mediante la creación de diversos elementos como componentes de Angular.
+
 **Pokedex:**
 
 -   Refactorización de todo el código e implementación de `display:flex`.
