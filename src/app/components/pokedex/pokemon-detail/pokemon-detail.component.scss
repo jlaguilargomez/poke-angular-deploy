@@ -31,12 +31,14 @@
 	&__card {
 		padding: 0.5rem;
 		box-sizing: border-box;
-		flex-grow: 1;
+		flex: 1;
+		min-width: 265px;
 	}
 	&__map {
 		padding: 0.5rem;
 		box-sizing: border-box;
-		flex-grow: 1;
+		flex: 1;
+		min-width: 265px;
 	}
 }
 
