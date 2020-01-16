@@ -37,6 +37,13 @@
 	left: 50%;
 }
 
+.u-border-style {
+	border-top: solid 5px white;
+	border-bottom: solid 5px white;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
 @media (max-width: 1366px) {
 	.u-margin-bottom-big {
 		margin-bottom: 4rem;
