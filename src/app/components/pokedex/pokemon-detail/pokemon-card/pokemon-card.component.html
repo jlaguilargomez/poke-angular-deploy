@@ -6,7 +6,7 @@
 		</h2>
 	</div>
 	<div class="card" [style.background-color]="pokemonColorType">
-		<div class="resume">
+		<div class="resume" *ngIf="detail === false">
 			<img
 				class="resume__image"
 				src="{{ pokemonSelected.imagePath }}"
@@ -23,9 +23,41 @@
 				</div>
 			</div>
 		</div>
-		<div class="stats"></div>
-		<div class="card__btn" (click)="changeData()">
+		<div class="stats" *ngIf="detail">
+			<h1 class="stats__name">
+				# {{ pokemonSelected.id }} {{ pokemonSelected.name }}
+			</h1>
+			<div class="stats__properties">
+				<h2>Ability: {{ pokemonSelected.ability }}</h2>
+				<h2>Height: {{ pokemonSelected.height }} m</h2>
+				<h2>Weight: {{ pokemonSelected.weight }} kg</h2>
+			</div>
+			<div
+				*ngFor="let feature of pokemonSelected.stats"
+				class="stats__chart"
+			>
+				<div class="stats__chart-name">{{ feature.name }}:</div>
+				<div class="stats__chart-bar">
+					<div>{{ feature.base }}</div>
+					<svg width="120" height="15">
+						<rect
+							x="0"
+							y="0"
+							rx="5"
+							ry="5"
+							[attr.width]="transformBaseStat(feature.base)"
+							height="10"
+							[attr.fill]="colorBar(feature.base)"
+						/>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="card__btn" (click)="changeData()" *ngIf="detail === false">
 			Stats >
+		</div>
+		<div class="card__btn" (click)="changeData()" *ngIf="detail">
+			Resume >
 		</div>
 	</div>
 </div>
