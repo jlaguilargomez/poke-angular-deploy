@@ -1,3 +1,32 @@
+### POKEAPI v.1.1.0
+
+En esta versión se han corregido errores detectados de la versión anterior y añadida alguna funcionalidad adicional:
+
+**CI:**
+
+-   Se han añadido test unitarios a los distintos componentes (se arreglaron los errores al realizar test con asincronía)
+-   Dentro del husky `ng test` en el pre-commit y `ng build --prod` en el push (compilación más escricta que el ng serve utilizado en el desarrollo)
+-   Se ha añadido la IC al GitLab (configuración en el archivo `.gitlab-ci.yml`). Se basa en tres jobs (lintado, realización de test y compilación de producción). Será necesario pasar estas pruebas en el repositorio para poder mergear ramas.
+
+**Routing:**
+
+-   Se ha modificado el routing para que funcione mediante el nombre del pokemon en lugar del id.
+
+**Pokedex:**
+
+-   Refactorización de todo el código e implementación de `display:flex`.
+
+**Pokemon-card:**
+
+-   Se ha sustituido el modelo de flip de la tarjeta por un botón para poder disponer de un código más limpio y de cara a trabajar en él en futuras versiones.
+-   Se ha sustituido las barras de las gráficas hechas con divs por barras hechas con svg
+
+**Mapa (leaflet):**
+
+-   Se ha añadido buscador el mapa.
+
+---
+
 ### POKEAPI v.1.0.0
 
 ### GIT FLOW
@@ -54,7 +83,7 @@ Una vez finalizada la tarea y lanzada la `pull-request`, se llevará la tarea a 
 
 ### PROCESO TRABAJO
 
-- _No trabajar en características o desarrollos que no correspondan con la rama sobre la que estamos llevando a cabo nuestra tarea_
+-   _No trabajar en características o desarrollos que no correspondan con la rama sobre la que estamos llevando a cabo nuestra tarea_
 
 ---
 
@@ -96,11 +125,11 @@ El proyecto se llevará a cabo mediante SASS y siguiendo la metodología BEM (ht
 
 **Para mejorar la especificidad de los selectores, se tendrán en cuenta las siguientes normas:**
 
-- No se usarán ID's ni elementos (salvo para estilos generales definidos por proyecto. p.ej: `body {font-size: 16px}` como selectores y siguiendo BEM.
+-   No se usarán ID's ni elementos (salvo para estilos generales definidos por proyecto. p.ej: `body {font-size: 16px}` como selectores y siguiendo BEM.
 
 En la raíz del proyecto, además del archivo `style.scss`, se ha creado un `reset.scss` y otro `commonStyles.scss`.
 
-- Como norma general se usará kebap-case para el nombrado de elementos en SCSS combinado con la metodología BEM.
+-   Como norma general se usará kebap-case para el nombrado de elementos en SCSS combinado con la metodología BEM.
 
 El archivo _reset_ resetea todo el formato previo que pueda existit en el navegador por defecto, y el de _commonStyles_ se encarga de importar este y de generar unos estilos globales para todo el proyecto, como las variables y aquellos estilos sobre selectores que vamos a utilizar de forma redundante. **_Este estilo siempre se importará en todas las hojas de estilo que se creen `@import '../../commonStyles.scss';`_**
 
@@ -112,9 +141,9 @@ Se maquetará aplicando `display:flex` para un código más limpio y que sea má
 
 Se tendrá en cuenta lo ya comentado del formateo en cada commit por parte de _prettier_ y además, durante la escritura de código se deberá llevar a cabo las siguientes prácticas:
 
-- Dado que el proyecto cuenta con transcriptores de JS, todo el proyecto se realiza con TypeScript y siguiendo los estándares de ES6 en cuanto al uso de nuevas funcionalidad, variables (let y const) ...
-- Se usará `;` al finalizar cada línea de código.
-- En general se usará camelCase como convención en el nombrado de variables en TypeScript.
+-   Dado que el proyecto cuenta con transcriptores de JS, todo el proyecto se realiza con TypeScript y siguiendo los estándares de ES6 en cuanto al uso de nuevas funcionalidad, variables (let y const) ...
+-   Se usará `;` al finalizar cada línea de código.
+-   En general se usará camelCase como convención en el nombrado de variables en TypeScript.
 
 ---
 
@@ -124,15 +153,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## New features developed!
 
-- Basic components created: pokedex, pokemon-list, pokemon-detail ...
-- Img folder added in src/ assets
-- Reset.scss and mediaQueries.scss added
-- Husky added in our repo
-- Main service `pokedex.service` added to fetch the list of the pokemon from the poke-api and give it to the pokedex component
-- Installed some new features to develop CI/CD
-- You can lint your project with the command `ng lint`, it will return the main ERRORs found in the project
+-   Basic components created: pokedex, pokemon-list, pokemon-detail ...
+-   Img folder added in src/ assets
+-   Reset.scss and mediaQueries.scss added
+-   Husky added in our repo
+-   Main service `pokedex.service` added to fetch the list of the pokemon from the poke-api and give it to the pokedex component
+-   Installed some new features to develop CI/CD
+-   You can lint your project with the command `ng lint`, it will return the main ERRORs found in the project
 
-- Figma design! https://www.figma.com/file/Pj6OX5iNLfU08yPPDtnhYH/pokedex?node-id=0%3A1
+-   Figma design! https://www.figma.com/file/Pj6OX5iNLfU08yPPDtnhYH/pokedex?node-id=0%3A1
 
 ---
 

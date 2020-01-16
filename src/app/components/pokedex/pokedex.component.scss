@@ -6,15 +6,18 @@
 	justify-content: center;
 	align-items: center;
 	min-height: calc(100vh - 100px);
+	background: linear-gradient(
+			rgba(255, 255, 255, 0.801),
+			rgba(255, 255, 255, 0.8)
+		),
+		url('https://c.wallhere.com/photos/02/08/Pok_mon_tile_cartoon_pattern-1558653.jpg!d');
 }
 
 .pokedex {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
-	max-width: 1280px;
 
 	&__pokemon-list {
 		flex-grow: 1;
@@ -22,6 +25,7 @@
 
 	&__pokemon-detail {
 		flex-grow: 6;
+		align-self: center;
 	}
 }
 
@@ -29,10 +33,12 @@
 	height: 100%;
 	display: flex;
 	align-items: center;
+
 	&__request {
 		border-radius: 100px;
 		height: 60px;
 	}
+
 	&__error {
 		height: 50vh;
 	}
@@ -42,7 +48,8 @@
 	.pokedex {
 		flex-direction: column;
 
-		&__pokemon-list {
+		&__pokemon-list,
+		&__pokemon-detail {
 			width: 100%;
 		}
 	}

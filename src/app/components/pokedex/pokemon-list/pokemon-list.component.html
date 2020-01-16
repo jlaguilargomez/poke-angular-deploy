@@ -1,4 +1,4 @@
-<main class="container">
+<main class="component-box">
 	<div class="title">
 		<img
 			class="title__logo"
@@ -23,20 +23,20 @@
 		<div *ngIf="pokemonList != undefined" class="list">
 			<div
 				class="elem"
-				(click)="renderPokemon(elem.name)"
 				*ngFor="
 					let elem of pokemonList | searcherFilter: searchPokemonName;
 					index as i
 				"
+				routerLink="./{{ elem.name }}"
 			>
 				<span class="elem__id">{{ elem.id }}</span>
 				<div class="elem__info">
 					<img
-						class="elem__img"
+						class="elem__info__img"
 						src="{{ elem.imagePath }}"
 						alt="pokemon-img"
 					/>
-					<p class="elem__name">{{ elem.name }}</p>
+					<p class="elem__info__name">{{ elem.name }}</p>
 				</div>
 			</div>
 		</div>
