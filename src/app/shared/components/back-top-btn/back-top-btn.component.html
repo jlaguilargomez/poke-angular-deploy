@@ -1,7 +1,12 @@
-<div class="btn">
+<div
+	(click)="renderScrollPosition()"
+	[ngClass]="{ displayBtn: scrollPosition > 300 }"
+	class="btn"
+>
 	<img
 		class="btn__img"
 		src="../../../../assets/img/svg/angle-up-solid.svg"
 		alt="back-top-arrow"
 	/>
+	<p></p>
 </div>

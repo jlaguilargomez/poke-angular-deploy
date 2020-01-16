@@ -6,7 +6,26 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./back-top-btn.component.scss'],
 })
 export class BackTopBtnComponent implements OnInit {
-	constructor() {}
+	scrollPosition: number;
 
-	ngOnInit() {}
+	constructor() {
+		this.scrollPosition = document.body.scrollTop;
+	}
+
+	ngOnInit() {
+		console.log(this.scrollPosition);
+	}
+
+	renderScrollPosition() {
+		this.scrollPosition = document.body.scrollTop;
+		return this.scrollPosition;
+	}
+
+	public backToTop(): void {
+		document.body.scrollTop = 0;
+	}
+
+	ngOnChanges() {
+		console.log(this.scrollPosition);
+	}
 }

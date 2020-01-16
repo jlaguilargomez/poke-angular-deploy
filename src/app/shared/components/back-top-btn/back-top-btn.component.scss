@@ -10,21 +10,34 @@
 	align-items: center;
 	background-color: $secondary-color;
 	border-radius: 10px;
-	opacity: 0.5;
+	opacity: 0.3;
 	position: absolute;
 	z-index: 10;
 	bottom: 3rem;
 	right: 3rem;
+	transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
 
 	&__img {
 		display: flex;
 		max-width: 80%;
 	}
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	&:active {
+		background-color: $primary-color;
+		opacity: 1;
+	}
+}
+
+.displayBtn {
+	display: none;
 }
 
 @media (max-width: 1024px) {
-	.btn {
-	}
 }
 @media (max-width: 768px) {
 }

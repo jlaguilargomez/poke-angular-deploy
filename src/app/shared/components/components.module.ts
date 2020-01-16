@@ -4,9 +4,10 @@ import { BackgroundDexStyleComponent } from './background-dex-style/background-d
 import { HeaderCurveComponent } from './header-curve/header-curve.component';
 import { CardMemberComponent } from './card-member/card-member.component';
 import { BackTopBtnComponent } from './back-top-btn/back-top-btn.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-	imports: [],
+	imports: [BrowserModule],
 	exports: [
 		ButtonArrowComponent,
 		BackgroundDexStyleComponent,
