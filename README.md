@@ -12,6 +12,10 @@ En esta versión se han corregido errores detectados de la versión anterior y a
 
 -   Se ha modificado el routing para que funcione mediante el nombre del pokemon en lugar del id.
 
+**Header**
+
+-   Minor bugs in header fixed.
+
 **Mejora de la arquitectura del proyecto**
 
 -   Carpeta de la app organizada en las siguientes carpetas:
