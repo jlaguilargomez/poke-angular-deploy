@@ -1,110 +1,63 @@
 <div *ngIf="pokemonSelected != undefined" class="card-container">
-	<div class="card">
-		<div class="card card__inner">
-			<!-- CARD FRONT -->
-			<div class="card card__front">
-				<div class="card__front--data-bg">
-					<!-- Card Title -->
-					<h2 class="btn btn--first">
-						<img
-							class="icon-img"
-							src="./../../../assets/img/iconPokeData.svg"
-							alt="Icon Pokemon Data"
-						/>POKEMON
-					</h2>
-					<!-- Background Color -->
-					<div
-						class="card__front--bg"
-						[style.background-color]="pokemonColorType"
-					>
-						<!-- Image -->
-						<img
-							class="card__image"
-							src="{{ pokemonSelected.imagePath }}"
-							alt="img {{ pokemonSelected.name }}"
+	<div class="card-container__title">
+		<img src="/assets/img/iconPokeData.svg" alt="Icon Map" />
+		<h2>
+			Pokemon
+		</h2>
+	</div>
+	<div class="card" [style.background-color]="pokemonColorType">
+		<div class="resume" *ngIf="detail === false">
+			<img
+				class="resume__image"
+				src="{{ pokemonSelected.imagePath }}"
+				alt="Imagen de {{ pokemonSelected.name }}"
+			/>
+			<h2 class="resume__name">{{ pokemonSelected.name }}</h2>
+			<div class="resume__type">
+				<div
+					*ngFor="let type of pokemonSelected.type"
+					[style.background-color]="getTypeColor(type)"
+					class="resume__type-elem"
+				>
+					{{ type }}
+				</div>
+			</div>
+		</div>
+		<div class="stats" *ngIf="detail">
+			<h1 class="stats__name">
+				# {{ pokemonSelected.id }} {{ pokemonSelected.name }}
+			</h1>
+			<div class="stats__properties">
+				<h2>Ability: {{ pokemonSelected.ability }}</h2>
+				<h2>Height: {{ pokemonSelected.height }} m</h2>
+				<h2>Weight: {{ pokemonSelected.weight }} kg</h2>
+			</div>
+			<div
+				*ngFor="let feature of pokemonSelected.stats"
+				class="stats__chart"
+			>
+				<div class="stats__chart-name">{{ feature.name }}:</div>
+				<div class="stats__chart-bar">
+					<div>{{ feature.base }}</div>
+					<svg width="120" height="15">
+						<rect
+							x="0"
+							y="0"
+							rx="5"
+							ry="5"
+							[attr.width]="transformBaseStat(feature.base)"
+							height="10"
+							[attr.fill]="colorBar(feature.base)"
 						/>
-						<!-- Pokemon Title -->
-						<h2 class="subtitle">{{ pokemonSelected.name }}</h2>
-						<div
-							*ngFor="let type of pokemonSelected.type"
-							class="type"
-							[style.background-color]="getTypeColor(type)"
-						>
-							{{ type }}
-						</div>
-					</div>
+					</svg>
 				</div>
 			</div>
-
-			<!-- CARD BACK -->
-			<div class="card card__back">
-				<div class="card__front--data-bg">
-					<!-- Card Title -->
-					<h2 class="btn btn--first">
-						<img
-							class="icon-img"
-							src="./../../../assets/img/iconPokeData.svg"
-							alt="Icon Pokemon Data"
-						/>DATA
-					</h2>
-					<!-- Background Color -->
-					<div
-						class="card__front--bg"
-						[style.background-color]="pokemonColorType"
-					>
-						<!-- Stats bars Div -->
-						<div class="card__stats">
-							<h1 class="title">#{{ pokemonSelected.name }}</h1>
-
-							<ul class="ability">
-								<!-- Ability has to be iterated-->
-								<li class="ability ability__item">
-									Ability:
-									<span
-										class="cap"
-										*ngFor="
-											let ability of pokemonSelected.ability
-										"
-										>{{ ability }}
-									</span>
-								</li>
-								<li class="ability ability__item">
-									Height: {{ pokemonSelected.height }}
-								</li>
-								<li class="ability ability__item">
-									Weight: {{ pokemonSelected.weight }}
-								</li>
-							</ul>
-							<!-- CARD BARS Stats -->
-							<table class="card__table">
-								<tr *ngFor="let stat of pokemonSelected.stats">
-									<td class="cap text-color-primary">
-										{{ stat.name }}
-									</td>
-									<td class="text-color-primary">
-										{{ stat.base }}
-									</td>
-									<div class="progress-bar">
-										<div
-											[style.width.%]="
-												stat.base > 100
-													? 100
-													: stat.base
-											"
-											[style.background-color]="
-												colorBar(stat.base)
-											"
-											class="progress-bar__skill"
-										>
-											<div class="d-hidden">Skill</div>
-										</div>
-									</div>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
+		<div class="card__btn" (click)="changeData()" *ngIf="detail === false">
+			Stats >
+		</div>
+		<div class="card__btn" (click)="changeData()" *ngIf="detail">
+			Resume >
 		</div>
 	</div>
 </div>

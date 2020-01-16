@@ -10,6 +10,7 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class PokemonCardComponent implements OnInit {
 	public pokemonSelected: Pokemon;
+	public detail = false;
 
 	constructor(
 		private pokedexService: PokedexService,
@@ -18,6 +19,7 @@ export class PokemonCardComponent implements OnInit {
 
 	public ngOnInit(): void {
 		this.routerData.params.subscribe((params: Params) => {
+			this.detail = false;
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 		});
 	}
@@ -25,6 +27,10 @@ export class PokemonCardComponent implements OnInit {
 	public colorBar(num: number): string {
 		const statusValue: number = num;
 		return `hsl(${statusValue}, 100%, 50%)`;
+	}
+
+	public transformBaseStat(base: number) {
+		return base / 1.5;
 	}
 
 	public get pokemonColorType(): string {
@@ -35,5 +41,9 @@ export class PokemonCardComponent implements OnInit {
 		const pokemonColors: { [key: string]: string } = this.pokedexService
 			.pokemonColorTypes;
 		return pokemonColors[type];
+	}
+
+	public changeData() {
+		this.detail = this.detail ? false : true;
 	}
 }
