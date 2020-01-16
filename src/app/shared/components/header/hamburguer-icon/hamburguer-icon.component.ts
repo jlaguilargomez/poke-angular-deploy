@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-hamburguer-icon',
@@ -6,12 +6,8 @@ import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 	styleUrls: ['./hamburguer-icon.component.scss'],
 })
 export class HamburguerIconComponent implements OnInit {
-	displayMenu = false;
+	@Input() displayMenu;
 	constructor() {}
-
-	render() {
-		this.displayMenu = !this.displayMenu;
-	}
 
 	ngOnInit() {}
 }
