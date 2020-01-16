@@ -1,0 +1,50 @@
+@import 'base/base';
+@import 'base/typography';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+.btn {
+	@include elem-size(5rem, 5rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $secondary-color;
+	border-radius: 10px;
+	opacity: 0.3;
+	position: absolute;
+	z-index: 10;
+	bottom: 3rem;
+	right: 3rem;
+	transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+
+	&__img {
+		display: flex;
+		max-width: 80%;
+	}
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	&:active {
+		background-color: $primary-color;
+		opacity: 1;
+	}
+}
+
+.displayBtn {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 480px) {
+	.btn {
+		@include elem-size(4rem, 4rem);
+		bottom: 2rem;
+		right: 2rem;
+	}
+}
