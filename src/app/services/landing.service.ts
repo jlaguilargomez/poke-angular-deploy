@@ -63,4 +63,8 @@ export class LandingService {
 	public getMembers(): Member[] {
 		return this.team;
 	}
+
+	public getFunctionalities(): Functionality[] {
+		return this.functionalities;
+	}
 }
