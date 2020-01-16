@@ -23,7 +23,6 @@
 
 .panel {
 	display: flex;
-	padding: 1em;
 	background-color: rgba(0, 0, 0, 0.37);
 	border-radius: 2em;
 	justify-content: space-between;
@@ -32,13 +31,11 @@
 		padding: 0.5rem;
 		box-sizing: border-box;
 		flex: 1;
-		min-width: 265px;
 	}
 	&__map {
 		padding: 0.5rem;
 		box-sizing: border-box;
 		flex: 1;
-		min-width: 265px;
 	}
 }
 

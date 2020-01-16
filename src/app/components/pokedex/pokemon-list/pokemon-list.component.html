@@ -23,11 +23,11 @@
 		<div *ngIf="pokemonList != undefined" class="list">
 			<div
 				class="elem"
-				(click)="renderPokemon(elem.name)"
 				*ngFor="
 					let elem of pokemonList | searcherFilter: searchPokemonName;
 					index as i
 				"
+				routerLink="./{{ elem.name }}"
 			>
 				<span class="elem__id">{{ elem.id }}</span>
 				<div class="elem__info">
