@@ -51,7 +51,7 @@ export class LandingService {
 		},
 		{
 			num: '3',
-			title: "And catch'em all!",
+			title: 'And catch em all!',
 			img: 'assets/img/functionality-3.jpg',
 			info:
 				'Explore the world around you and catch all the Pokemon availables!',
