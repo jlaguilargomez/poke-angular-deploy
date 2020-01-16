@@ -5,6 +5,7 @@ import { ButtonArrowComponent } from 'src/app/shared/components/button-arrow/but
 import { BackgroundDexStyleComponent } from 'src/app/shared/components/background-dex-style/background-dex-style.component';
 import { HeaderCurveComponent } from 'src/app/shared/components/header-curve/header-curve.component';
 import { CardMemberComponent } from 'src/app/shared/components/card-member/card-member.component';
+import { BackTopBtnComponent } from 'src/app/shared/components/back-top-btn/back-top-btn.component';
 
 describe('LandingComponent', () => {
 	beforeEach(() => {
@@ -15,6 +16,7 @@ describe('LandingComponent', () => {
 				BackgroundDexStyleComponent,
 				HeaderCurveComponent,
 				CardMemberComponent,
+				BackTopBtnComponent,
 			],
 		}).compileComponents();
 	});
