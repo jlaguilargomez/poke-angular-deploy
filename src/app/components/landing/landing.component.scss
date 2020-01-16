@@ -171,18 +171,17 @@
 			transform-origin: bottom;
 			transform: scaleY(1.8);
 		}
+		&__headings {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: auto;
+		}
 	}
 	.section-functionality {
 		height: auto;
 	}
 	.section-team {
 		height: auto;
-	}
-}
-
-@media (max-width: 480px) {
-	.section-functionality {
-		.explanation-card {
-		}
 	}
 }
