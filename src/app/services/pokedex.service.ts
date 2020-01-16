@@ -63,8 +63,8 @@ export class PokedexService {
 									colorType: this.pokemonColors[
 										responseData.types[0].type.name
 									],
-									height: responseData.height,
-									weight: responseData.weight,
+									height: responseData.height / 10,
+									weight: responseData.weight / 10,
 									stats: responseData.stats.map(stat => {
 										return {
 											name: stat['stat']['name'],
