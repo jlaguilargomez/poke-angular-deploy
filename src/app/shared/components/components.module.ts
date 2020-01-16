@@ -12,6 +12,7 @@ import { BackTopBtnComponent } from './back-top-btn/back-top-btn.component';
 		BackgroundDexStyleComponent,
 		HeaderCurveComponent,
 		CardMemberComponent,
+		BackTopBtnComponent,
 	],
 	declarations: [
 		ButtonArrowComponent,
