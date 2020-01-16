@@ -2,13 +2,13 @@
 @import 'abstracts/mixins';
 
 .card {
-	height: 26rem;
-	width: 26rem;
+	height: 23rem;
+	width: 23rem;
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 
 	&__side {
-		height: 26rem;
+		height: 23rem;
 		backface-visibility: visible;
 		position: absolute;
 		top: 0;
@@ -26,12 +26,12 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 26rem;
+			width: 23rem;
 		}
 	}
 
 	&__image {
-		height: 26rem;
+		height: 23rem;
 	}
 
 	&:hover &__side--front {
