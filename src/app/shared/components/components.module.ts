@@ -3,6 +3,7 @@ import { ButtonArrowComponent } from './button-arrow/button-arrow.component';
 import { BackgroundDexStyleComponent } from './background-dex-style/background-dex-style.component';
 import { HeaderCurveComponent } from './header-curve/header-curve.component';
 import { CardMemberComponent } from './card-member/card-member.component';
+import { BackTopBtnComponent } from './back-top-btn/back-top-btn.component';
 
 @NgModule({
 	imports: [],
@@ -17,6 +18,7 @@ import { CardMemberComponent } from './card-member/card-member.component';
 		BackgroundDexStyleComponent,
 		HeaderCurveComponent,
 		CardMemberComponent,
+		BackTopBtnComponent,
 	],
 	providers: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
