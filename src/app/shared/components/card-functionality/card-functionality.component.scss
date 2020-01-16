@@ -24,3 +24,17 @@
 		}
 	}
 }
+
+@media (max-width: 1366px) {
+	.explanation-card {
+		padding: 3rem;
+		max-width: 37rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.explanation-card {
+		padding: 3rem;
+		max-width: 25rem;
+	}
+}

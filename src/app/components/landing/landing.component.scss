@@ -198,6 +198,11 @@
 
 @media (max-width: 480px) {
 	.intro-section {
+		&__wave {
+			transform-origin: bottom;
+			transform: scaleY(2);
+		}
+
 		&__btn-landing {
 			margin-top: 4rem;
 		}
