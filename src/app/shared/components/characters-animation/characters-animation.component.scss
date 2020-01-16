@@ -1,0 +1,36 @@
+.characters {
+	position: relative;
+	&__professor {
+		width: 22rem;
+	}
+	&__pokemon {
+		width: 21rem;
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+	}
+}
+
+@media (max-width: 780px) {
+	.characters {
+		&__professor {
+			width: 16rem;
+		}
+		&__pokemon {
+			width: 15rem;
+			bottom: -11px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.characters {
+		&__professor {
+			width: 11rem;
+		}
+		&__pokemon {
+			width: 10rem;
+			bottom: -11px;
+		}
+	}
+}

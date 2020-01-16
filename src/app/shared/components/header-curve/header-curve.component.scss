@@ -1,0 +1,15 @@
+.wave {
+	transition: transform 0.7s;
+}
+@media (max-width: 1366px) {
+	.wave {
+		transform-origin: top;
+		transform: scaleY(1.4);
+	}
+}
+@media (max-width: 768px) {
+	.wave {
+		transform-origin: top;
+		transform: scaleY(1.7);
+	}
+}
