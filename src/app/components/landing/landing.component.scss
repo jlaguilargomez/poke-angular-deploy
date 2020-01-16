@@ -176,7 +176,26 @@
 			transform: scaleY(1.4);
 		}
 	}
+}
+
+@media (max-width: 780px) {
+	.intro-section {
+		&__wave {
+			transform-origin: bottom;
+			transform: scaleY(1.8);
+		}
+	}
 	.section-functionality {
 		height: auto;
+	}
+	.section-team {
+		height: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.section-functionality {
+		.explanation-card {
+		}
 	}
 }

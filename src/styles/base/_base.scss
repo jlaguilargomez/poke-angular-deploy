@@ -17,3 +17,21 @@ body {
 	height: 100%;
 	width: 100%;
 }
+
+@media (max-width: 1366px) {
+	html {
+		font-size: 44.5%;
+	}
+}
+
+@media (max-width: 1024px) {
+	html {
+		font-size: 62.5%;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 54.5%;
+	}
+}
