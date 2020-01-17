@@ -18,7 +18,7 @@ export class PokemonListComponent implements OnInit {
 	) {}
 
 	renderPokemon(name) {
-		this.router.navigate(['pokedex', name]);
+		// this.router.navigate(['pokedex', name]);
 		this.pokedexService.cardLoaded.subscribe(() => {
 			this.router.navigate(['pokedex', name], { fragment: 'card' });
 		});

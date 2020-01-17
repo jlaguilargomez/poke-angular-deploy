@@ -27,6 +27,8 @@
 					let elem of pokemonList | searcherFilter: searchPokemonName;
 					index as i
 				"
+				routerLink="./{{ elem.name }}"
+				fragment="card"
 				(click)="renderPokemon(elem.name)"
 			>
 				<span class="elem__id">{{ elem.id }}</span>
