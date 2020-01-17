@@ -22,6 +22,7 @@ export class PokemonCardComponent implements OnInit {
 			this.detail = false;
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
 		});
+		this.pokedexService.cardLoaded.next(true);
 	}
 
 	public colorBar(num: number): string {
