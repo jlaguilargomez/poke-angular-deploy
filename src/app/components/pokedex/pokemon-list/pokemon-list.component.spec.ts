@@ -38,7 +38,7 @@ describe('PokemonListComponent', () => {
 	});
 
 	it('should renderPokemon', done => {
-		let spy = spyOn(router, 'navigate');
+		const spy = spyOn(router, 'navigate');
 		new Observable(observer => {
 			component.renderPokemon('Pikachu');
 			pokedexService.cardLoaded.next(true);
