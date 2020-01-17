@@ -1,12 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { NgSelectModule } from '@ng-select/ng-select';
-// import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PokemonListComponent } from './pokemon-list.component';
-import { NgModule } from '@angular/core';
-import { NgModel, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from '../../../pipes/search-filter.pipe';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PokedexService } from 'src/app/services/pokedex.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Observable } from 'rxjs';
