@@ -46,7 +46,8 @@
 			<div
 				class="elem"
 				*ngFor="
-					let elem of pokemonList | searcherFilter: searchPokemonName;
+					let elem of filterPokemonsByType(selectedType)
+						| searcherFilter: searchPokemonName;
 					index as i
 				"
 				routerLink="./{{ elem.name }}"
