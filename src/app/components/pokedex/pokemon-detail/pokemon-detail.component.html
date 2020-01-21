@@ -12,10 +12,19 @@
 			</div>
 		</div>
 	</div>
-	<img
-		src="../../../assets/img/pikachu-search.png"
-		alt="Unselected picture"
-		*ngIf="pokemonSelected === undefined"
+	<div
 		class="detail-container__no-selected"
-	/>
+		*ngIf="pokemonSelected === undefined"
+	>
+		<div class="choose">
+			<img
+				src="../../../assets/img/pikachu-search.png"
+				alt="Unselected picture"
+				class="choose__img"
+			/>
+			<h1 class="choose__title">
+				Choose your <span class="choose__title--poke"> Pokemon</span>
+			</h1>
+		</div>
+	</div>
 </div>
