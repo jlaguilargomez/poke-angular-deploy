@@ -68,6 +68,25 @@
 	border-radius: 2em;
 	justify-content: space-between;
 
+	&__button-change {
+		border: none;
+		background-color: #fff;
+		color: #2b2b2b;
+		border-radius: 10px;
+		margin-top: 2rem;
+		padding: 1rem 2rem;
+		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			transform: translateY(-3px);
+		}
+		&:active {
+			transform: translateY(-1px);
+		}
+	}
+
 	&__card {
 		padding: 0.5rem;
 		box-sizing: border-box;

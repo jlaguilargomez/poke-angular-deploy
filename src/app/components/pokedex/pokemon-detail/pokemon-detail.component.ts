@@ -16,6 +16,10 @@ export class PokemonDetailComponent implements OnInit {
 		private pokedexService: PokedexService
 	) {}
 
+	public changeGrassType() {
+		this.pokedexService.changeGrassType();
+	}
+
 	ngOnInit() {
 		this.route.params.subscribe((params: Params) => {
 			this.pokemonSelected = this.pokedexService.getPokemon(params['id']);
