@@ -32,6 +32,15 @@
 				/>
 			</div>
 		</div>
+
+		<!-- Tag Box -->
+		<app-tag-box
+			[renderingType]="selectedType"
+			(typeSelected)="getTypeSelected($event)"
+			(turnDropDownOff)="getDropDownInteraction($event)"
+			*ngIf="displayTagBox == true"
+		></app-tag-box>
+
 		<!--List of Pokemons-->
 		<div *ngIf="pokemonList != undefined" class="list">
 			<div

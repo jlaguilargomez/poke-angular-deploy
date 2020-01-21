@@ -54,6 +54,8 @@
 .search-bar {
 	display: flex;
 	align-items: center;
+	flex-grow: 1;
+	position: sticky;
 	height: 35px;
 	border: 1px solid rgb(207, 205, 205);
 	background-color: white;
