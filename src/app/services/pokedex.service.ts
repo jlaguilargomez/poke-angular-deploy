@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError, retry } from 'rxjs/operators';
-import { Observable, forkJoin, throwError } from 'rxjs';
+import { Observable, forkJoin, throwError, Subject } from 'rxjs';
 import { Pokemon, PokemonAPIData } from '../models/pokemon.interface';
 
 @Injectable({
@@ -29,6 +29,7 @@ export class PokedexService {
 		poison: '#934392',
 		electric: '#FAB819',
 	};
+	public cardLoaded = new Subject<boolean>();
 
 	constructor(private http: HttpClient) {}
 
