@@ -1,0 +1,26 @@
+<div class="tag-box">
+	<div class="tag-box__container">
+		<div *ngFor="let type of pokemonTypes; let i = index">
+			<p
+				(click)="setTypeOfPokemon(type)"
+				[ngStyle]="{ backgroundColor: getColor(type) }"
+				[ngClass]="
+					type === renderingType ? 'tag--selected' : 'tag--disabled'
+				"
+				class="tag"
+			>
+				{{ type }}
+			</p>
+		</div>
+		<p
+			(click)="setTypeOfPokemon('all')"
+			[ngClass]="
+				renderingType === 'all' ? 'tag--selected' : 'tag--disabled'
+			"
+			class="tag tag__all"
+		>
+			Show me all types
+		</p>
+	</div>
+</div>
+n

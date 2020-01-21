@@ -17,6 +17,7 @@ import { HamburguerIconComponent } from './shared/components/header/hamburguer-i
 import { AppRoutingModule } from './app-routing.module';
 import { PokedexService } from './services/pokedex.service';
 import { ComponentsModule } from './shared/components/components.module';
+import { TagBoxComponent } from './components/pokedex/pokemon-list/tag-box/tag-box.component';
 
 @NgModule({
 	declarations: [
@@ -31,6 +32,7 @@ import { ComponentsModule } from './shared/components/components.module';
 		FooterComponent,
 		SearchFilterPipe,
 		HamburguerIconComponent,
+		TagBoxComponent,
 	],
 	imports: [
 		BrowserModule,

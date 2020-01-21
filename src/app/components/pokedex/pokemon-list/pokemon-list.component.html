@@ -9,16 +9,29 @@
 	</div>
 
 	<div class="list-container">
-		<form class="search-bar">
-			<img src="./assets/img/glass-search.png" class="search-bar__img" />
-			<input
-				name="pokemonName"
-				class="search-bar__input"
-				type="text"
-				placeholder="Search..."
-				[(ngModel)]="searchPokemonName"
-			/>
-		</form>
+		<div class="filter-box">
+			<form class="search-bar">
+				<img
+					src="./assets/img/glass-search.png"
+					class="search-bar__img"
+				/>
+				<input
+					name="pokemonName"
+					class="search-bar__input"
+					type="text"
+					placeholder="Search..."
+					[(ngModel)]="searchPokemonName"
+				/>
+			</form>
+
+			<div (click)="changeTagBoxStatus()" class="dropdown-btn">
+				<img
+					class="dropdown-btn__img"
+					src="./assets/img/svg/angle-up-solid.svg"
+					alt=""
+				/>
+			</div>
+		</div>
 		<!--List of Pokemons-->
 		<div *ngIf="pokemonList != undefined" class="list">
 			<div
