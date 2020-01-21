@@ -22,3 +22,49 @@
 	width: $width;
 	height: $height;
 }
+
+/*
+    // MEDIA QUERY MANAGER
+    0 - 480px:      Phone
+    480 - 780px:    Table Portrait
+    780 - 1366px:   Tablet Landscape
+    [1366 -1800px]:   Where the normal styles apply
+    1800px >:       Big desktops
+
+    $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+    1em = 16px;
+
+    ORDER: Base + typography > general layout + grid > page layout > components
+*/
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		// 480x
+		@media only screen and (max-width: 30em) {
+			@content;
+		}
+	}
+	@if $breakpoint == tab-port {
+		// 780 px
+		@media only screen and (max-width: 48.75em) {
+			@content;
+		}
+	}
+	@if $breakpoint == tab-land {
+		// 1200px
+		@media only screen and (max-width: 85.38em) {
+			@content;
+		}
+	}
+	@if $breakpoint == big-desktop {
+		// 1800px
+		@media only screen and (min-width: 112.5em) {
+			@content;
+		}
+	}
+}

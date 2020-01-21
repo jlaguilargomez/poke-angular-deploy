@@ -1,6 +1,7 @@
 @import 'base/base';
 @import 'base/typography';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .footer {
 	display: flex;
@@ -31,7 +32,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include respond(tab-port) {
 	.footer {
 		&__title {
 			height: 70%;
@@ -46,7 +47,7 @@
 	}
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.footer {
 		&__title {
 			height: 60%;
