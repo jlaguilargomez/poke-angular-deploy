@@ -1,3 +1,5 @@
+@import 'abstracts/mixins';
+
 .characters {
 	position: relative;
 	&__professor {
@@ -11,7 +13,7 @@
 	}
 }
 
-@media (max-width: 780px) {
+@include respond(tab-port) {
 	.characters {
 		&__professor {
 			width: 16rem;
@@ -23,7 +25,7 @@
 	}
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.characters {
 		&__professor {
 			width: 11rem;

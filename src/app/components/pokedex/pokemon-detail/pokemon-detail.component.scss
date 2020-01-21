@@ -1,5 +1,6 @@
 @import 'base/base';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 @keyframes rotateTitle {
 	0% {
@@ -93,7 +94,13 @@
 }
 
 // Responsive
-@media (max-width: 768px) {
+@include respond(tab-land) {
+	.detail-container {
+		padding: 2rem 6rem;
+	}
+}
+
+@include respond(tab-port) {
 	.detail-container {
 		padding-left: 2rem;
 	}
@@ -102,15 +109,9 @@
 	}
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.detail-container {
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.detail-container {
-		padding: 2rem 6rem;
 	}
 }

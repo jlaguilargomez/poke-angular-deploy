@@ -1,5 +1,6 @@
 @import 'base/base';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .component-box {
 	display: flex;
@@ -155,7 +156,7 @@
 	}
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.component-box {
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
@@ -167,7 +168,7 @@
 	}
 }
 
-@media (min-width: 1280px) {
+@include respond(tab-land) {
 	.component-box {
 		padding: 2rem 6rem;
 	}

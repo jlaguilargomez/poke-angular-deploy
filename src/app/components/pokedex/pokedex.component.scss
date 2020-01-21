@@ -1,5 +1,6 @@
 @import 'base/base';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .component-box {
 	display: flex;
@@ -45,7 +46,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include respond(tab-port) {
 	.pokedex {
 		flex-direction: column;
 

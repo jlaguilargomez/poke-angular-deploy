@@ -1,3 +1,5 @@
+@import '../abstracts/mixins';
+
 html {
 	//This defines what 1rem is
 	font-size: 62.5%;
@@ -15,7 +17,7 @@ html {
 	width: 100%;
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	html {
 		font-size: 54.5%;
 	}

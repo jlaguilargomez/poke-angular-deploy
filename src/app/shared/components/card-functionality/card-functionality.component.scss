@@ -1,4 +1,5 @@
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .explanation-card {
 	//Esto debería ser un componente
@@ -25,14 +26,14 @@
 	}
 }
 
-@media (max-width: 1366px) {
+@include respond(tab-land) {
 	.explanation-card {
 		padding: 3rem;
 		max-width: 37rem;
 	}
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.explanation-card {
 		padding: 3rem;
 		max-width: 25rem;
