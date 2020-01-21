@@ -21,4 +21,9 @@ describe('BackTopBtnComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it('should move to the top of the page', () => {
+		component.backToTop();
+		expect(window.pageYOffset).toBe(0);
+	});
 });

@@ -2,17 +2,29 @@
 	<div class="detail-container__selected" *ngIf="pokemonSelected">
 		<div class="panel">
 			<div class="panel__card">
-				<app-pokemon-card class="panel__info__card"></app-pokemon-card>
+				<app-pokemon-card
+					class="panel__info__card"
+					id="card"
+				></app-pokemon-card>
 			</div>
 			<div class="panel__map">
 				<app-pokemon-map class="panel__info__map"></app-pokemon-map>
 			</div>
 		</div>
 	</div>
-	<img
-		src="../../../assets/img/pikachu-search.png"
-		alt="Unselected picture"
-		*ngIf="pokemonSelected === undefined"
+	<div
 		class="detail-container__no-selected"
-	/>
+		*ngIf="pokemonSelected === undefined"
+	>
+		<div class="choose">
+			<img
+				src="../../../assets/img/pikachu-search.png"
+				alt="Unselected picture"
+				class="choose__img"
+			/>
+			<h1 class="choose__title">
+				Choose your <span class="choose__title--poke"> Pokemon</span>
+			</h1>
+		</div>
+	</div>
 </div>

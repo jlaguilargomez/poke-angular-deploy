@@ -12,9 +12,10 @@ En esta versión se han corregido errores detectados de la versión anterior y a
 
 -   Se ha modificado el routing para que funcione mediante el nombre del pokemon en lugar del id.
 
-**Header**
+**Generales de la App**
 
--   Minor bugs in header fixed.
+-   Se ha arreglado el error del overflow.
+-   Añadido botón para volver al principio de la página (desaparece cuando ya estamos en el principio).
 
 **Mejora de la arquitectura del proyecto**
 
@@ -42,6 +43,7 @@ En esta versión se han corregido errores detectados de la versión anterior y a
 **Pokedex:**
 
 -   Refactorización de todo el código e implementación de `display:flex`.
+-   Para pantallas con scroll, al seleccionar un pokemon de la lista te direcciona a la tarjeta del pokemon (mejora UX para pantallas pequeñas)
 
 **Pokemon-card:**
 
