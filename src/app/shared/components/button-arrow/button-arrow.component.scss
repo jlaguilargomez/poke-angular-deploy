@@ -1,4 +1,5 @@
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .button {
 	transition: 0.7s;
@@ -96,7 +97,7 @@
 	}
 }
 
-@media (max-width: 780px) {
+@include respond(tab-port) {
 	.button {
 		&__link {
 			font-size: 2rem;

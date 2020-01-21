@@ -44,7 +44,7 @@
 	padding-bottom: 1rem;
 }
 
-@media (max-width: 1366px) {
+@include respond(tab-land) {
 	.u-margin-bottom-big {
 		margin-bottom: 4rem;
 	}

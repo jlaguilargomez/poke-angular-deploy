@@ -44,7 +44,7 @@ body {
 	text-align: justify;
 }
 
-@media (max-width: 480px) {
+@include respond(phone) {
 	.heading-primary {
 		font-size: 6rem;
 		padding: 0.3rem 4rem;
