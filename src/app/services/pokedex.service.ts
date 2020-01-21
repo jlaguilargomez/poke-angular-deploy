@@ -130,6 +130,7 @@ export class PokedexService {
 				elem => elem.name === pokemon.name
 			).imagePath = 'assets/img/leaf.png';
 		}
+		return grassPokemon;
 	}
 
 	public loadPokemonList(first: number, last: number): Observable<Pokemon[]> {
