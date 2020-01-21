@@ -23,6 +23,25 @@
 	height: $height;
 }
 
+/*
+    // MEDIA QUERY MANAGER
+    0 - 600px:      Phone
+    600 - 900px:    Table Portrait
+    900 - 1200px:   Tablet Landscape
+    [1200 -1800px]:   Where the normal styles apply
+    1800px >:       Big desktops
+
+    $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+    1em = 16px;
+
+    ORDER: Base + typography > general layout + grid > page layout > components
+*/
+
 @mixin respond($breakpoint) {
 	@if $breakpoint == phone {
 		@media (max-width: 37.5em) {
