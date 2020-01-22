@@ -40,8 +40,8 @@
 
 	background-image: url('/assets/img/pokeball-bg.svg');
 	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position: 0 100%;
+	background-size: cover;
+	background-position: 49% 100%;
 
 	&__btn {
 		align-self: flex-end;

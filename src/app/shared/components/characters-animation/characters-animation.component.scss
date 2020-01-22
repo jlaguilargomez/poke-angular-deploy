@@ -13,7 +13,7 @@
 	}
 }
 
-@include respond(tab-port) {
+@include respond(tab-land) {
 	.characters {
 		&__professor {
 			width: 16rem;
@@ -24,6 +24,18 @@
 		}
 	}
 }
+
+// @include respond(tab-port) {
+// 	.characters {
+// 		&__professor {
+// 			width: 16rem;
+// 		}
+// 		&__pokemon {
+// 			width: 15rem;
+// 			bottom: -11px;
+// 		}
+// 	}
+// }
 
 @include respond(phone) {
 	.characters {
