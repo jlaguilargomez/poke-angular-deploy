@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonArrowComponent implements OnInit {
 	@Input() text: string;
+	@Input() url: string;
+
 	constructor() {}
 
 	ngOnInit() {}

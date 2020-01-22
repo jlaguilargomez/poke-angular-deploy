@@ -8,10 +8,12 @@ import { BackTopBtnComponent } from 'src/app/shared/components/back-top-btn/back
 import { CardFunctionalityComponent } from 'src/app/shared/components/card-functionality/card-functionality.component';
 import { CharactersAnimationComponent } from 'src/app/shared/components/characters-animation/characters-animation.component';
 import { BackgroundDexStyleComponent } from 'src/app/shared/components/card-functionality/background-dex-style/background-dex-style.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('LandingComponent', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
+			imports: [RouterTestingModule],
 			declarations: [
 				LandingComponent,
 				ButtonArrowComponent,

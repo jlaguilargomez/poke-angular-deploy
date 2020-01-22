@@ -13,11 +13,15 @@
 		/>
 	</div>
 	<div class="loading-picture" *ngIf="status === 'error'">
-		<img
-			class="loading-picture__error"
-			src="assets/img/psyduck404.png"
-			alt="Some problem with the API"
-		/>
+		<div class="error-message">
+			<div class="error-message__img">
+				<img
+					src="assets/img/gifs/psyduck.gif"
+					alt="Some problem with the API"
+				/>
+			</div>
+			<h2 class="error-message__text">Some problem with the API :(</h2>
+		</div>
 	</div>
 </div>
 

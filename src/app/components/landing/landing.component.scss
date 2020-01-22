@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 	height: calc(100vh - 7rem);
 	@include background-parallax(
-		'/assets/img/pokemon-header.jpg',
+		'../../../assets/img/pokemon-header.jpg',
 		$color-white,
 		0.8
 	);
@@ -33,10 +33,6 @@
 		bottom: 2.5rem;
 		left: 4rem;
 		text-align: center;
-	}
-
-	&__pokemon {
-		width: 21rem;
 	}
 
 	&__btn-landing {
@@ -98,7 +94,6 @@
 .section-team {
 	position: relative;
 	display: flex;
-	height: calc(100vh - 5rem);
 	flex-flow: column nowrap;
 	justify-content: space-between;
 	//background-color: $primary-color;
@@ -117,7 +112,7 @@
 
 	&__rights {
 		width: 100%;
-		height: 3%;
+		margin: 2rem 0;
 		font-size: 1.2rem;
 		text-align: center;
 		color: white;
@@ -144,6 +139,9 @@
 
 	.section-team {
 		height: auto;
+		&__members {
+			margin: 15rem 0rem;
+		}
 	}
 }
 
@@ -153,6 +151,12 @@
 			transform-origin: bottom;
 			transform: scaleY(1.4);
 		}
+	}
+}
+
+@include respond(big-desktop) {
+	.section-team {
+		height: calc(100vh - 5rem);
 	}
 }
 
@@ -189,6 +193,9 @@
 	}
 	.section-team {
 		height: auto;
+		&__members {
+			margin: 10rem 0rem;
+		}
 	}
 }
 
