@@ -10,7 +10,7 @@ export class LandingService {
 		{
 			name: 'Jose Angel Cívico Martos',
 			img: 'assets/img/personal/angel-photo.jpg',
-			job: 'Software Developer',
+			job: 'Web Developer',
 			linkedin:
 				'https://es.linkedin.com/in/jos%C3%A9-%C3%A1ngel-c%C3%ADvico-martos',
 			github: 'https://github.com/Gleanx',
@@ -19,15 +19,15 @@ export class LandingService {
 		{
 			name: 'Gabriel García Rodríguez',
 			img: 'assets/img/personal/gabri-photo.jpg',
-			job: 'Software Developer',
+			job: 'Web Developer',
 			linkedin: 'https://es.linkedin.com/in/gabrielgarci',
-			github: '',
+			github: 'https://github.com/gabrielgarci?tab=repositories',
 			twitter: '',
 		},
 		{
 			name: 'Guadalupe García Plaza',
 			img: 'assets/img/icon-profile3.png',
-			job: 'Software Developer',
+			job: 'Web Developer',
 			linkedin:
 				'https://es.linkedin.com/in/guadalupe-garc%C3%ADa-plaza-91337814a',
 			github: '',
@@ -36,7 +36,7 @@ export class LandingService {
 		{
 			name: 'Jose Luis Aguilar Gómez',
 			img: 'assets/img/personal/joselu-photo.jpg',
-			job: 'Software Developer',
+			job: 'Web Developer',
 			linkedin: 'https://es.linkedin.com/in/jlaguilargomez',
 			github: 'https://github.com/jlaguilargomez',
 			twitter: 'https://twitter.com/jlaguilargomez',
@@ -44,7 +44,7 @@ export class LandingService {
 		{
 			name: 'Juan Pablo Amador Díaz',
 			img: 'assets/img/personal/juanpablo-photo.jpeg',
-			job: 'Software Developer',
+			job: 'Web Developer',
 			linkedin: 'https://es.linkedin.com/in/juan-pablo-amador',
 			github: '',
 			twitter: '',
