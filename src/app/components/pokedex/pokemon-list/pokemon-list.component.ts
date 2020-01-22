@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 	styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
+	public selectedType = 'all';
+	public displayTagBox = false;
 	public searchPokemonName: string;
 	public pokemonList: Pokemon[] = this.pokedexService.getPokemonList();
 
@@ -21,6 +23,28 @@ export class PokemonListComponent implements OnInit {
 		this.pokedexService.cardLoaded.subscribe(() => {
 			this.router.navigate(['pokedex', name], { fragment: 'card' });
 		});
+	}
+
+	public changeTagBoxStatus(): void {
+		this.displayTagBox = !this.displayTagBox;
+	}
+
+	public filterPokemonsByType(type: string) {
+		const pokemonFilteredByType: Pokemon[] = this.pokemonList.filter(
+			// pokemon => pokemon.type[0] === type
+			(pokemon: Pokemon): boolean => {
+				return pokemon.type.some((val: string) => val === type);
+			}
+		);
+		return type === 'all' ? this.pokemonList : pokemonFilteredByType;
+	}
+
+	public getTypeSelected(type: string): void {
+		this.selectedType = type;
+	}
+
+	public getDropDownInteraction(status: boolean): void {
+		this.displayTagBox = status;
 	}
 
 	ngOnInit() {}
