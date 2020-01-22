@@ -35,10 +35,6 @@
 		text-align: center;
 	}
 
-	&__pokemon {
-		width: 21rem;
-	}
-
 	&__btn-landing {
 		position: absolute;
 		z-index: 1;
@@ -144,6 +140,9 @@
 
 	.section-team {
 		height: auto;
+		&__members {
+			margin: 15rem 0rem;
+		}
 	}
 }
 
@@ -189,6 +188,9 @@
 	}
 	.section-team {
 		height: auto;
+		&__members {
+			margin: 10rem 0rem;
+		}
 	}
 }
 
