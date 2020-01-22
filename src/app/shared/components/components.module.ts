@@ -7,9 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CardFunctionalityComponent } from './card-functionality/card-functionality.component';
 import { CharactersAnimationComponent } from './characters-animation/characters-animation.component';
 import { BackgroundDexStyleComponent } from './card-functionality/background-dex-style/background-dex-style.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-	imports: [BrowserModule],
+	imports: [BrowserModule, RouterModule],
 	exports: [
 		ButtonArrowComponent,
 		HeaderCurveComponent,

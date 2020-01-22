@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonArrowComponent } from './button-arrow.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ButtonArrowComponent', () => {
 	let component: ButtonArrowComponent;
@@ -8,6 +9,7 @@ describe('ButtonArrowComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [RouterTestingModule],
 			declarations: [ButtonArrowComponent],
 		}).compileComponents();
 	}));
