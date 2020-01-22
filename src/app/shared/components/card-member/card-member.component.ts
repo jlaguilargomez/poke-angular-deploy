@@ -9,6 +9,10 @@ export class CardMemberComponent implements OnInit {
 	@Input() name: string;
 	@Input() job: string;
 	@Input() img: string;
+	@Input() linkedin: string;
+	@Input() github: string;
+	@Input() twitter: string;
+
 	constructor() {}
 
 	ngOnInit() {}

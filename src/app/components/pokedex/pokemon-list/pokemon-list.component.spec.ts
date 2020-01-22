@@ -24,12 +24,12 @@ import { CardMemberComponent } from 'src/app/shared/components/card-member/card-
 import { BackTopBtnComponent } from 'src/app/shared/components/back-top-btn/back-top-btn.component';
 import { PokemonCardComponent } from '../pokemon-detail/pokemon-card/pokemon-card.component';
 import { PokemonMapComponent } from '../pokemon-detail/pokemon-map/pokemon-map.component';
-import { BackgroundDexStyleComponent } from 'src/app/shared/components/card-functionality/background-dex-style/background-dex-style.component';
 import { Observable } from 'rxjs';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { PokemonListComponent } from './pokemon-list.component';
 import { PokedexService } from 'src/app/services/pokedex.service';
+import { BackgroundDexStyleComponent } from 'src/app/shared/components/card-functionality/background-dex-style/background-dex-style.component';
 
 describe('Component: PokemonListComponent', () => {
 	let component: PokemonListComponent;

@@ -13,7 +13,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-color: $secondary-color;
+		background-color: $terciary-color;
 		transition: all 0.7s;
 
 		@include circle-mask;
@@ -21,6 +21,8 @@
 			opacity: 1;
 		}
 		&--back {
+			display: flex;
+			flex-direction: column;
 			transform: rotateY(180deg);
 			opacity: 0;
 			display: flex;
@@ -52,6 +54,16 @@
 
 	&__job {
 		font-size: 2.4rem;
-		color: $color-white;
+		color: $secondary-color;
+		text-shadow: 0 0 2px 2px;
+	}
+
+	&__sites {
+		display: flex;
+	}
+
+	&__logo {
+		width: 3rem;
+		margin: 1rem;
 	}
 }

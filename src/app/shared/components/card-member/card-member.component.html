@@ -4,6 +4,47 @@
 	</div>
 	<div class="card__side card__side--back">
 		<p class="card__job">{{ job }}</p>
+		<div class="card__sites">
+			<div *ngIf="linkedin">
+				<a
+					href="{{ linkedin }}"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						class="card__logo"
+						src="../.././../../assets/img/logos/linkedin-logo.png"
+						alt=""
+					/>
+				</a>
+			</div>
+			<div *ngIf="github">
+				<a
+					href="{{ github }}"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						class="card__logo"
+						src="../.././../../assets/img/logos/github-logo.png"
+						alt=""
+					/>
+				</a>
+			</div>
+			<div *ngIf="twitter">
+				<a
+					href="{{ twitter }}"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						class="card__logo"
+						src="../.././../../assets/img/logos/twitter-logo.png"
+						alt=""
+					/>
+				</a>
+			</div>
+		</div>
 	</div>
 </div>
 <h3 class="card__name u-margin-regular">{{ name }}</h3>
