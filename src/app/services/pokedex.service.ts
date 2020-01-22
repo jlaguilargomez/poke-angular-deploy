@@ -121,6 +121,18 @@ export class PokedexService {
 		return response;
 	}
 
+	public changeGrassType() {
+		const grassPokemon = this.pokemonList.filter(pokemon =>
+			pokemon.type.includes('grass')
+		);
+		for (const pokemon of grassPokemon) {
+			this.pokemonList.find(
+				elem => elem.name === pokemon.name
+			).imagePath = 'assets/img/leaf.png';
+		}
+		return grassPokemon;
+	}
+
 	public loadPokemonList(first: number, last: number): Observable<Pokemon[]> {
 		return this.requestPokemons(first, last);
 	}

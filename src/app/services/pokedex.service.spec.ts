@@ -4,9 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { PokedexService } from 'src/app/services/pokedex.service';
 import { Pokemon, PokemonTest } from 'src/app/models/pokemon.interface';
+import { doesNotThrow } from 'assert';
 
 describe('Service: PokedexService', () => {
 	let pokedexService: PokedexService;
+	let grassTypePokemons: Pokemon[];
 
 	beforeEach((): void => {
 		TestBed.configureTestingModule({
@@ -92,6 +94,22 @@ describe('Service: PokedexService', () => {
 			const pokemonSelected: any = pokedexService.getPokemon('Geodude');
 			// verify
 			expect(pokemonSelected.colorType).toEqual(colorSelected);
+		});
+
+		describe('changeGrassType() should works', () => {
+			beforeEach(() => {
+				grassTypePokemons = pokedexService.changeGrassType();
+			});
+			it('there are 14 grass type pokemons', () => {
+				expect(grassTypePokemons.length).toBe(14);
+			});
+			it('the image path is assets/img/leaf.png', () => {
+				for (const grassPokemon of grassTypePokemons) {
+					expect(grassPokemon.imagePath).toEqual(
+						'assets/img/leaf.png'
+					);
+				}
+			});
 		});
 	});
 
