@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 	height: calc(100vh - 7rem);
 	@include background-parallax(
-		'/assets/img/pokemon-header.jpg',
+		'../../../assets/img/pokemon-header.jpg',
 		$color-white,
 		0.8
 	);
