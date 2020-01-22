@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Member } from '../models/member.interface';
 import { Functionality } from '../models/functionality.interface';
 
@@ -6,7 +6,7 @@ import { Functionality } from '../models/functionality.interface';
 	providedIn: 'root',
 })
 export class LandingService {
-	team: Member[] = [
+	public team: Member[] = [
 		{
 			name: 'Jose Angel Cívico Martos',
 			img: '../../assets/img/personal/angel-photo.jpg',
@@ -51,7 +51,7 @@ export class LandingService {
 		},
 	];
 
-	functionalities: Functionality[] = [
+	public functionalities: Functionality[] = [
 		{
 			num: '1',
 			title: 'Search your Pokemon',
