@@ -12,7 +12,7 @@
 	}
 }
 .detail-container {
-	padding: 2rem;
+	//padding: 2rem;
 	display: flex;
 	justify-content: center;
 
@@ -26,8 +26,8 @@
 	}
 
 	&__no-selected {
-		width: 30vw;
-		min-width: 250px;
+		//width: 30vw;
+		max-width: 250px;
 		background-color: #f0f0f0;
 		border-radius: 20px 20px 60px 20px;
 		padding: 2.5rem;
@@ -41,7 +41,7 @@
 	align-items: center;
 	perspective: 1500px;
 	&__img {
-		width: 50%;
+		width: 20rem;
 		animation: rotate 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s infinite
 			normal;
 		padding: 2rem;
@@ -89,12 +89,10 @@
 
 	&__card {
 		padding: 0.5rem;
-		box-sizing: border-box;
 		flex: 1;
 	}
 	&__map {
 		padding: 0.5rem;
-		box-sizing: border-box;
 		flex: 1;
 	}
 }
@@ -112,7 +110,7 @@
 	}
 }
 
-// Responsive
+//Responsive
 @include respond(tab-land) {
 	.detail-container {
 		padding: 2rem 6rem;
